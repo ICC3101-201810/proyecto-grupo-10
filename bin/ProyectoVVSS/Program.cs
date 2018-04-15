@@ -34,6 +34,7 @@ namespace ProyectoVVSS
         }
         static void Main(string[] args)
         {
+            Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
             string correo;
             string clave;
             while (true)
@@ -48,11 +49,12 @@ namespace ProyectoVVSS
                 }
                 else
                 {
-                    Console.WriteLine("\n---------------------------\n Correo Invalido... \n---------------------------\n");
+                    Console.Clear();
+                    Console.WriteLine("Correo Invalido...");
                     continue;
                 }
             }
-            
+
 
             /*aqui va un validador de usuario ingresado
              * 0.Validar mail miUandes: Listo
@@ -60,8 +62,9 @@ namespace ProyectoVVSS
              * 2.Validar contraseña con mail ingresado
              * 3.Ver tipo de usuario (admin, user, etc..)
              */
-
+            Console.Clear();
             Menu:
+            Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
             Console.WriteLine("Bienvenido " + "<nombre usuario> !\n" +
                 "1.Ingresar Presupuesto\n" +
                 "2.Ver Locales disponibles\n" +
@@ -70,16 +73,14 @@ namespace ProyectoVVSS
             string opcion = Console.ReadLine();
             if (opcion=="1")
             {
-                Console.WriteLine("\n---------------------------");
+                Console.Clear();
                 Console.WriteLine("Proximamente...");
-                Console.WriteLine("---------------------------\n");
                 goto Menu;
             }
             else if (opcion=="2")
             {
-                Console.WriteLine("\n---------------------------");
+                Console.Clear();
                 Console.WriteLine("Proximamente...");
-                Console.WriteLine("---------------------------\n");
                 goto Menu;
             }
             else if (opcion == "3")
