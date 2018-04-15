@@ -22,7 +22,7 @@ namespace ProyectoVVSS
             mail = Mail;
         }
 
-        public string getName()
+        public virtual string getName()
         {
             return this.nombre;
         }
