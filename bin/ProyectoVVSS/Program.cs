@@ -34,9 +34,16 @@ namespace ProyectoVVSS
         }
         static void Main(string[] args)
         {
+            Login:
             Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
             string correo;
             string clave;
+            Console.WriteLine("1.Log-in \n2.Salir \n");
+            string variable = Console.ReadLine();
+            if (variable=="2")
+            {
+                goto Fin;
+            }
             while (true)
             {
                 Console.Write("Correo: ");
@@ -50,6 +57,7 @@ namespace ProyectoVVSS
                 else
                 {
                     Console.Clear();
+                    Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
                     Console.WriteLine("Correo Invalido...");
                     continue;
                 }
@@ -85,7 +93,8 @@ namespace ProyectoVVSS
             }
             else if (opcion == "3")
             {
-                goto Fin;
+                Console.Clear();
+                goto Login;
             }
 
 

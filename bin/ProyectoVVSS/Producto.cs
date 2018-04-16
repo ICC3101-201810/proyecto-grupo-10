@@ -17,5 +17,13 @@ namespace ProyectoVVSS
             stock = Stock;
             id = ID;
         }
+        public int GetPrecio()
+        {
+            return this.precio;
+        }
+        public string GetNombre()
+        {
+            return this.nombre;
+        }
     }
 }
