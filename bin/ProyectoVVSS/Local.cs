@@ -8,23 +8,25 @@ namespace ProyectoVVSS
     class Local
     {
         string nombre;
+        string rut;
         List<string> comentarios;
         List<Producto> menu;
         DateTime hora_apertura;
         DateTime hora_cierre;
-        public Local(string Nombre, DateTime Abre, DateTime Cierra)
+        public Local(string Nombre,string Rut, DateTime Abre, DateTime Cierra)
         {
             nombre = Nombre;
+            rut = Rut;
             hora_apertura = Abre;
             hora_cierre = Cierra;
             menu = new List<Producto>();
             comentarios = new List<string>();
         }
-        public string GetHorario()
+        public string ImprimeHorario()
         {
             return "Abre: " + this.hora_apertura.Hour + ":" + this.hora_apertura.Minute + "\nCierra: " + this.hora_apertura.Hour + ":" + this.hora_apertura.Minute;
         }
-        public void GetMenu()
+        public void ImprimeMenu()
         {
             Console.WriteLine("Producto\tPrecio");
             foreach (Producto item in this.menu)
@@ -32,5 +34,6 @@ namespace ProyectoVVSS
                 Console.WriteLine(item.GetNombre().ToUpper() + "\t" + item.GetPrecio().ToString());
             }
         }
+
     }
 }

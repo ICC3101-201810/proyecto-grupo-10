@@ -1,1 +1,2 @@
 CORREO@miuandes.cl,CONTRASEÑA,NOMBRE,APELLIDO,RUT
+hadelafuente@miuandes.cl,1234,Hugo,De la Fuente,19889338-2
