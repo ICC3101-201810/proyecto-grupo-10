@@ -28,10 +28,10 @@ namespace ProyectoVVSS
         }
         public void ImprimeMenu()
         {
-            Console.WriteLine("Producto\tPrecio");
+            Console.WriteLine("Producto\t\tPrecio");
             foreach (Producto item in this.menu)
             {
-                Console.WriteLine(item.GetNombre().ToUpper() + "\t" + item.GetPrecio().ToString());
+                Console.WriteLine(item.GetNombre().ToUpper() + "\t\t" + item.GetPrecio().ToString());
             }
         }
 

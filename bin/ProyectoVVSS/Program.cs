@@ -49,6 +49,11 @@ namespace ProyectoVVSS
         }
         static void Main(string[] args)
         {
+            StreamReader sr = new StreamReader(@"C:\Users\HDF\Desktop\proyecto-grupo-10\bin\ProyectoVVSS\users.txt");
+            string user = sr.ReadLine();
+            Console.WriteLine(user.Split(','));
+
+
             Login:
             Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
             string correo;
@@ -87,7 +92,7 @@ namespace ProyectoVVSS
             Console.WriteLine("Bienvenido " + "<nombre usuario> !\n" +
                 "1.Ingresar Presupuesto y ver opciones\n" +
                 "2.Ver Locales disponibles\n" +
-                "3.Asignar nota o comentario a local" +
+                "3.Asignar nota o comentario a local\n" +
                 "4.Cerrar Sesion\n");
             Console.Write("Opcion: ");
             string opcion = Console.ReadLine();

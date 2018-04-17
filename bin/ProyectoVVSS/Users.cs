@@ -34,7 +34,7 @@ namespace ProyectoVVSS
         /*Setters*/
         public void AgregarPresupuesto(int numero)
         {
-
+            presupuesto = numero;
         }
     }
 }
