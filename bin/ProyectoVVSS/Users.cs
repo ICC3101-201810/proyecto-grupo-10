@@ -12,7 +12,7 @@ namespace ProyectoVVSS
         string rut;
         string password;
         string mail;
-
+        int presupuesto;
         public Users(string miNombre, string miApellido, string miRut, string miPass, string Mail)
         {
             nombre = miNombre;
@@ -21,11 +21,20 @@ namespace ProyectoVVSS
             password = miPass;
             mail = Mail;
         }
-
+        /*Getters*/
         public virtual string getName()
         {
             return this.nombre;
         }
+        public virtual int getPresupuesto()
+        {
+            return this.presupuesto;
+        }
 
+        /*Setters*/
+        public void AgregarPresupuesto(int numero)
+        {
+
+        }
     }
 }

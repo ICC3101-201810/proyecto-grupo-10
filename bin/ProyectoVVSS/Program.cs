@@ -6,6 +6,14 @@ namespace ProyectoVVSS
 {
     class Program
     {
+        static void MenuAdmin_Local() //Imprime menu de admin de local
+        {
+            Console.Write("1.Agregar Oferta\n2.Quitar Oferta\n3.Modificar Menu\n4.Cerrar Sesion\nOpcion: ");
+        }
+        static void MenuAdmin_App() //Imprime menu para admin de la app
+        {
+            Console.Write("1.Agregar Local\n2.Quitar Local\n3.Quitar Usuario\n4.Cambiar Admin de Local\n5.Cerrar Sesion\nOpcion: ");
+        }
         static bool Mail(string correo) //Comprueba que sea correo valido atraves de una ER
         {
             string pat="[A-Z]*[a-z]*@[a-z]*[A-Z]*.[A-Z]*[a-z]*";
