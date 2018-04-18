@@ -11,7 +11,7 @@ namespace ProyectoVVSS
         {
             List<Users> usuarios = Metodos.GetUsuarios("users.txt");
             List<Users> admins = Metodos.GetAdmin("admins.txt");
-            Login:
+            Inicio:
             Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
             string correo;
             string clave;
@@ -21,14 +21,20 @@ namespace ProyectoVVSS
             {
                 goto Fin;
             }
-           Ingresar:
+            Ingresar:
+            Console.WriteLine("Deje este campo vacio para volver");
             Console.Write("Correo: ");
             correo = Console.ReadLine();
+            if (correo == "")
+            {
+                Console.Clear();
+                goto Inicio;
+            }
             Console.Write("Contraseña: ");
             clave = Console.ReadLine();
                 if (Metodos.VerificaMail(correo) && Metodos.Mail(correo))
                 {
-                goto Menu_User;
+                goto Loguea;
                 }
                 else
                 {
@@ -38,14 +44,27 @@ namespace ProyectoVVSS
                     goto Ingresar;
                 }
             /*aqui va un validador de usuario ingresado
-             * 0.Validar mail miUandes: Listo
-             * 1.Validar existencia de usuario, si no existe que se registre
-             * 2.Validar contraseña con mail ingresado
-             * 3.Ver tipo de usuario (admin, user, etc..)
+             * 0.Validar mail miUandes: 100%
+             * 1.Validar existencia de usuario, si no existe que se registre: 100%
+             * 2.Validar contraseña con mail ingresado: 100%
+             * 3.Ver tipo de usuario (admin, user, etc..) 0%
              */
-            Menu_User:
+            Loguea:
             Users login = Metodos.Log_In(usuarios, correo, clave);
-            
+            try
+            {
+                login.GetName();
+            }
+            catch (System.NullReferenceException)
+            {
+
+                Console.Clear();
+                Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
+                Console.WriteLine("Mail o correo invalido...");
+                goto Ingresar;
+            }
+
+            Menu_User:
             Console.Clear();
             Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
             Console.WriteLine("Bienvenido " + login.GetName() + "!\n" +
@@ -76,7 +95,7 @@ namespace ProyectoVVSS
             else if (opcion == "4")
             {
                 Console.Clear();
-                goto Login;
+                goto Inicio;
             }
 
 
