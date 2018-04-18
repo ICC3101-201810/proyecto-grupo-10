@@ -22,7 +22,7 @@ namespace ProyectoVVSS
             mail = Mail;
         }
         /*Getters*/
-        public virtual string getName()
+        public virtual string GetName()
         {
             return this.nombre;
         }
@@ -35,6 +35,15 @@ namespace ProyectoVVSS
         public void AgregarPresupuesto(int numero)
         {
             presupuesto = numero;
+        }
+        public virtual string GetMail()
+        {
+            return this.mail;
+        }
+
+        public bool CheckPass(string Ipas)
+        {
+            return this.password.Equals(Ipas);
         }
     }
 }

@@ -2,58 +2,15 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Linq;
 namespace ProyectoVVSS
 {
     class Program
     {
-        static void MenuAdmin_Local() //Imprime menu de admin de local
+                static void Main(string[] args)
         {
-            Console.Write("1.Agregar Oferta\n2.Quitar Oferta\n3.Modificar Menu\n4.Cerrar Sesion\nOpcion: ");
-        }
-        static void MenuAdmin_App() //Imprime menu para admin de la app
-        {
-            Console.Write("1.Agregar Local\n2.Quitar Local\n3.Quitar Usuario\n4.Cambiar Admin de Local\n5.Cerrar Sesion\nOpcion: ");
-        }
-        static bool Mail(string correo) //Comprueba que sea correo valido atraves de una ER
-        {
-            string pat="[A-Z]*[a-z]*@[a-z]*[A-Z]*.[A-Z]*[a-z]*";
-            Regex r = new Regex(pat);
-            Match m = r.Match(correo);
-            return m.Success;
-        }
-        static bool VerificaMail(string correo)
-        {
-            string verifica = "@miuandes.cl";
-            int temp = verifica.Length-1;
-            for (int i = correo.Length-1; i!=0 ; i--)
-            {
-                if (temp==0)
-                {
-                    break;
-                }
-                else
-                {
-                    if (correo[i]==verifica[temp])
-                    {
-                        temp--;
-                        continue;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-
-            }
-            return true;
-        }
-        static void Main(string[] args)
-        {
-            StreamReader sr = new StreamReader(@"C:\Users\HDF\Desktop\proyecto-grupo-10\bin\ProyectoVVSS\users.txt");
-            string user = sr.ReadLine();
-            Console.WriteLine(user.Split(','));
-
-
+            List<Users> usuarios = Metodos.GetUsuarios("users.txt");
+            List<Users> admins = Metodos.GetAdmin("admins.txt");
             Login:
             Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
             string correo;
@@ -69,7 +26,7 @@ namespace ProyectoVVSS
             correo = Console.ReadLine();
             Console.Write("Contraseña: ");
             clave = Console.ReadLine();
-                if (VerificaMail(correo) && Mail(correo))
+                if (Metodos.VerificaMail(correo) && Metodos.Mail(correo))
                 {
                 goto Menu_User;
                 }
@@ -87,9 +44,11 @@ namespace ProyectoVVSS
              * 3.Ver tipo de usuario (admin, user, etc..)
              */
             Menu_User:
+            Users login = Metodos.Log_In(usuarios, correo, clave);
+            
             Console.Clear();
             Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
-            Console.WriteLine("Bienvenido " + "<nombre usuario> !\n" +
+            Console.WriteLine("Bienvenido " + login.GetName() + "!\n" +
                 "1.Ingresar Presupuesto y ver opciones\n" +
                 "2.Ver Locales disponibles\n" +
                 "3.Asignar nota o comentario a local\n" +
