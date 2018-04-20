@@ -13,7 +13,7 @@ namespace ProyectoVVSS
         string password;
         string mail;
         int saldo;
-        public Users(string miNombre, string miApellido, string miRut, string miPass, string Mail, int miSaldo)
+        public Users(string Mail, string miPass, string miNombre, string miApellido, string miRut, int miSaldo)
         {
             nombre = miNombre;
             apellido = miApellido;

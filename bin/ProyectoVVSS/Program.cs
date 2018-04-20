@@ -14,14 +14,14 @@ namespace ProyectoVVSS
 
 
 
-
+            List<Users> usuarios = Metodos.GetUsuarios(@"usuarios.txt");
+            List<Users> admins_app = Metodos.GetAdmin(@"admin_app.txt");
             /*Archivos txt donde se almacena informacion con usuarios, admins, locales, etc... */
             StreamWriter registro_usuarios = new StreamWriter(Metodos.GetDirectrio(@"usuarios.txt"));
             StreamWriter registro_admin_app = new StreamWriter(Metodos.GetDirectrio(@"admin_app.txt"));
             StreamWriter registro_admin_local = new StreamWriter(Metodos.GetDirectrio(@"admin_local.txt"));
             StreamWriter registro_log = new StreamWriter(Metodos.GetDirectrio(@"log.txt"));
-            List<Users> usuarios = Metodos.GetUsuarios(@"usuarios.txt");
-            List<Users> admins_app = Metodos.GetAdmin(@"admin_app.txt");
+            
 
             /*Menu de log in generico para los usuarios y los 2 tipos de admin*/
             Inicio:
