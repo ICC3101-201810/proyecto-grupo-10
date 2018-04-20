@@ -9,17 +9,12 @@ namespace ProyectoVVSS
     {
         static void Main(string[] args)
         {
-            Users algo = new AdminApp("prueba", "prueba", "12345", "asdqwe", "a@miuandes.cl", 0);
-            Console.WriteLine(algo.GetType().ToString());
-
-
-
             List<Users> usuarios = Metodos.GetUsuarios(@"usuarios.txt");
             List<Users> admins_app = Metodos.GetAdmin(@"admin_app.txt");
-            /*Archivos txt donde se almacena informacion con usuarios, admins, locales, etc... */
+            /*Archivos txt donde se almacena informacion con usuarios, admins, locales, etc... 
             StreamWriter registro_usuarios = new StreamWriter(Metodos.GetDirectrio(@"usuarios.txt"));
             StreamWriter registro_admin_app = new StreamWriter(Metodos.GetDirectrio(@"admin_app.txt"));
-            StreamWriter registro_admin_local = new StreamWriter(Metodos.GetDirectrio(@"admin_local.txt"));
+            StreamWriter registro_admin_local = new StreamWriter(Metodos.GetDirectrio(@"admin_local.txt"));*/
             StreamWriter registro_log = new StreamWriter(Metodos.GetDirectrio(@"log.txt"));
             
 
@@ -63,7 +58,12 @@ namespace ProyectoVVSS
              * 3.Ver tipo de usuario (admin, user, etc..) 0%
              */
             Loguea:
+            List<DateTime> registroLog = new List<DateTime>();
             Users login = Metodos.Log_In(usuarios, correo, clave);
+            string tipo = Metodos.DiferenciaUser(login);
+            DateTime inicio = DateTime.Now;
+            registroLog.Add(inicio);
+            DateTime Cierra;
             try
             {
                 login.GetName();
@@ -76,22 +76,56 @@ namespace ProyectoVVSS
                 Console.WriteLine("Mail o correo invalido...");
                 goto Ingresar;
             }
-
+            if (tipo=="App")
+            {
+                goto Menu_Admin_App;
+            }
+            else if (tipo=="Local")
+            {
+                goto Menu_Admin_Local;
+            }
+            else
+            {
+                goto Menu_User;
+            }
             Menu_User:
             Metodos.MenuUser(login);
-
+            string opcion = Console.ReadLine();
+            if (opcion=="6")
+            {
+                Cierra = DateTime.Now;
+                registroLog.Add(Cierra);
+                Metodos.Logging(registroLog, registro_log, login);
+                goto Inicio;
+            }
             Menu_Admin_Local:
             Metodos.MenuAdmin_Local();
+            string opc = Console.ReadLine();
+            if (opc == "5")
+            {
+                Cierra = DateTime.Now;
+                registroLog.Add(Cierra);
+                Metodos.Logging(registroLog, registro_log, login);
+                goto Inicio;
+            }
 
             Menu_Admin_App:
             Metodos.MenuAdmin_App();
+            string opci = Console.ReadLine();
+            if (opci == "6")
+            {
+                Cierra = DateTime.Now;
+                registroLog.Add(Cierra);
+                Metodos.Logging(registroLog, registro_log, login);
+                goto Inicio;
+            }
 
-            registro_admin_app.Close();
-            registro_admin_local.Close();
-            registro_log.Close();
-            registro_usuarios.Close();
             Fin:
-            Console.WriteLine("Press any key to continue...");
+            /*registro_admin_app.Close();
+            registro_admin_local.Close();
+            registro_usuarios.Close();*/
+            registro_log.Close();
+            Console.WriteLine("Press any key to Exit...");
             Console.ReadKey();
         }
     }

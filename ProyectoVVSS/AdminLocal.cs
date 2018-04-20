@@ -7,8 +7,9 @@ namespace ProyectoVVSS
     class AdminLocal : Users
     {
         Local local;
-        public AdminLocal(string Mail, string miPass, string miNombre, string miApellido, string miRut, int miSaldo) : base(miNombre, miApellido, miRut, miPass, Mail, miSaldo)
+        public AdminLocal(string Mail, string miPass, string miNombre, string miApellido, string miRut, int miSaldo, Local miLocal) : base(miNombre, miApellido, miRut, miPass, Mail, miSaldo)
         {
+            local = miLocal;
         }
         public List<DateTime> DefineHorario(int hora_abre, int minuto_abre, int hora_cierra, int minuto_cierra)
         {

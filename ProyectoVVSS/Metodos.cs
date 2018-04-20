@@ -132,6 +132,26 @@ namespace ProyectoVVSS
             return null;
         }
         
+        public static string DiferenciaUser(Users persona)
+        {
+            if(persona.GetType().ToString() == "ProyectoVVSS.AdminApp")
+            {
+                return "App";
+            }
+            else if (persona.GetType().ToString()== "ProyectoVVSS.AdminLocal")
+            {
+                return "Local";
+            }
+            else
+            {
+                return "User";
+            }
+        }
+        public static void Logging(List<DateTime> ingreso, StreamWriter archivo, Users usuario)
+        {
+            string registro = usuario.GetName()+',' + usuario.GetMail() + ",Log-in: " + ingreso[0].ToString() + ",Log-out:" + ingreso[1].ToString();
+            archivo.Write(registro);
+        }
         
     }
 }
