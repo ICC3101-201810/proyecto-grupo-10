@@ -16,12 +16,12 @@ namespace ProyectoVVSS
 
 
             /*Archivos txt donde se almacena informacion con usuarios, admins, locales, etc... */
-            StreamWriter registro_usuarios = new StreamWriter(Metodos.GetDirectrio(@"users.txt"));
-            StreamWriter registro_admin_app = new StreamWriter(Metodos.GetDirectrio(@"admins.txt"));
+            StreamWriter registro_usuarios = new StreamWriter(Metodos.GetDirectrio(@"usuarios.txt"));
+            StreamWriter registro_admin_app = new StreamWriter(Metodos.GetDirectrio(@"admin_app.txt"));
             StreamWriter registro_admin_local = new StreamWriter(Metodos.GetDirectrio(@"admin_local.txt"));
             StreamWriter registro_log = new StreamWriter(Metodos.GetDirectrio(@"log.txt"));
-            List<Users> usuarios = Metodos.GetUsuarios(@"users.txt");
-            List<Users> admins_app = Metodos.GetAdmin(@"admins.txt");
+            List<Users> usuarios = Metodos.GetUsuarios(@"usuarios.txt");
+            List<Users> admins_app = Metodos.GetAdmin(@"admin_app.txt");
 
             /*Menu de log in generico para los usuarios y los 2 tipos de admin*/
             Inicio:
@@ -86,7 +86,10 @@ namespace ProyectoVVSS
             Menu_Admin_App:
             Metodos.MenuAdmin_App();
 
-
+            registro_admin_app.Close();
+            registro_admin_local.Close();
+            registro_log.Close();
+            registro_usuarios.Close();
             Fin:
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
