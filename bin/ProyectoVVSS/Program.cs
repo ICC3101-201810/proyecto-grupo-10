@@ -9,13 +9,19 @@ namespace ProyectoVVSS
     {
         static void Main(string[] args)
         {
+            Users algo = new AdminApp("prueba", "prueba", "12345", "asdqwe", "a@miuandes.cl", 0);
+            Console.WriteLine(algo.GetType().ToString());
+
+
+
+
             /*Archivos txt donde se almacena informacion con usuarios, admins, locales, etc... */
-            StreamWriter registro_usuarios = new StreamWriter(Metodos.GetDirectrio(@"txt\users.txt"));
-            StreamWriter registro_admin_app = new StreamWriter(Metodos.GetDirectrio(@"txt\admins.txt"));
-            StreamWriter registro_admin_local = new StreamWriter(Metodos.GetDirectrio(@"txt\admin_local.txt"));
-            StreamWriter registro_log = new StreamWriter(Metodos.GetDirectrio(@"txt\log.txt"));
-            List<Users> usuarios = Metodos.GetUsuarios(@"txt\users.txt");
-            List<Users> admins_app = Metodos.GetAdmin(@"txt\admins.txt");
+            StreamWriter registro_usuarios = new StreamWriter(Metodos.GetDirectrio(@"users.txt"));
+            StreamWriter registro_admin_app = new StreamWriter(Metodos.GetDirectrio(@"admins.txt"));
+            StreamWriter registro_admin_local = new StreamWriter(Metodos.GetDirectrio(@"admin_local.txt"));
+            StreamWriter registro_log = new StreamWriter(Metodos.GetDirectrio(@"log.txt"));
+            List<Users> usuarios = Metodos.GetUsuarios(@"users.txt");
+            List<Users> admins_app = Metodos.GetAdmin(@"admins.txt");
 
             /*Menu de log in generico para los usuarios y los 2 tipos de admin*/
             Inicio:
