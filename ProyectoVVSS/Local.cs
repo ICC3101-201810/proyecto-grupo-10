@@ -13,17 +13,13 @@ namespace ProyectoVVSS
         List<Producto> menu;
         List<DateTime> horario;
         List<string> pedidos;
-        public Local(string Nombre, string Rut)
+        public Local(string Nombre, string Rut, DateTime abre, DateTime cierra)
         {
             nombre = Nombre;
             rut = Rut;
             menu = new List<Producto>();
             comentarios = new List<Ranking>();
-        }
-        public void SetHorario(DateTime abre, DateTime cierra)
-        {
-            horario.Add(abre);
-            horario.Add(cierra);
+            horario = new List<DateTime> {abre, cierra};
         }
         public string GetName()
         {
@@ -32,7 +28,7 @@ namespace ProyectoVVSS
 
         public string ImprimeHorario()
         {
-            return "Abre: " + this.horario[0].Hour + ":" + this.horario[0].Minute + "\nCierra: " + this.horario[1].Hour + ":" + this.horario[1].Minute;
+            return "Abre: " + this.horario[0].Hour + ":" + this.horario[0].Minute + "Cierra: " + this.horario[1].Hour + ":" + this.horario[1].Minute;
         }
         public void ImprimeMenu()
         {

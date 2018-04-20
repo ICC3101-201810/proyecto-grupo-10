@@ -32,13 +32,28 @@ namespace ProyectoVVSS
         {
             Console.Write("1.Agregar Local\n2.Quitar Local\n3.Quitar Usuario\n4.Cambiar Admin de Local\n 5.Usar aplicacion como usuario normal\n6.Cerrar Sesion\nOpcion: ");
         }
+
+
+
+        public static List<Local> LocalesAbiertos(List<Local> locales)
+        {
+            List<Local> lugaresAbietos = new List<Local>();
+            IEnumerable<Local> abiertos = locales.Where(lugar => lugar.GetHorario()[0].Hour < DateTime.Now.Hour && DateTime.Now.Hour < lugar.GetHorario()[1].Hour);
+            foreach (Local lugar in abiertos)
+            {
+                lugaresAbietos.Add(lugar);
+            }
+            return lugaresAbietos;
+        }
+
         public static void ImprimeLocalesAbiertos(List<Local> locales)
         {
+            List<Local> Abiertos = Metodos.LocalesAbiertos(locales);
             Console.Clear();
             Console.WriteLine("\n---------------------------\nLocales Abiertos\n---------------------------\n");
-            foreach (Local lugar in locales)
+            foreach (Local lugar in Abiertos)
             {
-                Console.WriteLine(lugar.GetName() + lugar.ImprimeHorario());
+                Console.WriteLine(lugar.GetName() + " " + lugar.ImprimeHorario());
             }
             Console.WriteLine("\n---------------------------\n");
         }
@@ -127,7 +142,9 @@ namespace ProyectoVVSS
             for (int i = 0; i < lineas.Length; i++)
             {
                 string[] actual = lineas[i].Split(',');
-                Local local_actual = new Local(actual[0], actual[1]);
+                DateTime abre = Convert.ToDateTime(actual[2]);
+                DateTime cierra = Convert.ToDateTime(actual[3]);
+                Local local_actual = new Local(actual[0], actual[1], abre, cierra);
                 output.Add(local_actual);
             }
             return output;

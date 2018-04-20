@@ -81,8 +81,7 @@ namespace ProyectoVVSS
             Users login_1 = Metodos.Log_In(usuarios, correo, clave);
             DateTime inicio = DateTime.Now;
             Log.Add(inicio);
-            DateTime Cierra;
-            if (login_1.GetName()==null)
+            if (login_1==null)
             {
 
                 Console.Clear();
@@ -151,13 +150,8 @@ namespace ProyectoVVSS
                 Console.WriteLine("Monto Abonado con exito!");
                 goto Menu_User;
             }
-            else
-            {
-                Cierra = DateTime.Now;
-                Log.Add(Cierra);
-                Metodos.Logging(Log, registro_log, login);
-                goto Inicio;
-            }
+
+            
 
             /**************************/
             /*      Menu Admins       */
