@@ -38,6 +38,7 @@ namespace ProyectoVVSS
             }
             else if (variable==3)
             {
+                Console.Clear();
                 goto SoloAdmins;
             }
             else if (variable==2)
@@ -65,7 +66,9 @@ namespace ProyectoVVSS
             {
                 Console.Clear();
                 Mensaje("Proyecto VVSS");
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Correo Invalido...");
+                Console.ForegroundColor = ConsoleColor.White;
                 goto Ingresar;
             }
 
@@ -86,7 +89,9 @@ namespace ProyectoVVSS
 
                 Console.Clear();
                 Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Usuario no encontrado, por favor registrese...");
+                Console.ForegroundColor = ConsoleColor.White;
                 goto Registrar;
             }
 
@@ -102,7 +107,9 @@ namespace ProyectoVVSS
                 List<Producto> Opciones = login.Presupuestar(locales, presu);
                 if (Opciones==null)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("No se encontraron opciones para el monto: {0}", presu);
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
             }
             else if (opcion=="2")
@@ -123,19 +130,21 @@ namespace ProyectoVVSS
                 Metodos.ImprimeLocalesAbiertos(locales);
                 string elige_local = Console.ReadLine();
                 Local selecionado = Metodos.BuscaLocal(elige_local, locales);
-                if (selecionado == null) { Console.Clear();  Console.WriteLine("Local no existe..."); goto Menu_User; }
+                if (selecionado == null) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Local no existe..."); Console.ForegroundColor = ConsoleColor.White; goto Menu_User; }
                 selecionado.ImprimeMenu();
                 Console.Write("Seleccione el ID: ");
                 int id = Convert.ToInt32(Console.ReadLine());
                 Producto comida = Metodos.BuscaProducto(selecionado.GetMenu(), id);
-                if (comida == null) { Console.Clear(); Console.WriteLine("Producto no encontrado..."); goto Menu_User; }
+                if (comida == null) { Console.Clear(); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Producto no encontrado..."); Console.ForegroundColor = ConsoleColor.White; goto Menu_User; }
                 Console.Write("Cuant@s: ");
                 int q = Convert.ToInt32(Console.ReadLine());
                 bool realiza=login.RealizarPedido(comida, selecionado,q);
                 if (realiza==false)
                 {
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Error en el pedido...");
+                    Console.ForegroundColor = ConsoleColor.White;
                     goto Menu_User;
                 }
                 Console.WriteLine("Pedido realizado con exito...");
@@ -180,9 +189,21 @@ namespace ProyectoVVSS
                 Console.WriteLine("Correo Invalido...");
                 goto Ingresar;
             }
+
+
             Loguea_Admin:
             List<DateTime> registroLog_a = new List<DateTime>();
             Users login_a = Metodos.Log_In(admins_app, correo, clave);
+            Console.WriteLine(login_a.GetType().ToString());
+            if (login_a == null)
+            {
+
+                Console.Clear();
+                Console.ForegroundColor= ConsoleColor.Red;
+                Console.WriteLine("Usuario no existe como admin...");
+                Console.ForegroundColor = ConsoleColor.White;
+                goto Inicio;
+            }
             string tipo = Metodos.DiferenciaAdmin(login_a);
             DateTime inicio_a = DateTime.Now;
             registroLog_a.Add(inicio_a);
@@ -199,7 +220,7 @@ namespace ProyectoVVSS
             string opc = Console.ReadLine();
             if (opc=="1")
             {
-
+                
             }
             else if (opc=="2")
             {
@@ -225,7 +246,43 @@ namespace ProyectoVVSS
             Menu_Admin_App:
             Metodos.MenuAdmin_App();
             string opci = Console.ReadLine();
-            if (opci == "6")
+            if (opci == "1")
+            {
+                //agregar local
+                Console.Write("Nombre del local: ");
+                string nombre_local = Console.ReadLine();
+                Console.Write("\nRut del Local: ");
+                string rut_local = Console.ReadLine();
+                Console.Write("\nHora de apertura (hora:min): ");
+                string abre = Console.ReadLine();
+                string[] hora_a = abre.Split(':');
+                DateTime Abre = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, Convert.ToInt32(hora_a[0]), Convert.ToInt32(hora_a[1]), 0);
+                Console.Write("\nHora de cierre (hora:min): ");
+                string cierra = Console.ReadLine();
+                string[] hora_c = cierra.Split(':');
+                DateTime Cierra = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, Convert.ToInt32(hora_c[0]), Convert.ToInt32(hora_c[1]), 0);
+                Local seAgrega = new Local(nombre_local, rut_local, Abre, Cierra);
+                locales.Add(seAgrega);
+            }
+            else if (opci == "2")
+            {
+                //quitar local
+            }
+            else if (opci == "3")
+            {
+                //quitar user
+            }
+            else if (opci == "4")
+            {
+                //cambiar admin
+            }
+            else if (opci == "5")
+            {
+                Console.Clear();
+                goto Menu_User;
+            }
+
+            else if (opci == "6")
             {
                 Cierra_a = DateTime.Now;
                 registroLog_a.Add(Cierra_a);

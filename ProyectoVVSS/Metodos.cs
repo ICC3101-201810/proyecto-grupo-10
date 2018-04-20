@@ -223,6 +223,6 @@ namespace ProyectoVVSS
             Console.Clear();
             Console.WriteLine("Usuario creado, por favor inicie sesion ahora");
         }
-        
+
     }
 }
