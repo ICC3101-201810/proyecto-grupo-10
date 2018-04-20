@@ -1,1 +1,2 @@
-admin_local@miuandes.cl,1234,nombre,apellido,rut,0,Local
+
+nombre,apellido,rut,1234,admin_local@miuandes.cl,0

@@ -44,6 +44,10 @@ namespace ProyectoVVSS
         {
             return this.password.Equals(Ipas);
         }
+        public string Info()
+        {
+            return this.mail + ',' + this.password + ',' + this.nombre + ',' + this.apellido + ',' + this.rut + ',' + this.saldo;
+        }
 
         public bool RealizarPedido(Producto comida, Local local, int cantidad)
         {

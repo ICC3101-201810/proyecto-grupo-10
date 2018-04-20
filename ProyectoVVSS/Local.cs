@@ -25,7 +25,10 @@ namespace ProyectoVVSS
         {
             return this.nombre;
         }
-
+        public string GetRut()
+        {
+            return this.rut;
+        }
         public string ImprimeHorario()
         {
             return "Abre: " + this.horario[0].Hour + ":" + this.horario[0].Minute + "Cierra: " + this.horario[1].Hour + ":" + this.horario[1].Minute;

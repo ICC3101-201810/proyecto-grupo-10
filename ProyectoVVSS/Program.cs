@@ -16,12 +16,12 @@ namespace ProyectoVVSS
         {
             List<Users> usuarios = Metodos.GetUsuarios(@"usuarios.txt");
             List<Users> admins_app = Metodos.GetAdmin(@"admin_app.txt");
+            List<Users> admins_local = Metodos.GetAdmin(@"admin_local.txt");
             List<Local> locales = Metodos.GetLocales(@"locales.txt");
-            Console.WriteLine(locales.Count);
             /*Archivos txt donde se almacena informacion con usuarios, admins, locales, etc... */
-            /*FileStream registro_usuarios = new FileStream(Metodos.GetDirectrio(@"usuarios.txt"), FileMode.OpenOrCreate,FileAccess.ReadWrite, FileShare.None);*/
-            /*FileStream registro_admin_app = new FileStream(Metodos.GetDirectrio(@"admin_app.txt"), FileMode.OpenOrCreate,FileAccess.ReadWrite, FileShare.None);*/
-            /*FileStream registro_admin_local = new FileStream(Metodos.GetDirectrio(@"admin_local.txt"), FileMode.OpenOrCreate,FileAccess.ReadWrite, FileShare.None);*/
+            StreamWriter registro_usuarios = new StreamWriter(Metodos.GetDirectrio(@"usuarios.txt"));
+            StreamWriter registro_admin_app = new StreamWriter(Metodos.GetDirectrio(@"admin_app.txt"));
+            StreamWriter registro_admin_local = new StreamWriter(Metodos.GetDirectrio(@"admin_local.txt"));
             StreamWriter registro_log = new StreamWriter(Metodos.GetDirectrio(@"log.txt"));
 
 
@@ -80,10 +80,7 @@ namespace ProyectoVVSS
 
 
             Loguea:
-            List<DateTime> Log = new List<DateTime>();
             Users login_1 = Metodos.Log_In(usuarios, correo, clave);
-            DateTime inicio = DateTime.Now;
-            Log.Add(inicio);
             if (login_1==null)
             {
 
@@ -97,6 +94,9 @@ namespace ProyectoVVSS
 
 
             Menu_User:
+            List<DateTime> Log = new List<DateTime>();
+            DateTime inicio = DateTime.Now;
+            Log.Add(inicio);
             Users login = Metodos.Log_In(usuarios, correo, clave);
             Metodos.MenuUser(login);
             string opcion = Console.ReadLine();
@@ -135,7 +135,14 @@ namespace ProyectoVVSS
                 Console.Write("Seleccione el ID: ");
                 int id = Convert.ToInt32(Console.ReadLine());
                 Producto comida = Metodos.BuscaProducto(selecionado.GetMenu(), id);
-                if (comida == null) { Console.Clear(); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Producto no encontrado..."); Console.ForegroundColor = ConsoleColor.White; goto Menu_User; }
+                if (comida == null)
+                { 
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Producto no encontrado...");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    goto Menu_User;
+                }
                 Console.Write("Cuant@s: ");
                 int q = Convert.ToInt32(Console.ReadLine());
                 bool realiza=login.RealizarPedido(comida, selecionado,q);
@@ -147,7 +154,11 @@ namespace ProyectoVVSS
                     Console.ForegroundColor = ConsoleColor.White;
                     goto Menu_User;
                 }
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Pedido realizado con exito...");
+                Console.ForegroundColor = ConsoleColor.White;
+                goto Menu_User;
 
             }
             else if (opcion=="5")
@@ -159,8 +170,18 @@ namespace ProyectoVVSS
                 Console.WriteLine("Monto Abonado con exito!");
                 goto Menu_User;
             }
+            else
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Sesion Cerrada");
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            DateTime finaliza = DateTime.Now;
+            Log.Add(finaliza);
+            Metodos.Logging(Log, registro_log, login);
+            goto Ingresar;
 
-            
 
             /**************************/
             /*      Menu Admins       */
@@ -220,14 +241,15 @@ namespace ProyectoVVSS
             string opc = Console.ReadLine();
             if (opc=="1")
             {
-                
+                //agregar oferta
             }
             else if (opc=="2")
             {
-
+                //quitar oferta
             }
             else if (opc=="3")
             {
+                //modificar menu
 
             }
             else if (opc=="4")
@@ -285,6 +307,7 @@ namespace ProyectoVVSS
             else if (opci == "4")
             {
                 //cambiar admin
+                //no implementado
             }
             else if (opci == "5")
             {
@@ -301,9 +324,16 @@ namespace ProyectoVVSS
             }
 
             Fin:
-            /*registro_admin_app.Close();
+
+
+            Metodos.EscribeArchivoUsers(registro_admin_app, admins_app);
+            registro_admin_app.Close();
+
+            Metodos.EscribeArchivoUsers(registro_admin_local, admins_local);
             registro_admin_local.Close();
-            registro_usuarios.Close();*/
+
+            Metodos.EscribeArchivoUsers(registro_usuarios, usuarios);
+            registro_usuarios.Close();
             registro_log.Close();
             Console.WriteLine("Press any key to Exit...");
             Console.ReadKey();

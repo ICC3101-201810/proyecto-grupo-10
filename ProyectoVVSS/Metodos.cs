@@ -223,6 +223,20 @@ namespace ProyectoVVSS
             Console.Clear();
             Console.WriteLine("Usuario creado, por favor inicie sesion ahora");
         }
+        public static void EscribeArchivoUsers(StreamWriter archivo, List<Users> lista)
+        {
+            foreach (Users persona in lista)
+            {
+                archivo.Write("\n"+persona.Info());
+            }
+        }
 
+        public static void EscribeArchivoUsers(StreamWriter archivo, List<Local> lista)
+        {
+            foreach (Local persona in lista)
+            {
+                archivo.Write(persona.GetName()+','+persona.GetRut()+','+persona.GetHorario()[0].ToString()+','+persona.GetHorario()[1].ToString());
+            }
+        }
     }
 }

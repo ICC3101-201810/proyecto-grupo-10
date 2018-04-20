@@ -1,1 +1,2 @@
-admin@miuandes.cl,123456,nombre,apellido,rut,0
+
+nombre,apellido,rut,123456,admin@miuandes.cl,0
