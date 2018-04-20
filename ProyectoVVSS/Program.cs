@@ -267,10 +267,20 @@ namespace ProyectoVVSS
             else if (opci == "2")
             {
                 //quitar local
+                Console.Write("Nombre del local: ");
+                string nombre = Console.ReadLine();
+                Local aQuitar = Metodos.BuscaLocal(nombre, locales);
+                locales.Remove(aQuitar);
             }
             else if (opci == "3")
             {
                 //quitar user
+                Console.Write("Mail del user a quitar: ");
+                string mail = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Usuario: " + mail + "fue removido con extio...");
+                Console.ForegroundColor = ConsoleColor.White;
+                goto Menu_Admin_App;
             }
             else if (opci == "4")
             {
