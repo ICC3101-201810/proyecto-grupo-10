@@ -9,22 +9,20 @@ namespace ProyectoVVSS
     {
         string nombre;
         string rut;
-        List<string> comentarios;
+        List<Ranking> comentarios;
         List<Producto> menu;
-        DateTime hora_apertura;
-        DateTime hora_cierre;
-        public Local(string Nombre,string Rut, DateTime Abre, DateTime Cierra)
+        List<DateTime> horario;
+        List<string> pedidos;
+        public Local(string Nombre, string Rut)
         {
             nombre = Nombre;
             rut = Rut;
-            hora_apertura = Abre;
-            hora_cierre = Cierra;
             menu = new List<Producto>();
-            comentarios = new List<string>();
+            comentarios = new List<Ranking>();
         }
         public string ImprimeHorario()
         {
-            return "Abre: " + this.hora_apertura.Hour + ":" + this.hora_apertura.Minute + "\nCierra: " + this.hora_apertura.Hour + ":" + this.hora_apertura.Minute;
+            return "Abre: " + this.horario[0].Hour + ":" + this.horario[0].Minute + "\nCierra: " + this.horario[1].Hour + ":" + this.horario[1].Minute;
         }
         public void ImprimeMenu()
         {
@@ -34,6 +32,27 @@ namespace ProyectoVVSS
                 Console.WriteLine(item.GetNombre().ToUpper() + "\t\t" + item.GetPrecio().ToString());
             }
         }
+        public List<DateTime> GetHorario()
+        {
+            return this.horario;
+        }
 
+        public List<Producto> GetMenu()
+        {
+            return this.menu;
+        }
+
+        public void RecibeNota(Ranking rank)
+        {
+            comentarios.Add(rank);
+        }
+        public void RecibePedido(string pedido)
+        {
+            pedidos.Add(pedido);
+        }
+        public void RecibeProducto(Producto item)
+        {
+            menu.Add(item);
+        }
     }
 }

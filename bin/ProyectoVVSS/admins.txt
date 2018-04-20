@@ -1,2 +1,0 @@
-ADMIN@miuandes.cl,CONTRASEÑA,NOMBRE,APELLIDO,RUT,TIPO_ADMIN
-hadelafuente@miuandes.cl,1234,Hugo,De la Fuente,19889338-2,ADMIN_APP

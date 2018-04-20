@@ -25,5 +25,13 @@ namespace ProyectoVVSS
         {
             return this.nombre;
         }
+        public int GetStock()
+        {
+            return this.stock;
+        }
+        public int GetID()
+        {
+            return this.id;
+        }
     }
 }

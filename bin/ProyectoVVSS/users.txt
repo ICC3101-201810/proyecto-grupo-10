@@ -1,2 +1,0 @@
-CORREO@miuandes.cl,CONTRASENA,NOMBRE,APELLIDO,RUT
-prueba@miuandes.cl,1234,prueba,apellido,12345678-9

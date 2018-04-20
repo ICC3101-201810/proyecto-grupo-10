@@ -7,10 +7,17 @@ namespace ProyectoVVSS
 {
     class Program
     {
-                static void Main(string[] args)
+        static void Main(string[] args)
         {
-            List<Users> usuarios = Metodos.GetUsuarios("users.txt");
-            List<Users> admins = Metodos.GetAdmin("admins.txt");
+            /*Archivos txt donde se almacena informacion con usuarios, admins, locales, etc... */
+            StreamWriter registro_usuarios = new StreamWriter(Metodos.GetDirectrio(@"txt\users.txt"));
+            StreamWriter registro_admin_app = new StreamWriter(Metodos.GetDirectrio(@"txt\admins.txt"));
+            StreamWriter registro_admin_local = new StreamWriter(Metodos.GetDirectrio(@"txt\admin_local.txt"));
+            StreamWriter registro_log = new StreamWriter(Metodos.GetDirectrio(@"txt\log.txt"));
+            List<Users> usuarios = Metodos.GetUsuarios(@"txt\users.txt");
+            List<Users> admins_app = Metodos.GetAdmin(@"txt\admins.txt");
+
+            /*Menu de log in generico para los usuarios y los 2 tipos de admin*/
             Inicio:
             Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
             string correo;
@@ -65,40 +72,13 @@ namespace ProyectoVVSS
             }
 
             Menu_User:
-            Console.Clear();
-            Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
-            Console.WriteLine("Bienvenido " + login.GetName() + "!\n" +
-                "1.Ingresar Presupuesto y ver opciones\n" +
-                "2.Ver Locales disponibles\n" +
-                "3.Asignar nota o comentario a local\n" +
-                "4.Cerrar Sesion\n");
-            Console.Write("Opcion: ");
-            string opcion = Console.ReadLine();
-            if (opcion=="1")
-            {
-                Console.Clear();
-                Console.WriteLine("Proximamente...");
-                goto Menu_User;
-            }
-            else if (opcion=="2")
-            {
-                Console.Clear();
-                Console.WriteLine("Proximamente...");
-                goto Menu_User;
-            }
-            else if (opcion=="3")
-            {
-                Console.Clear();
-                Console.WriteLine("Proximamente...");
-                goto Menu_User;
-            }
-            else if (opcion == "4")
-            {
-                Console.Clear();
-                goto Inicio;
-            }
+            Metodos.MenuUser(login);
 
+            Menu_Admin_Local:
+            Metodos.MenuAdmin_Local();
 
+            Menu_Admin_App:
+            Metodos.MenuAdmin_App();
 
 
             Fin:
