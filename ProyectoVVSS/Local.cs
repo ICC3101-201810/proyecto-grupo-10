@@ -20,16 +20,26 @@ namespace ProyectoVVSS
             menu = new List<Producto>();
             comentarios = new List<Ranking>();
         }
+        public void SetHorario(DateTime abre, DateTime cierra)
+        {
+            horario.Add(abre);
+            horario.Add(cierra);
+        }
+        public string GetName()
+        {
+            return this.nombre;
+        }
+
         public string ImprimeHorario()
         {
             return "Abre: " + this.horario[0].Hour + ":" + this.horario[0].Minute + "\nCierra: " + this.horario[1].Hour + ":" + this.horario[1].Minute;
         }
         public void ImprimeMenu()
         {
-            Console.WriteLine("Producto\t\tPrecio");
+            Console.WriteLine("Producto\t\tPrecio\t\tID");
             foreach (Producto item in this.menu)
             {
-                Console.WriteLine(item.GetNombre().ToUpper() + "\t\t" + item.GetPrecio().ToString());
+                Console.WriteLine(item.GetNombre().ToUpper() + "\t\t" + item.GetPrecio().ToString()+"\t\t" + item.GetID());
             }
         }
         public List<DateTime> GetHorario()
@@ -53,6 +63,10 @@ namespace ProyectoVVSS
         public void RecibeProducto(Producto item)
         {
             menu.Add(item);
+        }
+        public int generaID()
+        {
+            return pedidos.Count+1;
         }
     }
 }

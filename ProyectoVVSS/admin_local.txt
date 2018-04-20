@@ -1,0 +1,1 @@
+prueba@miuandes.cl,1234,nombre,apellido,rut,0,Local

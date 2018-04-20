@@ -47,24 +47,47 @@ namespace ProyectoVVSS
 
         public bool RealizarPedido(Producto comida, Local local, int cantidad)
         {
-            string pedido = "Nombre: " + this.GetName() + this.apellido + "Item: " + comida.GetNombre() + "Cantidad: " + cantidad.ToString() + "Monto a pagar: " + (cantidad * comida.GetPrecio()).ToString();
-            if (comida.GetStock()>=cantidad && comida.GetPrecio()<= this.saldo)
+            Console.WriteLine("1.Paga con saldo\n2.Paraga en local\nOpcion: ");
+            int IDPedido = local.generaID();
+            int medioPago = Convert.ToInt32(Console.ReadLine());
+            if (medioPago == 1)
             {
-                local.RecibePedido(pedido);
-                saldo -= comida.GetPrecio() * cantidad;
-                return true;
+                string pedido = "Pedido numero: "+ IDPedido+ "Nombre: " + this.GetName() + this.apellido + "Item: " + comida.GetNombre() + "Cantidad: " + cantidad.ToString() + "Monto a pagado: " + (cantidad * comida.GetPrecio()).ToString();
+                if (comida.GetStock() >= cantidad && comida.GetPrecio() <= this.saldo)
+                {
+                    local.RecibePedido(pedido);
+                    saldo -= comida.GetPrecio() * cantidad;
+                    return true;
+                }
+                return false;
             }
-            return false;
-            
+            else
+            {
+                string pedido = "Pedido numero: " + IDPedido + "Nombre: " + this.GetName() + this.apellido + "Item: " + comida.GetNombre() + "Cantidad: " + cantidad.ToString() + "Monto a pagar: " + (cantidad * comida.GetPrecio()).ToString();
+                if (comida.GetStock() >= cantidad)
+                {
+                    local.RecibePedido(pedido);
+                    return true;
+                }
+                return false;
+            }
         }
-        public List<Producto> Presupuestar(Local local, int presupuesto)
+        public List<Producto> Presupuestar(List<Local> locales, int presupuesto)
         {
-            List<Producto> Out = new List<Producto>();
-            IEnumerable<Producto> Opciones = local.GetMenu().Where(producto => producto.GetPrecio() <= presupuesto);
-            foreach (Producto item in Opciones)
+            if (presupuesto==0)
             {
-                Out.Add(item);
+                return null;
             }
+            List<Producto> Out = new List<Producto>();
+            foreach (Local local in locales)
+            {
+                IEnumerable<Producto> Opciones = local.GetMenu().Where(producto => producto.GetPrecio() <= presupuesto);
+                foreach (Producto item in Opciones)
+                {
+                    Out.Add(item);
+                }
+            }
+            
             return Out;
         }
         public void SetNota(Local local, double nota, string comentario)

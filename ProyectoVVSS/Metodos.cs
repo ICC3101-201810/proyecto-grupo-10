@@ -16,8 +16,6 @@ namespace ProyectoVVSS
 
         public static void MenuUser(Users login) //menu para el usuario regular
         {
-            Console.Clear();
-            Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
             Console.Write("Bienvenido " + login.GetName() + "!\n" +
                 "1.Ingresar Presupuesto y ver opciones\n" +
                 "2.Ver Locales disponibles\n" +
@@ -25,28 +23,51 @@ namespace ProyectoVVSS
                 "6.Cerrar Sesion\nOpcion: ");
         }
 
+
         public static void MenuAdmin_Local() //Imprime menu de admin de local
         {
-            Console.Clear();
-            Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
             Console.Write("1.Agregar Oferta\n2.Quitar Oferta\n3.Modificar Menu\n4.Usar aplicacion como usuario normal\n5.Cerrar Sesion\nOpcion: ");
         }
         public static void MenuAdmin_App() //Imprime menu para admin de la app
         {
-            Console.Clear();
-            Console.WriteLine("\n---------------------------\n Proyecto VVSS\n---------------------------\n");
             Console.Write("1.Agregar Local\n2.Quitar Local\n3.Quitar Usuario\n4.Cambiar Admin de Local\n 5.Usar aplicacion como usuario normal\n6.Cerrar Sesion\nOpcion: ");
         }
-        public List<Local> LocalesAbiertos(List<Local> locales)
-        { 
-            List<Local> lugaresAbietos = new List<Local>();
-            IEnumerable<Local> abiertos = locales.Where(lugar => lugar.GetHorario()[0].Hour < DateTime.Now.Hour && DateTime.Now.Hour < lugar.GetHorario()[1].Hour);
-            foreach (Local lugar in abiertos)
+        public static void ImprimeLocalesAbiertos(List<Local> locales)
+        {
+            Console.Clear();
+            Console.WriteLine("\n---------------------------\nLocales Abiertos\n---------------------------\n");
+            foreach (Local lugar in locales)
             {
-                lugaresAbietos.Add(lugar);
+                Console.WriteLine(lugar.GetName() + lugar.ImprimeHorario());
             }
-            return lugaresAbietos;
+            Console.WriteLine("\n---------------------------\n");
         }
+
+        public static Local BuscaLocal(string nombre, List<Local> lista)
+        {
+            foreach (Local lugar in lista)
+            {
+                if (nombre == lugar.GetName())
+                {
+                    return lugar;
+                }
+            }
+            return null;
+        }
+
+        public static Producto BuscaProducto(List<Producto> items, int id)
+        {
+            foreach (Producto item in items)
+            {
+                if (item.GetID()==id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+
 
 
         public static bool Mail(string correo) //Comprueba que sea correo
@@ -82,6 +103,9 @@ namespace ProyectoVVSS
             }
             return true;
         }
+
+
+
         public static string GetDirectrio(string archivo) //obtiene el path de los archivos de texto
         {
             string path_i = Directory.GetCurrentDirectory();
@@ -95,6 +119,20 @@ namespace ProyectoVVSS
             path += archivo;
             return path;
         }
+        public static List<Local> GetLocales(string archivo)
+        {
+            string path = GetDirectrio(archivo);
+            string[] lineas = File.ReadAllLines(path);
+            List<Local> output = new List<Local>();
+            for (int i = 0; i < lineas.Length; i++)
+            {
+                string[] actual = lineas[i].Split(',');
+                Local local_actual = new Local(actual[0], actual[1]);
+                output.Add(local_actual);
+            }
+            return output;
+        }
+
         public static List<Users> GetUsuarios(string archivo) //genera la lista con usuarios a partir del archivo especificado
         {
             string path_user = GetDirectrio(archivo);
@@ -132,7 +170,7 @@ namespace ProyectoVVSS
             return null;
         }
         
-        public static string DiferenciaUser(Users persona)
+        public static string DiferenciaAdmin(Users persona)
         {
             if(persona.GetType().ToString() == "ProyectoVVSS.AdminApp")
             {
@@ -142,15 +180,31 @@ namespace ProyectoVVSS
             {
                 return "Local";
             }
-            else
-            {
-                return "User";
-            }
+            return null;
         }
         public static void Logging(List<DateTime> ingreso, StreamWriter archivo, Users usuario)
         {
-            string registro = usuario.GetName()+',' + usuario.GetMail() + ",Log-in: " + ingreso[0].ToString() + ",Log-out:" + ingreso[1].ToString();
+            string registro = usuario.GetName()+',' + usuario.GetMail() + ",Log-in:" + ingreso[0].ToString() + ",Log-out:" + ingreso[1].ToString();
             archivo.Write(registro);
+        }
+        public static void Registra(List<Users> usuarios)
+        {
+            Console.Write("Nombre: ");
+            string nombre = Console.ReadLine();
+            Console.Write("\nApellido: ");
+            string apellido = Console.ReadLine();
+            Here:
+            Console.Write("\nCorreo: ");
+            string mail = Console.ReadLine();
+            if (Metodos.VerificaMail(mail) == false || Metodos.Mail(mail) == false) { Console.WriteLine("Correo Invalido..."); goto Here; }
+            Console.Write("\nPassword: ");
+            string pass = Console.ReadLine();
+            Console.Write("\nRut: ");
+            string Rut = Console.ReadLine();
+            Users nuevo = new Users(mail, pass, nombre, apellido, Rut, 0);
+            usuarios.Add(nuevo);
+            Console.Clear();
+            Console.WriteLine("Usuario creado, por favor inicie sesion ahora");
         }
         
     }
