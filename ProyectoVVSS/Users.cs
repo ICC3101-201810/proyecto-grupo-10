@@ -44,7 +44,7 @@ namespace ProyectoVVSS
         {
             return this.password.Equals(Ipas);
         }
-        public string Info()
+        public virtual string Info()
         {
             return this.mail + ',' + this.password + ',' + this.nombre + ',' + this.apellido + ',' + this.rut + ',' + this.saldo;
         }

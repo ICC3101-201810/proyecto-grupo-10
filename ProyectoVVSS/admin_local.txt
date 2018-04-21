@@ -1,2 +1,0 @@
-
-nombre,apellido,rut,1234,admin_local@miuandes.cl,0

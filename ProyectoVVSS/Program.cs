@@ -242,15 +242,23 @@ namespace ProyectoVVSS
             if (opc=="1")
             {
                 //agregar oferta
+                Console.Clear();
+                Console.WriteLine("Proximamente...");
+                goto Menu_Admin_Local;
             }
             else if (opc=="2")
             {
                 //quitar oferta
+                Console.Clear();
+                Console.WriteLine("Proximamente");
+                goto Menu_Admin_Local;
             }
             else if (opc=="3")
             {
                 //modificar menu
-
+                Console.Clear();
+                Console.WriteLine("Proximamente...");
+                goto Menu_Admin_Local;
             }
             else if (opc=="4")
             {
@@ -307,6 +315,8 @@ namespace ProyectoVVSS
             else if (opci == "4")
             {
                 //cambiar admin
+                Console.WriteLine("Proximamente...");
+                goto Menu_Admin_App;
                 //no implementado
             }
             else if (opci == "5")

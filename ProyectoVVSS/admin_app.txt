@@ -1,2 +1,2 @@
-
-nombre,apellido,rut,123456,admin@miuandes.cl,0
+hugo,delafuente,1234-5,1234,hdelafuente@miuandes.cl,0
+tomas,garcia,1234-5,12345,tmgarcia@miuandes.cl,0

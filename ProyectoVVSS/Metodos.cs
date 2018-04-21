@@ -227,15 +227,17 @@ namespace ProyectoVVSS
         {
             foreach (Users persona in lista)
             {
-                archivo.Write("\n"+persona.Info());
+                archivo.Write(persona.Info());
+                archivo.Write("\n");
             }
         }
 
-        public static void EscribeArchivoUsers(StreamWriter archivo, List<Local> lista)
+        public static void EscribeArchivoLocal(StreamWriter archivo, List<Local> lista)
         {
             foreach (Local persona in lista)
             {
                 archivo.Write(persona.GetName()+','+persona.GetRut()+','+persona.GetHorario()[0].ToString()+','+persona.GetHorario()[1].ToString());
+                archivo.Write("\n");
             }
         }
     }
