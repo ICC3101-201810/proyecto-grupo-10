@@ -1,5 +1,6 @@
-# proyecto-grupo-10 Programación Orientada a Objetos
-# Integrantes:
-					-Hugo de la Fuente
-					-Tomás García
-					-Mauricio Sánchez
+# Programación Orientada a Objetos
+Proyecto VVSS grupo 10
+Integrantes:
+		-Hugo de la Fuente
+		-Tomás García
+		-Mauricio Sánchez
