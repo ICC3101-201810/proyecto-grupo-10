@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace ProyectoVVSS
 {
+    [Serializable]
     class Users
     {
         string nombre;
@@ -22,19 +23,23 @@ namespace ProyectoVVSS
             mail = Mail;
             saldo = miSaldo;
         }
-        /*Getters*/
         public int GetSaldo()
         {
             return this.saldo;
         }
+
         public virtual string GetName()
         {
             return this.nombre;
         }
-        public void Abonar(int numero)
+
+        public void Abonar()
         {
+            Console.Write("Monto a abonar: ");
+            int numero = Convert.ToInt32(Console.ReadLine());
             saldo += numero;
         }
+
         public virtual string GetMail()
         {
             return this.mail;
@@ -44,15 +49,41 @@ namespace ProyectoVVSS
         {
             return this.password.Equals(Ipas);
         }
+
         public virtual string Info()
         {
             return this.mail + ',' + this.password + ',' + this.nombre + ',' + this.apellido + ',' + this.rut + ',' + this.saldo;
         }
 
-        public bool RealizarPedido(Producto comida, Local local, int cantidad)
+        public bool RealizarPedido(List<Local> locales)
         {
-            Console.WriteLine("1.Paga con saldo\n2.Paraga en local\nOpcion: ");
-            int IDPedido = local.generaID();
+            Console.Clear();
+            Metodos.ImprimeLocalesAbiertos(locales);
+            string elige_local = Console.ReadLine();
+            Local local = Metodos.BuscaLocal(elige_local, locales);
+            if (local == null)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Local no existe...");
+                Console.ForegroundColor = ConsoleColor.White;
+                return false;
+            }
+            local.ImprimeMenu();
+            Console.Write("Seleccione el ID: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Producto comida = Metodos.BuscaProducto(local.GetMenu(), id);
+            if (comida == null)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Producto no encontrado...");
+                Console.ForegroundColor = ConsoleColor.White;
+                return false;
+            }
+            Console.Write("Cuant@s: ");
+            int cantidad = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("1.Paga con saldo\n2.Paga en local\nOpcion: ");
+            int IDPedido = local.GeneraID();
             int medioPago = Convert.ToInt32(Console.ReadLine());
             if (medioPago == 1)
             {
@@ -76,8 +107,11 @@ namespace ProyectoVVSS
                 return false;
             }
         }
-        public List<Producto> Presupuestar(List<Local> locales, int presupuesto)
+
+        public List<Producto> Presupuestar(List<Local> locales)
         {
+            Console.Write("Monto a presupuestar: ");
+            int presupuesto = Convert.ToInt32(Console.ReadLine());
             if (presupuesto==0)
             {
                 return null;
@@ -94,6 +128,7 @@ namespace ProyectoVVSS
             
             return Out;
         }
+
         public void SetNota(Local local, double nota, string comentario)
         {
             Ranking asigname = new Ranking(local, nota, comentario);

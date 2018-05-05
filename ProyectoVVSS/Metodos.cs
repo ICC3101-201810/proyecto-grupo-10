@@ -3,18 +3,17 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ProyectoVVSS
 {
     class Metodos
     {
         /***************************************************************/
-        /*                                                             */
         /*           Metodos y Funciones usados en main                */
-        /*                                                             */
         /***************************************************************/
 
-        public static void MenuUser(Users login) //menu para el usuario regular
+        public static void MenuUser(Users login) //menu para el usuario regular, modificar para el GUI
         {
             Console.Write("Bienvenido " + login.GetName() + "!\n" +
                 "1.Ingresar Presupuesto y ver opciones\n" +
@@ -23,17 +22,14 @@ namespace ProyectoVVSS
                 "6.Cerrar Sesion\nOpcion: ");
         }
 
-
-        public static void MenuAdmin_Local() //Imprime menu de admin de local
+        public static void MenuAdmin_Local() //menu de admin de local, modificar para GUI
         {
             Console.Write("1.Agregar Oferta\n2.Quitar Oferta\n3.Modificar Menu\n4.Usar aplicacion como usuario normal\n5.Cerrar Sesion\nOpcion: ");
         }
-        public static void MenuAdmin_App() //Imprime menu para admin de la app
+        public static void MenuAdmin_App() //menu para admin de la app, modificar para GUI
         {
-            Console.Write("1.Agregar Local\n2.Quitar Local\n3.Quitar Usuario\n4.Cambiar Admin de Local\n 5.Usar aplicacion como usuario normal\n6.Cerrar Sesion\nOpcion: ");
+            Console.Write("1.Agregar Local\n2.Quitar Local\n3.Quitar Usuario\n4.Cambiar Admin de Local\n5.Usar aplicacion como usuario normal\n6.Cerrar Sesion\nOpcion: ");
         }
-
-
 
         public static List<Local> LocalesAbiertos(List<Local> locales)
         {
@@ -46,7 +42,7 @@ namespace ProyectoVVSS
             return lugaresAbietos;
         }
 
-        public static void ImprimeLocalesAbiertos(List<Local> locales)
+        public static void ImprimeLocalesAbiertos(List<Local> locales) //modificar para GUI
         {
             List<Local> Abiertos = Metodos.LocalesAbiertos(locales);
             Console.Clear();
@@ -74,7 +70,7 @@ namespace ProyectoVVSS
         {
             foreach (Producto item in items)
             {
-                if (item.GetID()==id)
+                if (item.GetID() == id)
                 {
                     return item;
                 }
@@ -82,46 +78,15 @@ namespace ProyectoVVSS
             return null;
         }
 
-
-
-
-        public static bool Mail(string correo) //Comprueba que sea correo
+        public static bool VerificaMail(string correo) //comprueba que sea un correo
         {
-            string pat = "[A-Z]*[a-z]*@[a-z]*[A-Z]*.[A-Z]*[a-z]*";
+            string pat = "[A-Z]*[a-z]*@miuandes.cl*";
             Regex r = new Regex(pat);
             Match m = r.Match(correo);
             return m.Success;
         }
-        public static bool VerificaMail(string correo) //Comprueba que sea @miUandes.cl
-        {
-            string verifica = "@miuandes.cl";
-            int temp = verifica.Length - 1;
-            for (int i = correo.Length - 1; i != 0; i--)
-            {
-                if (temp == 0)
-                {
-                    break;
-                }
-                else
-                {
-                    if (correo[i] == verifica[temp])
-                    {
-                        temp--;
-                        continue;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
 
-            }
-            return true;
-        }
-
-
-
-        public static string GetDirectrio(string archivo) //obtiene el path de los archivos de texto
+        public static string GetDirectrio(string archivo) //obtiene el path del repositorio
         {
             string path_i = Directory.GetCurrentDirectory();
             string algo = @"bin\Debug\netcoreapp2.0";
@@ -134,49 +99,209 @@ namespace ProyectoVVSS
             path += archivo;
             return path;
         }
-        public static List<Local> GetLocales(string archivo)
+
+        /**************************************************/
+        /*        Presistencia de la Informacion          */
+        /**************************************************/
+        public static void SerializarLocal(List<Local> lista_locales)
         {
-            string path = GetDirectrio(archivo);
-            string[] lineas = File.ReadAllLines(path);
-            List<Local> output = new List<Local>();
-            for (int i = 0; i < lineas.Length; i++)
+            try
             {
-                string[] actual = lineas[i].Split(',');
-                DateTime abre = Convert.ToDateTime(actual[2]);
-                DateTime cierra = Convert.ToDateTime(actual[3]);
-                Local local_actual = new Local(actual[0], actual[1], abre, cierra);
-                output.Add(local_actual);
+                using (Stream stream = File.Open("locales.bin", FileMode.Create))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, lista_locales);
+                }
             }
-            return output;
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
-        public static List<Users> GetUsuarios(string archivo) //genera la lista con usuarios a partir del archivo especificado
+        public static List<Local> DeserializarLocal()
         {
-            string path_user = GetDirectrio(archivo);
-            string[] texto_user = File.ReadAllLines(path_user);
-            List<Users> usuarios = new List<Users>();
-            for (int i = 0; i < texto_user.Length; i++)
+            List<Local> locales;
+            try
             {
-                string[] actual = texto_user[i].Split(',');
-                Users actual_usuario = new Users(actual[0],actual[1],actual[2],actual[3],actual[4],Convert.ToInt32(actual[5]));
-                usuarios.Add(actual_usuario);
+                using (Stream stream = File.Open("locales.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+
+                    locales = (List<Local>)bin.Deserialize(stream);
+                }
+                return locales;
             }
-            return usuarios;
-        }
-        public static List<Users> GetAdmin(string archivo) //lo mismo para los admin
-        {
-            string path_user = GetDirectrio(archivo);
-            string[] texto_user = File.ReadAllLines(path_user);
-            List<Users> usuarios = new List<Users>();
-            for (int i = 0; i < texto_user.Length; i++)
+            catch (Exception e)
             {
-                string[] actual = texto_user[i].Split(',');
-                Users actual_usuario = new AdminApp(actual[0], actual[1], actual[2], actual[3], actual[4], Convert.ToInt32(actual[5]));
-                usuarios.Add(actual_usuario);
+                Console.WriteLine(e.Message);
+                return null;
             }
-            return usuarios;
         }
 
+        public static void SerializarAdminsApp(List<AdminApp> usuarios)
+        {
+            try
+            {
+                using (Stream stream = File.Open("admin_app.bin", FileMode.Create))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, usuarios);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public static List<AdminApp> DeserializarAdminsApp()
+        {
+            List<AdminApp> usuarios;
+            try
+            {
+                using (Stream stream = File.Open("admin_app.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+
+                    usuarios = (List<AdminApp>)bin.Deserialize(stream);
+                }
+                return usuarios;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+        public static void SerializarAdminsLocal(List<AdminLocal> usuarios)
+        {
+            try
+            {
+                using (Stream stream = File.Open("admin_local.bin", FileMode.Create))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, usuarios);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public static List<AdminLocal> DeserializarAdminsLocal()
+        {
+            List<AdminLocal> usuarios;
+            try
+            {
+                using (Stream stream = File.Open("admin_local.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+
+                    usuarios = (List<AdminLocal>)bin.Deserialize(stream);
+                }
+                return usuarios;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+
+        public static void SerializarUsers(List<Users> usuarios)
+        {
+            try
+            {
+                using (Stream stream = File.Open("users.bin", FileMode.Create))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, usuarios);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+        public static List<Users> DeserializarUsers()
+        {
+            List<Users> usuarios;
+            try
+            {
+                using (Stream stream = File.Open("users.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+
+                    usuarios = (List<Users>)bin.Deserialize(stream);
+                }
+                return usuarios;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+        public static void WriteLog(Users usuario, List<string> log, List<DateTime> ingreso) //genera string y se agrega a la lista para serializar el log
+        {
+            string registro = usuario.GetName() + ',' + usuario.GetMail() + ",Log-in:" + ingreso[0].ToString() + ",Log-out:" + ingreso[1].ToString() +',' +usuario.GetType().ToString();
+            try
+            {
+                log.Add(registro);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(registro);
+            }
+            
+        }
+
+        public static void SerializaLog(List<string> log)
+        {
+            try
+            {
+                using (Stream stream = File.Open("log.bin", FileMode.Create))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, log);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+
+        public static List<string> DeserializaLog()
+        {
+            List<string> log;
+            try
+            {
+                using (Stream stream = File.Open("log.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+
+                    log = (List<string>)bin.Deserialize(stream);
+                }
+                return log;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+        /********************/
+        /*     Log In       */
+        /********************/
         public static Users Log_In(List<Users> lista_users, string usuario_mail, string pass) //verifica al usuario dentro de la lista
         {
             IEnumerable<Users> Lista = lista_users.Where(us => us.GetMail() == usuario_mail && us.CheckPass(pass));
@@ -186,8 +311,28 @@ namespace ProyectoVVSS
             }
             return null;
         }
-        
-        public static string DiferenciaAdmin(Users persona)
+
+        public static AdminApp LogInAdminApp(List<AdminApp> lista_users, string usuario_mail, string pass) //verifica al usuario dentro de la lista
+        {
+            IEnumerable<AdminApp> Lista = lista_users.Where(us => us.GetMail() == usuario_mail && us.CheckPass(pass));
+            foreach (AdminApp elemento in Lista)
+            {
+                return elemento;
+            }
+            return null;
+        }
+
+        public static AdminLocal LogInAdmin(List<AdminLocal> lista_users, string usuario_mail, string pass) //verifica al usuario dentro de la lista
+        {
+            IEnumerable<AdminLocal> Lista = lista_users.Where(us => us.GetMail() == usuario_mail && us.CheckPass(pass));
+            foreach (AdminLocal elemento in Lista)
+            {
+                return elemento;
+            }
+            return null;
+        }
+
+        public static string DiferenciaAdmin(Users persona) //podria no ser utilizado
         {
             if(persona.GetType().ToString() == "ProyectoVVSS.AdminApp")
             {
@@ -199,21 +344,43 @@ namespace ProyectoVVSS
             }
             return null;
         }
-        public static void Logging(List<DateTime> ingreso, StreamWriter archivo, Users usuario)
-        {
-            string registro = usuario.GetName()+',' + usuario.GetMail() + ",Log-in:" + ingreso[0].ToString() + ",Log-out:" + ingreso[1].ToString();
-            archivo.Write(registro);
-        }
-        public static void Registra(List<Users> usuarios)
+
+        public static bool RegistrarAdmin(List<AdminApp> usuarios) //modificar para GUI
         {
             Console.Write("Nombre: ");
             string nombre = Console.ReadLine();
             Console.Write("\nApellido: ");
             string apellido = Console.ReadLine();
-            Here:
             Console.Write("\nCorreo: ");
             string mail = Console.ReadLine();
-            if (Metodos.VerificaMail(mail) == false || Metodos.Mail(mail) == false) { Console.WriteLine("Correo Invalido..."); goto Here; }
+            if (Metodos.VerificaMail(mail) == false)
+            {
+                Console.WriteLine("Correo Invalido...");
+                return false;
+            }
+            Console.Write("\nPassword: ");
+            string pass = Console.ReadLine();
+            Console.Write("\nRut: ");
+            string Rut = Console.ReadLine();
+            AdminApp nuevo = new AdminApp(mail, pass, nombre, apellido, Rut, 0);
+            usuarios.Add(nuevo);
+            Console.Clear();
+            return true;
+        }
+
+        public static bool RegistrarUser(List<Users> usuarios) //modificar para GUI
+        {
+            Console.Write("Nombre: ");
+            string nombre = Console.ReadLine();
+            Console.Write("\nApellido: ");
+            string apellido = Console.ReadLine();
+            Console.Write("\nCorreo: ");
+            string mail = Console.ReadLine();
+            if (Metodos.VerificaMail(mail) == false)
+            {
+                Console.WriteLine("Correo Invalido...");
+                return false;
+            }
             Console.Write("\nPassword: ");
             string pass = Console.ReadLine();
             Console.Write("\nRut: ");
@@ -221,24 +388,31 @@ namespace ProyectoVVSS
             Users nuevo = new Users(mail, pass, nombre, apellido, Rut, 0);
             usuarios.Add(nuevo);
             Console.Clear();
-            Console.WriteLine("Usuario creado, por favor inicie sesion ahora");
-        }
-        public static void EscribeArchivoUsers(StreamWriter archivo, List<Users> lista)
-        {
-            foreach (Users persona in lista)
-            {
-                archivo.Write(persona.Info());
-                archivo.Write("\n");
-            }
+            return true;
         }
 
-        public static void EscribeArchivoLocal(StreamWriter archivo, List<Local> lista)
+        public static bool RegistrarAdmin(List<AdminLocal> usuarios) //modificar para GUI
         {
-            foreach (Local persona in lista)
+            Console.Write("Nombre: ");
+            string nombre = Console.ReadLine();
+            Console.Write("\nApellido: ");
+            string apellido = Console.ReadLine();
+            Console.Write("\nCorreo: ");
+            string mail = Console.ReadLine();
+            if (Metodos.VerificaMail(mail) == false)
             {
-                archivo.Write(persona.GetName()+','+persona.GetRut()+','+persona.GetHorario()[0].ToString()+','+persona.GetHorario()[1].ToString());
-                archivo.Write("\n");
+                Console.WriteLine("Correo Invalido...");
+                return false;
             }
+            Console.Write("\nPassword: ");
+            string pass = Console.ReadLine();
+            Console.Write("\nRut: ");
+            string Rut = Console.ReadLine();
+            AdminLocal nuevo = new AdminLocal(mail, pass, nombre, apellido, Rut, 0);
+            usuarios.Add(nuevo);
+            Console.Clear();
+            return true;
         }
+
     }
 }

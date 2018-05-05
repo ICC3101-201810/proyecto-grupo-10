@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ProyectoVVSS
 {
+    [Serializable]
     class Local
     {
         string nombre;
@@ -13,6 +14,7 @@ namespace ProyectoVVSS
         List<Producto> menu;
         List<DateTime> horario;
         List<string> pedidos;
+        List<Producto> ofertas;
         public Local(string Nombre, string Rut, DateTime abre, DateTime cierra)
         {
             nombre = Nombre;
@@ -20,6 +22,7 @@ namespace ProyectoVVSS
             menu = new List<Producto>();
             comentarios = new List<Ranking>();
             horario = new List<DateTime> {abre, cierra};
+            pedidos = new List<string>();
         }
         public string GetName()
         {
@@ -63,7 +66,7 @@ namespace ProyectoVVSS
         {
             menu.Add(item);
         }
-        public int generaID()
+        public int GeneraID()
         {
             return pedidos.Count+1;
         }
