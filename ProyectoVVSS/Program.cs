@@ -21,7 +21,7 @@ namespace ProyectoVVSS
             //List<string> Log = Metodos.DeserializaLog();
             List<Users> usuarios = new List<Users>();
             List<AdminLocal> admins_local = new List<AdminLocal>();
-            List <AdminApp> admins_app = new List<AdminApp>();
+            List<AdminApp> admins_app = new List<AdminApp>();
 
             Users user1 = new Users("prueba@miuandes.cl", "12345", "prueba", "uno", "rut", 0);
             usuarios.Add(user1);
