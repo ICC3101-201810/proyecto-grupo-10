@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 //Sintaxis tomgar:(iniciales mayusculas) inicial primera palabra + segunda palabra, ejemplo: cerrar sesion = CSesion
+//Sintaxis textBox... T mayusculua segudi del nombre  ejemplo Texto para poner notas = TNota
 namespace UI
 {
     public partial class Form1 : Form

@@ -56,6 +56,7 @@
             this.ANota.Text = "Grade and Comments";
             this.ANota.UseCompatibleTextRendering = true;
             this.ANota.UseVisualStyleBackColor = true;
+            this.ANota.Click += new System.EventHandler(this.ANota_Click);
             // 
             // IPresupuesto
             // 

@@ -26,5 +26,12 @@ namespace UI
         {
 
         }
+
+        private void ANota_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GradesComm nn = new GradesComm();
+            nn.Show();
+        }
     }
 }
