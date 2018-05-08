@@ -4,6 +4,7 @@ using System.Text;
 
 namespace ProyectoVVSS
 {
+    [Serializable]
     class Ranking
     {
         Local local;

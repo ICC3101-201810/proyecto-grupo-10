@@ -14,21 +14,12 @@ namespace ProyectoVVSS
         }
         static void Main(string[] args)
         {
-            //List<Users> usuarios = Metodos.DeserializarUsers();
-            //List<AdminApp> admins_app = Metodos.DeserializarAdminsApp();
-            //List<AdminLocal> admins_local = Metodos.DeserializarAdminsLocal();
-            //List<Local> locales = Metodos.DeserializarLocal();
-            //List<string> Log = Metodos.DeserializaLog();
-            List<Users> usuarios = new List<Users>();
-            List<AdminLocal> admins_local = new List<AdminLocal>();
-            List<AdminApp> admins_app = new List<AdminApp>();
+            List<Users> usuarios = Metodos.DeserializarUsers();
+            List<AdminApp> admins_app = Metodos.DeserializarAdminsApp();
+            List<AdminLocal> admins_local = Metodos.DeserializarAdminsLocal();
+            List<Local> locales = Metodos.DeserializarLocal();
+            List<string> Log = Metodos.DeserializaLog();
 
-            Users user1 = new Users("prueba@miuandes.cl", "12345", "prueba", "uno", "rut", 0);
-            usuarios.Add(user1);
-            AdminLocal prueba = new AdminLocal("adminLocal@miuandes.cl", "1243", "admin", "local 1", "1234-5", 0);
-            admins_local.Add(prueba);
-            AdminApp hugo = new AdminApp("hadelafuente@miuandes.cl", "1234", "Hugo", "de la Fuente", "19889338-2", 1000000);
-            admins_app.Add(hugo);
             //solo implementado para admin de app
             /*SoloAdmins:
             Mensaje("Admins");
@@ -118,8 +109,8 @@ namespace ProyectoVVSS
             Metodos.SerializarAdminsApp(admins_app);
             Metodos.SerializarUsers(usuarios);
             Metodos.SerializarAdminsLocal(admins_local);
-            //Metodos.SerializaLog(Log);
-            //Metodos.SerializarLocal(locales);
+            Metodos.SerializaLog(Log);
+            Metodos.SerializarLocal(locales);
             Console.WriteLine("Press any key to Exit...");
             Console.ReadKey();
         }
