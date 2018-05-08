@@ -44,6 +44,8 @@ namespace UI
             int Nota = Int32.Parse(TNota.Text);
             string Comentario = TComentario.Text;
             string Local = CLocal.Text;
+            
+
             this.Hide();
             MainAplicacion ss = new MainAplicacion();
             ss.Show();
