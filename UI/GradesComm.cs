@@ -43,6 +43,16 @@ namespace UI
         {
             int Nota = Int32.Parse(TNota.Text);
             string Comentario = TComentario.Text;
+            string Local = CLocal.Text;
+            this.Hide();
+            MainAplicacion ss = new MainAplicacion();
+            ss.Show();
+
+            //este boton recibe nota , comentario y local; hay que meterlos a la app.
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
