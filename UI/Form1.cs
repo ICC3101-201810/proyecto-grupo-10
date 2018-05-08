@@ -65,5 +65,12 @@ namespace UI
             MainAplicacion ss = new MainAplicacion();
             ss.Show();
         }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

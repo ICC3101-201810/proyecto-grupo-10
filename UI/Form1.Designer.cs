@@ -39,7 +39,7 @@
             // usersLabel
             // 
             this.usersLabel.AutoSize = true;
-            this.usersLabel.Location = new System.Drawing.Point(153, 98);
+            this.usersLabel.Location = new System.Drawing.Point(153, 30);
             this.usersLabel.Name = "usersLabel";
             this.usersLabel.Size = new System.Drawing.Size(40, 13);
             this.usersLabel.TabIndex = 1;
@@ -48,7 +48,7 @@
             // PaswordLabel
             // 
             this.PaswordLabel.AutoSize = true;
-            this.PaswordLabel.Location = new System.Drawing.Point(127, 128);
+            this.PaswordLabel.Location = new System.Drawing.Point(127, 60);
             this.PaswordLabel.Name = "PaswordLabel";
             this.PaswordLabel.Size = new System.Drawing.Size(66, 13);
             this.PaswordLabel.TabIndex = 2;
@@ -57,7 +57,7 @@
             // 
             // UsuarioIng
             // 
-            this.UsuarioIng.Location = new System.Drawing.Point(199, 98);
+            this.UsuarioIng.Location = new System.Drawing.Point(199, 30);
             this.UsuarioIng.Name = "UsuarioIng";
             this.UsuarioIng.Size = new System.Drawing.Size(157, 20);
             this.UsuarioIng.TabIndex = 3;
@@ -65,7 +65,7 @@
             // 
             // UsuarioCont
             // 
-            this.UsuarioCont.Location = new System.Drawing.Point(199, 124);
+            this.UsuarioCont.Location = new System.Drawing.Point(199, 56);
             this.UsuarioCont.Name = "UsuarioCont";
             this.UsuarioCont.Size = new System.Drawing.Size(157, 20);
             this.UsuarioCont.TabIndex = 4;
@@ -74,7 +74,7 @@
             // NewUser
             // 
             this.NewUser.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.NewUser.Location = new System.Drawing.Point(199, 198);
+            this.NewUser.Location = new System.Drawing.Point(199, 256);
             this.NewUser.Name = "NewUser";
             this.NewUser.Size = new System.Drawing.Size(100, 28);
             this.NewUser.TabIndex = 5;
@@ -85,7 +85,7 @@
             // Loginboton
             // 
             this.Loginboton.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.Loginboton.Location = new System.Drawing.Point(199, 164);
+            this.Loginboton.Location = new System.Drawing.Point(199, 96);
             this.Loginboton.Name = "Loginboton";
             this.Loginboton.Size = new System.Drawing.Size(100, 28);
             this.Loginboton.TabIndex = 6;
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(534, 311);
             this.Controls.Add(this.Loginboton);
             this.Controls.Add(this.NewUser);
