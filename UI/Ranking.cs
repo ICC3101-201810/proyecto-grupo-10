@@ -18,5 +18,9 @@ namespace UI
             nota = Nota;
             comentario = Comment;
         }
+        public double GetNota()
+        {
+            return this.nota;
+        }
     }
 }
