@@ -71,5 +71,15 @@ namespace UI
         {
             return pedidos.Count + 1;
         }
+        public double PromedioRanking(List<Ranking> rank)
+        {
+            double total = rank.Count();
+            double suma = 0.0;
+            foreach (Ranking r1 in rank)
+            {
+                suma += r1.GetNota();
+            }
+            return suma / total;
+        }
     }
 }
