@@ -100,6 +100,7 @@
             // 
             // IBudget
             // 
+            this.IBudget.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.IBudget.Location = new System.Drawing.Point(224, 126);
             this.IBudget.Name = "IBudget";
             this.IBudget.Size = new System.Drawing.Size(100, 20);
