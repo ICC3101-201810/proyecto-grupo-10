@@ -64,6 +64,7 @@
             this.CLocal.Name = "CLocal";
             this.CLocal.Size = new System.Drawing.Size(121, 21);
             this.CLocal.TabIndex = 2;
+            this.CLocal.SelectedIndexChanged += new System.EventHandler(this.CLocal_SelectedIndexChanged);
             // 
             // LElegir
             // 
@@ -118,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BEnviar);
             this.Controls.Add(this.BVolver);

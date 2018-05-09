@@ -15,7 +15,14 @@ namespace UI
         public GradesComm()
         {
             InitializeComponent();
+            List<Local> locales = Metodos.DeserializarLocal();
+            foreach (Local l in locales)
+            {
+                CLocal.Items.Add(l.GetName());
+            }
+            Metodos.SerializarLocal(locales);
         }
+        public EventHandler<RankEventArgs> OnRanking;
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -43,7 +50,17 @@ namespace UI
         {
             int Nota = Int32.Parse(TNota.Text);
             string Comentario = TComentario.Text;
-            string Local = CLocal.Text;
+            string lugar = CLocal.SelectedText;
+            List<Local> locales = Metodos.DeserializarLocal();
+            Local selected = Metodos.BuscaLocal(lugar, locales);
+            Metodos.SerializarLocal(locales);
+
+            RankEventArgs args_nota = new RankEventArgs();
+            args_nota.Lugar = selected;
+            args_nota.Nota = Nota;
+            args_nota.Comment = Comentario;
+
+            OnRanking(this, args_nota);
             
 
             this.Hide();
@@ -56,6 +73,11 @@ namespace UI
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CLocal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

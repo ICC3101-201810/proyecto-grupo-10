@@ -75,6 +75,7 @@
             this.VLocales.TabIndex = 3;
             this.VLocales.Text = "View Stores";
             this.VLocales.UseVisualStyleBackColor = true;
+            this.VLocales.Click += new System.EventHandler(this.VLocales_Click);
             // 
             // RPedido
             // 
@@ -94,6 +95,7 @@
             this.ASaldo.TabIndex = 5;
             this.ASaldo.Text = "Add Credit";
             this.ASaldo.UseVisualStyleBackColor = true;
+            this.ASaldo.Click += new System.EventHandler(this.ASaldo_Click);
             // 
             // textBox1
             // 

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AdminApp.cs" />
     <Compile Include="AdminLocal.cs" />
+    <Compile Include="RankEventArgs.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

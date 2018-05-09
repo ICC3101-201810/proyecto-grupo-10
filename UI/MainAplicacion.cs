@@ -19,8 +19,7 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            
+            Application.Exit();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -33,6 +32,21 @@ namespace UI
             this.Hide();
             GradesComm nn = new GradesComm();
             nn.Show();
+        }
+
+        private void VLocales_Click(object sender, EventArgs e)
+        {
+            List<Local> locales = Metodos.DeserializarLocal();
+            foreach (Local lugar in locales)
+            {
+                MessageBox.Show(lugar.GetName());
+            }
+            Metodos.SerializarLocal(locales);
+        }
+
+        private void ASaldo_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

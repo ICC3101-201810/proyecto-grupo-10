@@ -21,10 +21,6 @@ namespace UI
         }
         public event EventHandler<LogInEventArgs> OnLogIn;
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -43,7 +39,7 @@ namespace UI
 
         private void NewUser_Click(object sender, EventArgs e)
         {
-
+            //abrir ventana de registro
         }
 
         private void UsuarioCont_TextChanged(object sender, EventArgs e)
@@ -53,17 +49,19 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             string usuario = UsuarioIng.Text;
             string clave = UsuarioCont.Text;
             List<Users> usuarios = Metodos.DeserializarUsers();
             Users LogInUser = Metodos.Log_In(usuarios, usuario, clave);
             if (LogInUser == null)
             {
-                MessageBox.Show("Usuario no encontrado");
+                MessageBox.Show("Error en contraseña o correo");
                 Metodos.SerializarUsers(usuarios);
             }
             else
             {
+                
                 LogInEventArgs inicia = new LogInEventArgs();
                 inicia.Usuario = LogInUser;
                 OnLogIn(this, inicia);

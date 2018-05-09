@@ -53,11 +53,10 @@
             this.PaswordLabel.Size = new System.Drawing.Size(66, 13);
             this.PaswordLabel.TabIndex = 2;
             this.PaswordLabel.Text = "PASWORD:";
-            this.PaswordLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // UsuarioIng
             // 
-            this.UsuarioIng.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.UsuarioIng.BackColor = System.Drawing.SystemColors.Control;
             this.UsuarioIng.Location = new System.Drawing.Point(199, 30);
             this.UsuarioIng.Name = "UsuarioIng";
             this.UsuarioIng.Size = new System.Drawing.Size(157, 20);
@@ -66,7 +65,7 @@
             // 
             // UsuarioCont
             // 
-            this.UsuarioCont.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.UsuarioCont.BackColor = System.Drawing.SystemColors.Control;
             this.UsuarioCont.Location = new System.Drawing.Point(199, 56);
             this.UsuarioCont.Name = "UsuarioCont";
             this.UsuarioCont.Size = new System.Drawing.Size(157, 20);
@@ -75,7 +74,7 @@
             // 
             // NewUser
             // 
-            this.NewUser.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.NewUser.BackColor = System.Drawing.SystemColors.Control;
             this.NewUser.Location = new System.Drawing.Point(199, 256);
             this.NewUser.Name = "NewUser";
             this.NewUser.Size = new System.Drawing.Size(100, 28);
@@ -86,7 +85,7 @@
             // 
             // Loginboton
             // 
-            this.Loginboton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.Loginboton.BackColor = System.Drawing.SystemColors.Control;
             this.Loginboton.Location = new System.Drawing.Point(199, 96);
             this.Loginboton.Name = "Loginboton";
             this.Loginboton.Size = new System.Drawing.Size(100, 28);
@@ -99,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(534, 311);
             this.Controls.Add(this.Loginboton);
             this.Controls.Add(this.NewUser);
@@ -108,6 +107,7 @@
             this.Controls.Add(this.PaswordLabel);
             this.Controls.Add(this.usersLabel);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.White;
             this.ResumeLayout(false);

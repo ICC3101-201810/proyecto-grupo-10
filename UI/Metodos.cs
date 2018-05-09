@@ -12,24 +12,8 @@ namespace UI
         /***************************************************************/
         /*           Metodos y Funciones usados en main                */
         /***************************************************************/
-
-        public static void MenuUser(Users login) //menu para el usuario regular, modificar para el GUI
-        {
-            Console.Write("Bienvenido " + login.GetName() + "!\n" +
-                "1.Ingresar Presupuesto y ver opciones\n" +
-                "2.Ver Locales disponibles\n" +
-                "3.Asignar nota o comentario a local\n" + "4.Realizar Pedido\n" + "5.Abonar Saldo\n" +
-                "6.Cerrar Sesion\nOpcion: ");
-        }
-
-        public static void MenuAdmin_Local() //menu de admin de local, modificar para GUI
-        {
-            Console.Write("1.Agregar Oferta\n2.Quitar Oferta\n3.Modificar Menu\n4.Usar aplicacion como usuario normal\n5.Cerrar Sesion\nOpcion: ");
-        }
-        public static void MenuAdmin_App() //menu para admin de la app, modificar para GUI
-        {
-            Console.Write("1.Agregar Local\n2.Quitar Local\n3.Quitar Usuario\n4.Cambiar Admin de Local\n5.Usar aplicacion como usuario normal\n6.Cerrar Sesion\nOpcion: ");
-        }
+        public Users UsuarioActivo;
+        public List<DateTime> UsuarioActivoLogIn= new List<DateTime> { DateTime.Now };
 
         public static List<Local> LocalesAbiertos(List<Local> locales)
         {
@@ -89,7 +73,7 @@ namespace UI
         public static string GetDirectorio(string archivo) //obtiene el path del repositorio
         {
             string path_i = Directory.GetCurrentDirectory();
-            string algo = @"bin\Debug\netcoreapp2.0";
+            string algo = @"bin";
             string path = "";
             int largo = (int)path_i.Length - 1;
             for (int i = 0; i <= largo - algo.Length; i++)
