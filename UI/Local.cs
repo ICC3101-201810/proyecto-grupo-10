@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace ProyectoVVSS
+namespace UI
 {
     [Serializable]
     public class Local
@@ -21,7 +22,7 @@ namespace ProyectoVVSS
             rut = Rut;
             menu = new List<Producto>();
             comentarios = new List<Ranking>();
-            horario = new List<DateTime> {abre, cierra};
+            horario = new List<DateTime> { abre, cierra };
             pedidos = new List<string>();
         }
         public string GetName()
@@ -41,7 +42,7 @@ namespace ProyectoVVSS
             Console.WriteLine("Producto\t\tPrecio\t\tID");
             foreach (Producto item in this.menu)
             {
-                Console.WriteLine(item.GetNombre().ToUpper() + "\t\t" + item.GetPrecio().ToString()+"\t\t" + item.GetID());
+                Console.WriteLine(item.GetNombre().ToUpper() + "\t\t" + item.GetPrecio().ToString() + "\t\t" + item.GetID());
             }
         }
         public List<DateTime> GetHorario()
@@ -68,7 +69,7 @@ namespace ProyectoVVSS
         }
         public int GeneraID()
         {
-            return pedidos.Count+1;
+            return pedidos.Count + 1;
         }
     }
 }

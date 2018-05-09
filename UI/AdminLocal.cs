@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace ProyectoVVSS
+namespace UI
 {
     [Serializable]
     public class AdminLocal : Users
@@ -19,7 +21,7 @@ namespace ProyectoVVSS
         public List<DateTime> DefineHorario(int hora_abre, int minuto_abre, int hora_cierra, int minuto_cierra)
         {
             DateTime dia = DateTime.Now;
-            DateTime apertura= new DateTime(dia.Year, dia.Month, dia.Day, hora_abre, minuto_abre, 0);
+            DateTime apertura = new DateTime(dia.Year, dia.Month, dia.Day, hora_abre, minuto_abre, 0);
             DateTime cierre = new DateTime(dia.Year, dia.Month, dia.Day, hora_cierra, minuto_cierra, 0);
             List<DateTime> horario = new List<DateTime> { apertura, cierre };
             return horario;
@@ -28,7 +30,7 @@ namespace ProyectoVVSS
         {
             List<Producto> menu = lugar.GetMenu();
             Producto plato = new Producto(nombre, precio, stock, menu.Count + 1);
-            lugar.RecibeProducto(plato); 
+            lugar.RecibeProducto(plato);
         }
         public void AgregarOferta()
         {

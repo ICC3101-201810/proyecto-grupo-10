@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace UI
 {
     static class Program
@@ -16,7 +15,11 @@ namespace UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Form1 inicio = new Form1();
+            LogInController controlador = new LogInController(inicio);
+
+            Application.Run(inicio);
         }
     }
 }

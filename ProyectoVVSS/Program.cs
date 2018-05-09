@@ -14,14 +14,14 @@ namespace ProyectoVVSS
         }
         static void Main(string[] args)
         {
-            List<Users> usuarios = Metodos.DeserializarUsers();
+            /*List<Users> usuarios = Metodos.DeserializarUsers();
             List<AdminApp> admins_app = Metodos.DeserializarAdminsApp();
             List<AdminLocal> admins_local = Metodos.DeserializarAdminsLocal();
             List<Local> locales = Metodos.DeserializarLocal();
             List<string> Log = Metodos.DeserializaLog();
 
             //solo implementado para admin de app
-            /*SoloAdmins:
+            SoloAdmins:
             Mensaje("Admins");
             Console.WriteLine("Deje este campo vacio para volver");
             Console.Write("Correo: ");
@@ -103,14 +103,14 @@ namespace ProyectoVVSS
                 registroLog_a.Add(Cierra_a);
                 Metodos.WriteLog(login_a, Log, registroLog_a);
                 
-            }*/
+            }
 
 
             Metodos.SerializarAdminsApp(admins_app);
             Metodos.SerializarUsers(usuarios);
             Metodos.SerializarAdminsLocal(admins_local);
             Metodos.SerializaLog(Log);
-            Metodos.SerializarLocal(locales);
+            Metodos.SerializarLocal(locales);*/
             Console.WriteLine("Press any key to Exit...");
             Console.ReadKey();
         }

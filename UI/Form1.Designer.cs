@@ -57,7 +57,7 @@
             // 
             // UsuarioIng
             // 
-            this.UsuarioIng.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.UsuarioIng.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.UsuarioIng.Location = new System.Drawing.Point(199, 30);
             this.UsuarioIng.Name = "UsuarioIng";
             this.UsuarioIng.Size = new System.Drawing.Size(157, 20);
@@ -66,7 +66,7 @@
             // 
             // UsuarioCont
             // 
-            this.UsuarioCont.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.UsuarioCont.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.UsuarioCont.Location = new System.Drawing.Point(199, 56);
             this.UsuarioCont.Name = "UsuarioCont";
             this.UsuarioCont.Size = new System.Drawing.Size(157, 20);

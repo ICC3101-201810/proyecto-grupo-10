@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 //Sintaxis tomgar:(iniciales mayusculas) inicial primera palabra + segunda palabra, ejemplo: cerrar sesion = CSesion
 //Sintaxis textBox... T mayusculua segudi del nombre  ejemplo Texto para poner notas = TNota
 namespace UI
@@ -20,12 +19,7 @@ namespace UI
             InitializeComponent();
 
         }
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+        public event EventHandler<LogInEventArgs> OnLogIn;
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -61,11 +55,23 @@ namespace UI
         {
             string usuario = UsuarioIng.Text;
             string clave = UsuarioCont.Text;
-            //Agregar que revise si esta bien el usuario, y si es asi que ingrese al mainaplicacion
-            //si esta bien que haga lo siguiente
-            this.Hide();
-            MainAplicacion ss = new MainAplicacion();
-            ss.Show();
+            List<Users> usuarios = Metodos.DeserializarUsers();
+            Users LogInUser = Metodos.Log_In(usuarios, usuario, clave);
+            if (LogInUser == null)
+            {
+                MessageBox.Show("Usuario no encontrado");
+                Metodos.SerializarUsers(usuarios);
+            }
+            else
+            {
+                LogInEventArgs inicia = new LogInEventArgs();
+                inicia.Usuario = LogInUser;
+                OnLogIn(this, inicia);
+
+                this.Hide();
+                Metodos.SerializarUsers(usuarios);
+            }
+
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)

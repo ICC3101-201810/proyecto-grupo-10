@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace ProyectoVVSS
+namespace UI
 {
     [Serializable]
-    public class AdminApp:Users
+    public class AdminApp : Users
     {
         public AdminApp(string Mail, string miPass, string miNombre, string miApellido, string miRut, int miSaldo) : base(miNombre, miApellido, miRut, miPass, Mail, miSaldo)
         {
-            
+
         }
         public void AddLocal(List<Local> locales)
         {

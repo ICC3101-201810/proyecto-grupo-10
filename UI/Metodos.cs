@@ -1,11 +1,11 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Linq;
+using System.IO;
+using System.Text.RegularExpressions;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace ProyectoVVSS
+namespace UI
 {
     public class Metodos
     {
@@ -249,17 +249,17 @@ namespace ProyectoVVSS
 
         public static void WriteLog(Users usuario, List<string> log, List<DateTime> ingreso) //genera string y se agrega a la lista para serializar el log
         {
-            string registro = usuario.GetName() + ',' + usuario.GetMail() + ",Log-in:" + ingreso[0].ToString() + ",Log-out:" + ingreso[1].ToString() +',' +usuario.GetType().ToString();
+            string registro = usuario.GetName() + ',' + usuario.GetMail() + ",Log-in:" + ingreso[0].ToString() + ",Log-out:" + ingreso[1].ToString() + ',' + usuario.GetType().ToString();
             try
             {
                 log.Add(registro);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine(registro);
             }
-            
+
         }
 
         public static void SerializaLog(List<string> log)
@@ -334,11 +334,11 @@ namespace ProyectoVVSS
 
         public static string DiferenciaAdmin(Users persona) //podria no ser utilizado
         {
-            if(persona.GetType().ToString() == "ProyectoVVSS.AdminApp")
+            if (persona.GetType().ToString() == "ProyectoVVSS.AdminApp")
             {
                 return "App";
             }
-            else if (persona.GetType().ToString()== "ProyectoVVSS.AdminLocal")
+            else if (persona.GetType().ToString() == "ProyectoVVSS.AdminLocal")
             {
                 return "Local";
             }

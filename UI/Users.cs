@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ProyectoVVSS
+namespace UI
 {
     [Serializable]
     public class Users
@@ -87,7 +88,7 @@ namespace ProyectoVVSS
             int medioPago = Convert.ToInt32(Console.ReadLine());
             if (medioPago == 1)
             {
-                string pedido = "Pedido numero: "+ IDPedido+ "Nombre: " + this.GetName() + this.apellido + "Item: " + comida.GetNombre() + "Cantidad: " + cantidad.ToString() + "Monto a pagado: " + (cantidad * comida.GetPrecio()).ToString();
+                string pedido = "Pedido numero: " + IDPedido + "Nombre: " + this.GetName() + this.apellido + "Item: " + comida.GetNombre() + "Cantidad: " + cantidad.ToString() + "Monto a pagado: " + (cantidad * comida.GetPrecio()).ToString();
                 if (comida.GetStock() >= cantidad && comida.GetPrecio() <= this.saldo)
                 {
                     local.RecibePedido(pedido);
@@ -112,7 +113,7 @@ namespace ProyectoVVSS
         {
             Console.Write("Monto a presupuestar: ");
             int presupuesto = Convert.ToInt32(Console.ReadLine());
-            if (presupuesto==0)
+            if (presupuesto == 0)
             {
                 return null;
             }
@@ -125,7 +126,7 @@ namespace ProyectoVVSS
                     Out.Add(item);
                 }
             }
-            
+
             return Out;
         }
 
