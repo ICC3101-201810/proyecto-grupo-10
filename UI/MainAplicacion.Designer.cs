@@ -34,7 +34,7 @@
             this.VLocales = new System.Windows.Forms.Button();
             this.RPedido = new System.Windows.Forms.Button();
             this.ASaldo = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.IBudget = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // CSesion
@@ -66,6 +66,7 @@
             this.IPresupuesto.TabIndex = 2;
             this.IPresupuesto.Text = "See Options";
             this.IPresupuesto.UseVisualStyleBackColor = true;
+            this.IPresupuesto.Click += new System.EventHandler(this.IPresupuesto_Click);
             // 
             // VLocales
             // 
@@ -97,22 +98,22 @@
             this.ASaldo.UseVisualStyleBackColor = true;
             this.ASaldo.Click += new System.EventHandler(this.ASaldo_Click);
             // 
-            // textBox1
+            // IBudget
             // 
-            this.textBox1.Location = new System.Drawing.Point(224, 126);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "Budget";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.IBudget.Location = new System.Drawing.Point(224, 126);
+            this.IBudget.Name = "IBudget";
+            this.IBudget.Size = new System.Drawing.Size(100, 20);
+            this.IBudget.TabIndex = 6;
+            this.IBudget.Text = "Budget";
+            this.IBudget.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.IBudget.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // MainAplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.IBudget);
             this.Controls.Add(this.ASaldo);
             this.Controls.Add(this.RPedido);
             this.Controls.Add(this.VLocales);
@@ -134,6 +135,6 @@
         private System.Windows.Forms.Button VLocales;
         private System.Windows.Forms.Button RPedido;
         private System.Windows.Forms.Button ASaldo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox IBudget;
     }
 }

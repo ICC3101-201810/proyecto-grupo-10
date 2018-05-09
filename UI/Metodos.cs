@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Windows.Forms;
 
 namespace UI
 {
@@ -12,9 +13,6 @@ namespace UI
         /***************************************************************/
         /*           Metodos y Funciones usados en main                */
         /***************************************************************/
-        public Users UsuarioActivo;
-        public List<DateTime> UsuarioActivoLogIn= new List<DateTime> { DateTime.Now };
-
         public static List<Local> LocalesAbiertos(List<Local> locales)
         {
             List<Local> lugaresAbietos = new List<Local>();
@@ -24,18 +22,6 @@ namespace UI
                 lugaresAbietos.Add(lugar);
             }
             return lugaresAbietos;
-        }
-
-        public static void ImprimeLocalesAbiertos(List<Local> locales) //modificar para GUI
-        {
-            List<Local> Abiertos = Metodos.LocalesAbiertos(locales);
-            Console.Clear();
-            Console.WriteLine("\n---------------------------\nLocales Abiertos\n---------------------------\n");
-            foreach (Local lugar in Abiertos)
-            {
-                Console.WriteLine(lugar.GetName() + " " + lugar.ImprimeHorario());
-            }
-            Console.WriteLine("\n---------------------------\n");
         }
 
         public static Local BuscaLocal(string nombre, List<Local> lista)
@@ -99,7 +85,7 @@ namespace UI
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                MessageBox.Show(e.Message);
             }
         }
 
@@ -118,7 +104,7 @@ namespace UI
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                MessageBox.Show(e.Message);
                 return null;
             }
         }

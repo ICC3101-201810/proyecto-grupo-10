@@ -8,7 +8,7 @@ namespace UI
 {
     public class RankEventArgs : EventArgs
     {
-        public Users Usuario;
+        public Users Usuario { get; set; }
         public Local Lugar { get; set; }
         public double Nota { get; set; }
         public string Comment { get; set; }

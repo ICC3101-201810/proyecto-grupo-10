@@ -48,19 +48,31 @@ namespace UI
 
         private void BEnviar_Click(object sender, EventArgs e)
         {
-            int Nota = Int32.Parse(TNota.Text);
+            Double Nota = Convert.ToDouble(TNota.Text);
             string Comentario = TComentario.Text;
             string lugar = CLocal.SelectedText;
             List<Local> locales = Metodos.DeserializarLocal();
             Local selected = Metodos.BuscaLocal(lugar, locales);
-            Metodos.SerializarLocal(locales);
 
-            RankEventArgs args_nota = new RankEventArgs();
-            args_nota.Lugar = selected;
-            args_nota.Nota = Nota;
-            args_nota.Comment = Comentario;
 
-            OnRanking(this, args_nota);
+            if (selected == null)
+            {
+                MessageBox.Show("Seleccione un local");
+                Metodos.SerializarLocal(locales);
+            }
+            else
+            {
+                RankEventArgs args_nota = new RankEventArgs();
+                args_nota.Lugar = selected;
+                args_nota.Nota = Nota;
+                args_nota.Comment = Comentario;
+                args_nota.Usuario = AUser.UsuarioA;
+                OnRanking(this, args_nota);
+                Metodos.SerializarLocal(locales);
+                MessageBox.Show("Nota Enviada a " + selected.GetName());
+                
+            }
+
             
 
             this.Hide();

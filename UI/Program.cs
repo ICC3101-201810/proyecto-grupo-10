@@ -22,7 +22,6 @@ namespace UI
 
             Form1 inicio = new Form1();
             LogInController controlador = new LogInController(inicio);
-
             Application.Run(inicio);
         }
     }

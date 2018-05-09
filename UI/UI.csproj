@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AUser.cs" />
     <Compile Include="AdminApp.cs" />
     <Compile Include="AdminLocal.cs" />
     <Compile Include="RankEventArgs.cs" />

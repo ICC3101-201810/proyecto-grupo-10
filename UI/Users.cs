@@ -59,7 +59,6 @@ namespace UI
         public bool RealizarPedido(List<Local> locales)
         {
             Console.Clear();
-            Metodos.ImprimeLocalesAbiertos(locales);
             string elige_local = Console.ReadLine();
             Local local = Metodos.BuscaLocal(elige_local, locales);
             if (local == null)
@@ -109,10 +108,8 @@ namespace UI
             }
         }
 
-        public List<Producto> Presupuestar(List<Local> locales)
+        public List<Producto> Presupuestar(List<Local> locales, int presupuesto)
         {
-            Console.Write("Monto a presupuestar: ");
-            int presupuesto = Convert.ToInt32(Console.ReadLine());
             if (presupuesto == 0)
             {
                 return null;

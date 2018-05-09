@@ -36,17 +36,28 @@ namespace UI
 
         private void VLocales_Click(object sender, EventArgs e)
         {
+            string mensaje = "";
             List<Local> locales = Metodos.DeserializarLocal();
             foreach (Local lugar in locales)
             {
-                MessageBox.Show(lugar.GetName());
+                mensaje += lugar.GetName() + "\n";
             }
+            MessageBox.Show(mensaje);
             Metodos.SerializarLocal(locales);
         }
 
         private void ASaldo_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void IPresupuesto_Click(object sender, EventArgs e)
+        {
+            int budget = Convert.ToInt32(IBudget.Text);
+            List<Local> locales = Metodos.DeserializarLocal();
+            Users Uactual = AUser.UsuarioA;
+            List<Producto> Opciones = Uactual.Presupuestar(locales, budget);
+
         }
     }
 }
