@@ -38,11 +38,13 @@ namespace UI
         {
             string mensaje = "";
             List<Local> locales = Metodos.DeserializarLocal();
+            Producto cafe_grande = new Producto("Cafe Grande", 1200, 25, 1);
+            Producto cafe_chico = new Producto("Cafe Chico", 890, 25, 2);
             foreach (Local lugar in locales)
             {
-                mensaje += lugar.GetName() + "\n";
+                mensaje += lugar.GetName() + ", Promedio: " +lugar.PromedioRanking(lugar.GetRank()) + "\n";
             }
-            MessageBox.Show(mensaje);
+            MessageBox.Show(mensaje, "Locales Disponibles");
             Metodos.SerializarLocal(locales);
         }
 
@@ -57,7 +59,12 @@ namespace UI
             List<Local> locales = Metodos.DeserializarLocal();
             Users Uactual = AUser.UsuarioA;
             List<Producto> Opciones = Uactual.Presupuestar(locales, budget);
-
+            string mensaje = "";
+            foreach (Producto item in Opciones)
+            {
+                mensaje += "Producto: " + item.GetNombre() + " Precio: " + item.GetPrecio() + "\n"; 
+            }
+            MessageBox.Show(mensaje, "Productos Disponibles");
         }
     }
 }

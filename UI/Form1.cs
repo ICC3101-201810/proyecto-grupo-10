@@ -39,7 +39,8 @@ namespace UI
 
         private void NewUser_Click(object sender, EventArgs e)
         {
-            //abrir ventana de registro
+            Registro register = new Registro();
+            this.Hide();
         }
 
         private void UsuarioCont_TextChanged(object sender, EventArgs e)

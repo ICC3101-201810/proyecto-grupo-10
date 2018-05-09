@@ -71,6 +71,10 @@ namespace UI
         {
             return pedidos.Count + 1;
         }
+        public List<Ranking> GetRank()
+        {
+            return this.comentarios;
+        }
         public double PromedioRanking(List<Ranking> rank)
         {
             double total = rank.Count();
