@@ -34,6 +34,7 @@
             this.UsuarioCont = new System.Windows.Forms.TextBox();
             this.NewUser = new System.Windows.Forms.Button();
             this.Loginboton = new System.Windows.Forms.Button();
+            this.BLoginAdmin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usersLabel
@@ -94,12 +95,24 @@
             this.Loginboton.UseVisualStyleBackColor = false;
             this.Loginboton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // BLoginAdmin
+            // 
+            this.BLoginAdmin.BackColor = System.Drawing.SystemColors.Control;
+            this.BLoginAdmin.Location = new System.Drawing.Point(199, 142);
+            this.BLoginAdmin.Name = "BLoginAdmin";
+            this.BLoginAdmin.Size = new System.Drawing.Size(100, 28);
+            this.BLoginAdmin.TabIndex = 7;
+            this.BLoginAdmin.Text = " Admin Log In ";
+            this.BLoginAdmin.UseVisualStyleBackColor = false;
+            this.BLoginAdmin.Click += new System.EventHandler(this.BLoginAdmin_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(534, 311);
+            this.Controls.Add(this.BLoginAdmin);
             this.Controls.Add(this.Loginboton);
             this.Controls.Add(this.NewUser);
             this.Controls.Add(this.UsuarioCont);
@@ -122,6 +135,7 @@
         private System.Windows.Forms.TextBox UsuarioCont;
         private System.Windows.Forms.Button NewUser;
         private System.Windows.Forms.Button Loginboton;
+        private System.Windows.Forms.Button BLoginAdmin;
     }
 }
 

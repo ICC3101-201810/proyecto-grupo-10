@@ -79,6 +79,9 @@ namespace UI
 
         }
 
+        private void BLoginAdmin_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
