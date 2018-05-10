@@ -23,6 +23,20 @@ namespace UI
             }
             return lugaresAbietos;
         }
+        public static int BuscaIndiceUser(List<Users> lista, Users usuario)
+        {
+            int contador = 0;
+            foreach (Users persona in lista)
+            {
+                if (usuario.GetMail()==persona.GetMail())
+                {
+                    break;
+                }
+                contador++;
+            }
+            return contador;
+        }
+
 
         public static Local BuscaLocal(string nombre, List<Local> lista)
         {
@@ -36,11 +50,11 @@ namespace UI
             return null;
         }
 
-        public static Producto BuscaProducto(List<Producto> items, int id)
+        public static Producto BuscaProducto(List<Producto> items, string id)
         {
             foreach (Producto item in items)
             {
-                if (item.GetID() == id)
+                if (item.GetNombre() == id)
                 {
                     return item;
                 }

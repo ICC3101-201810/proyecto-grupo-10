@@ -30,11 +30,14 @@
         {
             this.BBack = new System.Windows.Forms.Button();
             this.CLocal = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CProducto = new System.Windows.Forms.ComboBox();
             this.LLocal = new System.Windows.Forms.Label();
-            this.CProducto = new System.Windows.Forms.Label();
+            this.LProducto = new System.Windows.Forms.Label();
             this.BCredito = new System.Windows.Forms.Button();
             this.BTienda = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ICantidad = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BBack
@@ -54,14 +57,16 @@
             this.CLocal.Name = "CLocal";
             this.CLocal.Size = new System.Drawing.Size(156, 21);
             this.CLocal.TabIndex = 1;
+            this.CLocal.Text = "Choose Store";
+            this.CLocal.SelectedIndexChanged += new System.EventHandler(this.CLocal_SelectedIndexChanged);
             // 
-            // comboBox2
+            // CProducto
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(83, 133);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(156, 21);
-            this.comboBox2.TabIndex = 2;
+            this.CProducto.FormattingEnabled = true;
+            this.CProducto.Location = new System.Drawing.Point(83, 133);
+            this.CProducto.Name = "CProducto";
+            this.CProducto.Size = new System.Drawing.Size(156, 21);
+            this.CProducto.TabIndex = 2;
             // 
             // LLocal
             // 
@@ -73,18 +78,18 @@
             this.LLocal.Text = "Choose Local";
             this.LLocal.Click += new System.EventHandler(this.label1_Click);
             // 
-            // CProducto
+            // LProducto
             // 
-            this.CProducto.AutoSize = true;
-            this.CProducto.Location = new System.Drawing.Point(80, 117);
-            this.CProducto.Name = "CProducto";
-            this.CProducto.Size = new System.Drawing.Size(83, 13);
-            this.CProducto.TabIndex = 4;
-            this.CProducto.Text = "Choose Product";
+            this.LProducto.AutoSize = true;
+            this.LProducto.Location = new System.Drawing.Point(80, 117);
+            this.LProducto.Name = "LProducto";
+            this.LProducto.Size = new System.Drawing.Size(83, 13);
+            this.LProducto.TabIndex = 4;
+            this.LProducto.Text = "Choose Product";
             // 
             // BCredito
             // 
-            this.BCredito.Location = new System.Drawing.Point(83, 179);
+            this.BCredito.Location = new System.Drawing.Point(83, 182);
             this.BCredito.Name = "BCredito";
             this.BCredito.Size = new System.Drawing.Size(75, 23);
             this.BCredito.TabIndex = 5;
@@ -94,7 +99,7 @@
             // 
             // BTienda
             // 
-            this.BTienda.Location = new System.Drawing.Point(164, 179);
+            this.BTienda.Location = new System.Drawing.Point(164, 182);
             this.BTienda.Name = "BTienda";
             this.BTienda.Size = new System.Drawing.Size(75, 23);
             this.BTienda.TabIndex = 6;
@@ -102,19 +107,48 @@
             this.BTienda.UseVisualStyleBackColor = true;
             this.BTienda.Click += new System.EventHandler(this.BTienda_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(269, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Amount";
+            // 
+            // ICantidad
+            // 
+            this.ICantidad.Location = new System.Drawing.Point(272, 134);
+            this.ICantidad.Name = "ICantidad";
+            this.ICantidad.Size = new System.Drawing.Size(100, 20);
+            this.ICantidad.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(80, 166);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Payment Method";
+            // 
             // MakeOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ICantidad);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BTienda);
             this.Controls.Add(this.BCredito);
-            this.Controls.Add(this.CProducto);
+            this.Controls.Add(this.LProducto);
             this.Controls.Add(this.LLocal);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.CProducto);
             this.Controls.Add(this.CLocal);
             this.Controls.Add(this.BBack);
             this.Name = "MakeOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MakeOrder";
             this.Load += new System.EventHandler(this.MakeOrder_Load);
             this.ResumeLayout(false);
@@ -126,10 +160,13 @@
 
         private System.Windows.Forms.Button BBack;
         private System.Windows.Forms.ComboBox CLocal;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CProducto;
         private System.Windows.Forms.Label LLocal;
-        private System.Windows.Forms.Label CProducto;
+        private System.Windows.Forms.Label LProducto;
         private System.Windows.Forms.Button BCredito;
         private System.Windows.Forms.Button BTienda;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox ICantidad;
+        private System.Windows.Forms.Label label2;
     }
 }

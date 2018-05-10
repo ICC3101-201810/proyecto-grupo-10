@@ -89,6 +89,7 @@
             this.RPedido.Text = "Make an Order";
             this.RPedido.UseCompatibleTextRendering = true;
             this.RPedido.UseVisualStyleBackColor = true;
+            this.RPedido.Click += new System.EventHandler(this.RPedido_Click);
             // 
             // ASaldo
             // 
@@ -127,8 +128,12 @@
             this.Bienvenida.Name = "Bienvenida";
             this.Bienvenida.Size = new System.Drawing.Size(63, 13);
             this.Bienvenida.TabIndex = 8;
+<<<<<<< HEAD
             this.Bienvenida.Text = "Bienvenido ";
             this.Bienvenida.Click += new System.EventHandler(this.Bienvenida_Click);
+=======
+            this.Bienvenida.Text = "";
+>>>>>>> 2f53b0e0d6fd55921aa35cf24439d9b3e56c0909
             // 
             // MainAplicacion
             // 

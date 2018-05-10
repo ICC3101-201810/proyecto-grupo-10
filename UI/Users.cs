@@ -54,38 +54,23 @@ namespace UI
             return this.mail + ',' + this.password + ',' + this.nombre + ',' + this.apellido + ',' + this.rut + ',' + this.saldo;
         }
 
-        public bool RealizarPedido(List<Local> locales)
+        public bool RealizarPedido(List<Local> locales, string elige_local, string id, int cantidad, int medioPago)
         {
-            Console.Clear();
-            string elige_local = Console.ReadLine();
             Local local = Metodos.BuscaLocal(elige_local, locales);
             if (local == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Local no existe...");
-                Console.ForegroundColor = ConsoleColor.White;
                 return false;
             }
-            local.ImprimeMenu();
-            Console.Write("Seleccione el ID: ");
-            int id = Convert.ToInt32(Console.ReadLine());
-            Producto comida = Metodos.BuscaProducto(local.GetMenu(), id);
+            List<Producto> Menu_Local = local.GetMenu();
+            Producto comida = Metodos.BuscaProducto(Menu_Local, id);
             if (comida == null)
             {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Producto no encontrado...");
-                Console.ForegroundColor = ConsoleColor.White;
                 return false;
             }
-            Console.Write("Cuant@s: ");
-            int cantidad = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("1.Paga con saldo\n2.Paga en local\nOpcion: ");
             int IDPedido = local.GeneraID();
-            int medioPago = Convert.ToInt32(Console.ReadLine());
             if (medioPago == 1)
             {
-                string pedido = "Pedido numero: " + IDPedido + "Nombre: " + this.GetName() + this.apellido + "Item: " + comida.GetNombre() + "Cantidad: " + cantidad.ToString() + "Monto a pagado: " + (cantidad * comida.GetPrecio()).ToString();
+                string pedido = "Pedido numero: " + IDPedido + "Nombre: " + this.GetName() + this.apellido + "Item: " + comida.GetNombre() + "ID_Item: "+ comida.GetID() + "Cantidad: " + cantidad.ToString() + "Monto a pagado: " + (cantidad * comida.GetPrecio()).ToString();
                 if (comida.GetStock() >= cantidad && comida.GetPrecio() <= this.saldo)
                 {
                     local.RecibePedido(pedido);
@@ -96,7 +81,7 @@ namespace UI
             }
             else
             {
-                string pedido = "Pedido numero: " + IDPedido + "Nombre: " + this.GetName() + this.apellido + "Item: " + comida.GetNombre() + "Cantidad: " + cantidad.ToString() + "Monto a pagar: " + (cantidad * comida.GetPrecio()).ToString();
+                string pedido = "Pedido numero: " + IDPedido + "Nombre: " + this.GetName() + this.apellido + "Item: " + comida.GetNombre() + "ID_Item: " + comida.GetID() + "Cantidad: " + cantidad.ToString() + "Monto a pagar: " + (cantidad * comida.GetPrecio()).ToString();
                 if (comida.GetStock() >= cantidad)
                 {
                     local.RecibePedido(pedido);
