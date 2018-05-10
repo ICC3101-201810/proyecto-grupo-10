@@ -125,9 +125,10 @@
             this.Bienvenida.AutoSize = true;
             this.Bienvenida.Location = new System.Drawing.Point(212, 80);
             this.Bienvenida.Name = "Bienvenida";
-            this.Bienvenida.Size = new System.Drawing.Size(73, 26);
+            this.Bienvenida.Size = new System.Drawing.Size(63, 13);
             this.Bienvenida.TabIndex = 8;
-            this.Bienvenida.Text = "Bienvenido " +AUser.UsuarioA.GetName();
+            this.Bienvenida.Text = "Bienvenido ";
+            this.Bienvenida.Click += new System.EventHandler(this.Bienvenida_Click);
             // 
             // MainAplicacion
             // 

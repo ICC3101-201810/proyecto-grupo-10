@@ -49,6 +49,12 @@
     <Compile Include="AUser.cs" />
     <Compile Include="AdminApp.cs" />
     <Compile Include="AdminLocal.cs" />
+    <Compile Include="MainAdminLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainAdminLocal.Designer.cs">
+      <DependentUpon>MainAdminLocal.cs</DependentUpon>
+    </Compile>
     <Compile Include="MakeOrder.cs">
       <SubType>Form</SubType>
     </Compile>

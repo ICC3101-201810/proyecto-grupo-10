@@ -101,5 +101,9 @@ namespace UI
             
         }
 
+        private void Bienvenida_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
