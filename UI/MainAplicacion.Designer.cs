@@ -35,6 +35,7 @@
             this.RPedido = new System.Windows.Forms.Button();
             this.ASaldo = new System.Windows.Forms.Button();
             this.IBudget = new System.Windows.Forms.TextBox();
+            this.ISaldo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // CSesion
@@ -49,7 +50,7 @@
             // 
             // ANota
             // 
-            this.ANota.Location = new System.Drawing.Point(330, 306);
+            this.ANota.Location = new System.Drawing.Point(330, 259);
             this.ANota.Name = "ANota";
             this.ANota.Size = new System.Drawing.Size(75, 31);
             this.ANota.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             // IPresupuesto
             // 
-            this.IPresupuesto.Location = new System.Drawing.Point(330, 123);
+            this.IPresupuesto.Location = new System.Drawing.Point(330, 126);
             this.IPresupuesto.Name = "IPresupuesto";
             this.IPresupuesto.Size = new System.Drawing.Size(75, 23);
             this.IPresupuesto.TabIndex = 2;
@@ -70,7 +71,7 @@
             // 
             // VLocales
             // 
-            this.VLocales.Location = new System.Drawing.Point(330, 166);
+            this.VLocales.Location = new System.Drawing.Point(330, 155);
             this.VLocales.Name = "VLocales";
             this.VLocales.Size = new System.Drawing.Size(75, 23);
             this.VLocales.TabIndex = 3;
@@ -80,7 +81,7 @@
             // 
             // RPedido
             // 
-            this.RPedido.Location = new System.Drawing.Point(330, 213);
+            this.RPedido.Location = new System.Drawing.Point(330, 184);
             this.RPedido.Name = "RPedido";
             this.RPedido.Size = new System.Drawing.Size(75, 40);
             this.RPedido.TabIndex = 4;
@@ -90,7 +91,7 @@
             // 
             // ASaldo
             // 
-            this.ASaldo.Location = new System.Drawing.Point(330, 259);
+            this.ASaldo.Location = new System.Drawing.Point(330, 230);
             this.ASaldo.Name = "ASaldo";
             this.ASaldo.Size = new System.Drawing.Size(75, 23);
             this.ASaldo.TabIndex = 5;
@@ -101,19 +102,29 @@
             // IBudget
             // 
             this.IBudget.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.IBudget.Location = new System.Drawing.Point(224, 126);
+            this.IBudget.Location = new System.Drawing.Point(215, 126);
             this.IBudget.Name = "IBudget";
-            this.IBudget.Size = new System.Drawing.Size(100, 20);
+            this.IBudget.Size = new System.Drawing.Size(109, 20);
             this.IBudget.TabIndex = 6;
             this.IBudget.Text = "Budget";
             this.IBudget.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IBudget.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // ISaldo
+            // 
+            this.ISaldo.Location = new System.Drawing.Point(215, 233);
+            this.ISaldo.Name = "ISaldo";
+            this.ISaldo.Size = new System.Drawing.Size(109, 20);
+            this.ISaldo.TabIndex = 7;
+            this.ISaldo.Text = "Money";
+            this.ISaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MainAplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ISaldo);
             this.Controls.Add(this.IBudget);
             this.Controls.Add(this.ASaldo);
             this.Controls.Add(this.RPedido);
@@ -123,7 +134,7 @@
             this.Controls.Add(this.CSesion);
             this.Name = "MainAplicacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "Menu";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +149,6 @@
         private System.Windows.Forms.Button RPedido;
         private System.Windows.Forms.Button ASaldo;
         private System.Windows.Forms.TextBox IBudget;
+        private System.Windows.Forms.TextBox ISaldo;
     }
 }

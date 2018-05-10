@@ -34,10 +34,8 @@ namespace UI
             return this.nombre;
         }
 
-        public void Abonar()
+        public void Abonar(int numero)
         {
-            Console.Write("Monto a abonar: ");
-            int numero = Convert.ToInt32(Console.ReadLine());
             saldo += numero;
         }
 

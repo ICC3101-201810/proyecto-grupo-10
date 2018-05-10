@@ -281,6 +281,15 @@ namespace UI
             }
             return null;
         }
+        public static Users BuscaUsuario(List<Users> lista_users, string usuario_mail)
+        {
+            IEnumerable<Users> Lista = lista_users.Where(us => us.GetMail() == usuario_mail);
+            foreach (Users elemento in Lista)
+            {
+                return elemento;
+            }
+            return null;
+        }
 
         public static AdminApp LogInAdminApp(List<AdminApp> lista_users, string usuario_mail, string pass) //verifica al usuario dentro de la lista
         {
@@ -301,89 +310,5 @@ namespace UI
             }
             return null;
         }
-
-        public static string DiferenciaAdmin(Users persona) //podria no ser utilizado
-        {
-            if (persona.GetType().ToString() == "ProyectoVVSS.AdminApp")
-            {
-                return "App";
-            }
-            else if (persona.GetType().ToString() == "ProyectoVVSS.AdminLocal")
-            {
-                return "Local";
-            }
-            return null;
-        }
-
-        public static bool RegistrarAdmin(List<AdminApp> usuarios) //modificar para GUI
-        {
-            Console.Write("Nombre: ");
-            string nombre = Console.ReadLine();
-            Console.Write("\nApellido: ");
-            string apellido = Console.ReadLine();
-            Console.Write("\nCorreo: ");
-            string mail = Console.ReadLine();
-            if (Metodos.VerificaMail(mail) == false)
-            {
-                Console.WriteLine("Correo Invalido...");
-                return false;
-            }
-            Console.Write("\nPassword: ");
-            string pass = Console.ReadLine();
-            Console.Write("\nRut: ");
-            string Rut = Console.ReadLine();
-            AdminApp nuevo = new AdminApp(mail, pass, nombre, apellido, Rut, 0);
-            usuarios.Add(nuevo);
-            Console.Clear();
-            return true;
-        }
-
-        public static bool RegistrarUser(List<Users> usuarios) //modificar para GUI
-        {
-            Console.Write("Nombre: ");
-            string nombre = Console.ReadLine();
-            Console.Write("\nApellido: ");
-            string apellido = Console.ReadLine();
-            Console.Write("\nCorreo: ");
-            string mail = Console.ReadLine();
-            if (Metodos.VerificaMail(mail) == false)
-            {
-                Console.WriteLine("Correo Invalido...");
-                return false;
-            }
-            Console.Write("\nPassword: ");
-            string pass = Console.ReadLine();
-            Console.Write("\nRut: ");
-            string Rut = Console.ReadLine();
-            Users nuevo = new Users(mail, pass, nombre, apellido, Rut, 0);
-            usuarios.Add(nuevo);
-            Console.Clear();
-            return true;
-        }
-
-        public static bool RegistrarAdmin(List<AdminLocal> usuarios) //modificar para GUI
-        {
-            Console.Write("Nombre: ");
-            string nombre = Console.ReadLine();
-            Console.Write("\nApellido: ");
-            string apellido = Console.ReadLine();
-            Console.Write("\nCorreo: ");
-            string mail = Console.ReadLine();
-            if (Metodos.VerificaMail(mail) == false)
-            {
-                Console.WriteLine("Correo Invalido...");
-                return false;
-            }
-            Console.Write("\nPassword: ");
-            string pass = Console.ReadLine();
-            Console.Write("\nRut: ");
-            string Rut = Console.ReadLine();
-            AdminLocal nuevo = new AdminLocal(mail, pass, nombre, apellido, Rut, 0);
-            usuarios.Add(nuevo);
-            Console.Clear();
-            return true;
-        }
-
-
     }
 }

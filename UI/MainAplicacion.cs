@@ -48,7 +48,27 @@ namespace UI
 
         private void ASaldo_Click(object sender, EventArgs e)
         {
-            
+            bool hay_error = false;
+            List<Users> usuarios = Metodos.DeserializarUsers();
+            string mail = AUser.Usuario.GetMail();
+            Users Usuario_Activo = Metodos.BuscaUsuario(usuarios, mail);
+            try
+            {
+                int saldo = Convert.ToInt32(ISaldo.Text);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Ingrese un monto valido\n" + exc.Message, "Error en presupuestacion");
+                hay_error = true;
+            }
+            if (hay_error==false)
+            {
+                int saldo = Convert.ToInt32(ISaldo.Text);
+                Usuario_Activo.Abonar(saldo);
+                MessageBox.Show("Abono realizado con exito!");
+            }
+
+
         }
 
         private void IPresupuesto_Click(object sender, EventArgs e)
