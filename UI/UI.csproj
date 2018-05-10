@@ -101,6 +101,9 @@
     <EmbeddedResource Include="GradesComm.resx">
       <DependentUpon>GradesComm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainAdminLocal.resx">
+      <DependentUpon>MainAdminLocal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainAplicacion.resx">
       <DependentUpon>MainAplicacion.cs</DependentUpon>
     </EmbeddedResource>

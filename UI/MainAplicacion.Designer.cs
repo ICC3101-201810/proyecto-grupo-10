@@ -89,7 +89,7 @@
             this.RPedido.Text = "Make an Order";
             this.RPedido.UseCompatibleTextRendering = true;
             this.RPedido.UseVisualStyleBackColor = true;
-            this.RPedido.Click += new System.EventHandler(this.RPedido_Click);
+
             // 
             // ASaldo
             // 
