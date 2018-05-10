@@ -15,6 +15,7 @@ namespace UI
         public MainAdminLocal()
         {
             InitializeComponent();
+            Bienvenida.Text += "Bienvenido " + AUser.UsuarioA.GetName() + "\nSaldo disponible: $" + AUser.UsuarioA.GetSaldo();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -23,6 +24,11 @@ namespace UI
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainAdminLocal_Load(object sender, EventArgs e)
         {
 
         }

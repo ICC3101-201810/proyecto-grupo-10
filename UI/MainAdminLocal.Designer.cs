@@ -33,11 +33,12 @@
             this.BExit = new System.Windows.Forms.Button();
             this.BCambiarMenu = new System.Windows.Forms.Button();
             this.BCambioHorario = new System.Windows.Forms.Button();
+            this.Bienvenida = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BNuevaOferta
             // 
-            this.BNuevaOferta.Location = new System.Drawing.Point(382, 169);
+            this.BNuevaOferta.Location = new System.Drawing.Point(323, 143);
             this.BNuevaOferta.Name = "BNuevaOferta";
             this.BNuevaOferta.Size = new System.Drawing.Size(97, 23);
             this.BNuevaOferta.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             // BQuitarOferta
             // 
-            this.BQuitarOferta.Location = new System.Drawing.Point(382, 208);
+            this.BQuitarOferta.Location = new System.Drawing.Point(323, 172);
             this.BQuitarOferta.Name = "BQuitarOferta";
             this.BQuitarOferta.Size = new System.Drawing.Size(97, 23);
             this.BQuitarOferta.TabIndex = 1;
@@ -67,7 +68,7 @@
             // 
             // BCambiarMenu
             // 
-            this.BCambiarMenu.Location = new System.Drawing.Point(382, 237);
+            this.BCambiarMenu.Location = new System.Drawing.Point(323, 201);
             this.BCambiarMenu.Name = "BCambiarMenu";
             this.BCambiarMenu.Size = new System.Drawing.Size(97, 23);
             this.BCambiarMenu.TabIndex = 3;
@@ -76,18 +77,27 @@
             // 
             // BCambioHorario
             // 
-            this.BCambioHorario.Location = new System.Drawing.Point(382, 276);
+            this.BCambioHorario.Location = new System.Drawing.Point(323, 230);
             this.BCambioHorario.Name = "BCambioHorario";
-            this.BCambioHorario.Size = new System.Drawing.Size(97, 23);
+            this.BCambioHorario.Size = new System.Drawing.Size(97, 48);
             this.BCambioHorario.TabIndex = 4;
-            this.BCambioHorario.Text = "Change ";
+            this.BCambioHorario.Text = "Change opening and closing hours";
             this.BCambioHorario.UseVisualStyleBackColor = true;
+            // 
+            // Bienvenida
+            // 
+            this.Bienvenida.AutoSize = true;
+            this.Bienvenida.Location = new System.Drawing.Point(320, 103);
+            this.Bienvenida.Name = "Bienvenida";
+            this.Bienvenida.Size = new System.Drawing.Size(0, 13);
+            this.Bienvenida.TabIndex = 5;
             // 
             // MainAdminLocal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Bienvenida);
             this.Controls.Add(this.BCambioHorario);
             this.Controls.Add(this.BCambiarMenu);
             this.Controls.Add(this.BExit);
@@ -95,7 +105,9 @@
             this.Controls.Add(this.BNuevaOferta);
             this.Name = "MainAdminLocal";
             this.Text = "MainAdminLocal";
+            this.Load += new System.EventHandler(this.MainAdminLocal_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -106,5 +118,6 @@
         private System.Windows.Forms.Button BExit;
         private System.Windows.Forms.Button BCambiarMenu;
         private System.Windows.Forms.Button BCambioHorario;
+        private System.Windows.Forms.Label Bienvenida;
     }
 }

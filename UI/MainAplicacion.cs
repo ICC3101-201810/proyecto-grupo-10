@@ -114,5 +114,10 @@ namespace UI
             this.Close();
             a.Show();
         }
+
+        private void MainAplicacion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
