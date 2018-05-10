@@ -48,38 +48,34 @@ namespace UI
 
         private void BEnviar_Click(object sender, EventArgs e)
         {
-            Double Nota = Convert.ToDouble(TNota.Text);
-            string Comentario = TComentario.Text;
-            string lugar = CLocal.SelectedText;
-            List<Local> locales = Metodos.DeserializarLocal();
-            Local selected = Metodos.BuscaLocal(lugar, locales);
-
-
-            if (selected == null)
+            bool hay_error = false;
+            try
             {
-                MessageBox.Show("Seleccione un local");
-                Metodos.SerializarLocal(locales);
+                Double Nota = Convert.ToDouble(TNota.Text);
+                string Comentario = TComentario.Text;
+                string lugar = CLocal.SelectedItem.ToString();
             }
-            else
+            catch
             {
-                RankEventArgs args_nota = new RankEventArgs();
-                args_nota.Lugar = selected;
-                args_nota.Nota = Nota;
-                args_nota.Comment = Comentario;
-                args_nota.Usuario = AUser.UsuarioA;
-                OnRanking(this, args_nota);
+                MessageBox.Show("Hay un campo vacio!", "Error");
+                hay_error = true;
+            }
+
+            if (hay_error == false)
+            {
+                Double Nota = Convert.ToDouble(TNota.Text);
+                string Comentario = TComentario.Text;
+                string lugar = CLocal.SelectedItem.ToString();
+                List<Local> locales = Metodos.DeserializarLocal();
+                Local selected = Metodos.BuscaLocal(lugar, locales);
+                Users aUser = AUser.UsuarioA;
+                aUser.SetNota(selected, Nota, Comentario);
                 Metodos.SerializarLocal(locales);
                 MessageBox.Show("Nota Enviada a " + selected.GetName());
-                
+                this.Hide();
+                MainAplicacion ss = new MainAplicacion();
+                ss.Show();
             }
-
-            
-
-            this.Hide();
-            MainAplicacion ss = new MainAplicacion();
-            ss.Show();
-
-            //este boton recibe nota , comentario y local; hay que meterlos a la app.
         }
 
         private void label1_Click(object sender, EventArgs e)
