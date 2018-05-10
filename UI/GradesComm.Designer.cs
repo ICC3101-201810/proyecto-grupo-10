@@ -130,6 +130,7 @@
             this.Controls.Add(this.TComentario);
             this.Controls.Add(this.TNota);
             this.Name = "GradesComm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GradesComm";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -142,7 +142,7 @@
             this.BRegistrar.Name = "BRegistrar";
             this.BRegistrar.Size = new System.Drawing.Size(100, 23);
             this.BRegistrar.TabIndex = 10;
-            this.BRegistrar.Text = "Sign Up";
+            this.BRegistrar.Text = "Register";
             this.BRegistrar.UseVisualStyleBackColor = true;
             this.BRegistrar.Click += new System.EventHandler(this.BRegistrar_Click);
             // 
@@ -174,6 +174,7 @@
             this.Controls.Add(this.TNombre);
             this.Controls.Add(this.LNombre);
             this.Name = "Registro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.Registro_Load);
             this.ResumeLayout(false);

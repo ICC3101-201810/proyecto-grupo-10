@@ -69,22 +69,41 @@ namespace UI
 
         private void BRegistrar_Click(object sender, EventArgs e)
         {
+            Form1 menu = new Form1();
             string Nombre = TNombre.Text;
             string Apellido = TAppellido.Text;
             string Rut = TRut.Text;
             string Mail = TMail.Text;
-            int Saldo = 0; // (?)
-            this.Hide();
-            Form1 a = new Form1();
-            a.Show();
+            if (Metodos.VerificaMail(Mail)==false)
+            {
+                MessageBox.Show("Ingrese un mail valido", "Error de registro");
+            }
+            string Clave = TClave.Text;
+            int Saldo = 0; //al registrar usuario el saldo por defecto es 0
+            Users NewUser = new Users(Mail, Clave, Nombre, Apellido, Rut, Saldo);
+            List<Users> usuarios = Metodos.DeserializarUsers();
+            foreach (Users persona in usuarios)
+            {
+                if (persona.GetMail()==NewUser.GetMail())
+                {
+                    MessageBox.Show("Usuario ya esta registrado", "Error de registro");
+                    menu.Show();
+                    this.Close();
+                }
+            }
+            usuarios.Add(NewUser);
+            MessageBox.Show("Usuario registrado con exito!");
+            Metodos.SerializarUsers(usuarios);
+            this.Close();
+            menu.Show();
 
         }
 
         private void BAtras_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 a = new Form1();
-            a.Show();
+            this.Close();
+            Form1 menu = new Form1();
+            menu.Show();
 
         }
     }

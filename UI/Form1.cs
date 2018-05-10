@@ -41,6 +41,7 @@ namespace UI
         {
             Registro register = new Registro();
             this.Hide();
+            register.Show();
         }
 
         private void UsuarioCont_TextChanged(object sender, EventArgs e)
