@@ -36,6 +36,7 @@
             this.ASaldo = new System.Windows.Forms.Button();
             this.IBudget = new System.Windows.Forms.TextBox();
             this.ISaldo = new System.Windows.Forms.TextBox();
+            this.Bienvenida = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CSesion
@@ -119,11 +120,21 @@
             this.ISaldo.Text = "Money";
             this.ISaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // Bienvenida
+            // 
+            this.Bienvenida.AutoSize = true;
+            this.Bienvenida.Location = new System.Drawing.Point(212, 80);
+            this.Bienvenida.Name = "Bienvenida";
+            this.Bienvenida.Size = new System.Drawing.Size(73, 26);
+            this.Bienvenida.TabIndex = 8;
+            this.Bienvenida.Text = "Bienvenido " +AUser.UsuarioA.GetName();
+            // 
             // MainAplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Bienvenida);
             this.Controls.Add(this.ISaldo);
             this.Controls.Add(this.IBudget);
             this.Controls.Add(this.ASaldo);
@@ -150,5 +161,6 @@
         private System.Windows.Forms.Button ASaldo;
         private System.Windows.Forms.TextBox IBudget;
         private System.Windows.Forms.TextBox ISaldo;
+        private System.Windows.Forms.Label Bienvenida;
     }
 }

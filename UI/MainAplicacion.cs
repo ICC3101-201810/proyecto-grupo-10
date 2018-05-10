@@ -60,12 +60,14 @@ namespace UI
             {
                 MessageBox.Show("Ingrese un monto valido\n" + exc.Message, "Error en presupuestacion");
                 hay_error = true;
+                Metodos.SerializarUsers(usuarios);
             }
             if (hay_error==false)
             {
                 int saldo = Convert.ToInt32(ISaldo.Text);
                 Usuario_Activo.Abonar(saldo);
                 MessageBox.Show("Abono realizado con exito!");
+                Metodos.SerializarUsers(usuarios);
             }
 
 
@@ -98,5 +100,6 @@ namespace UI
             }
             
         }
+
     }
 }

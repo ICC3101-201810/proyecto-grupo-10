@@ -39,7 +39,6 @@ namespace UI
         }
         public void AddAdmin(List<AdminLocal> admin_local)
         {
-            Metodos.RegistrarAdmin(admin_local);
 
         }
         public void QuitarAdmin()
