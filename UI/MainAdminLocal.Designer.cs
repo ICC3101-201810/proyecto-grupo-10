@@ -28,33 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BNuevaOferta = new System.Windows.Forms.Button();
-            this.BQuitarOferta = new System.Windows.Forms.Button();
+            this.BOferta = new System.Windows.Forms.Button();
             this.BExit = new System.Windows.Forms.Button();
             this.BCambiarMenu = new System.Windows.Forms.Button();
             this.BCambioHorario = new System.Windows.Forms.Button();
             this.Bienvenida = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // BNuevaOferta
+            // BOferta
             // 
-            this.BNuevaOferta.Location = new System.Drawing.Point(323, 143);
-            this.BNuevaOferta.Name = "BNuevaOferta";
-            this.BNuevaOferta.Size = new System.Drawing.Size(97, 23);
-            this.BNuevaOferta.TabIndex = 0;
-            this.BNuevaOferta.Text = "Add Sale";
-            this.BNuevaOferta.UseVisualStyleBackColor = true;
-            this.BNuevaOferta.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // BQuitarOferta
-            // 
-            this.BQuitarOferta.Location = new System.Drawing.Point(323, 172);
-            this.BQuitarOferta.Name = "BQuitarOferta";
-            this.BQuitarOferta.Size = new System.Drawing.Size(97, 23);
-            this.BQuitarOferta.TabIndex = 1;
-            this.BQuitarOferta.Text = "Remove Sale";
-            this.BQuitarOferta.UseCompatibleTextRendering = true;
-            this.BQuitarOferta.UseVisualStyleBackColor = true;
+            this.BOferta.Location = new System.Drawing.Point(323, 172);
+            this.BOferta.Name = "BOferta";
+            this.BOferta.Size = new System.Drawing.Size(97, 23);
+            this.BOferta.TabIndex = 0;
+            this.BOferta.Text = "Set Sales";
+            this.BOferta.UseVisualStyleBackColor = true;
+            this.BOferta.Click += new System.EventHandler(this.button1_Click);
             // 
             // BExit
             // 
@@ -101,9 +90,9 @@
             this.Controls.Add(this.BCambioHorario);
             this.Controls.Add(this.BCambiarMenu);
             this.Controls.Add(this.BExit);
-            this.Controls.Add(this.BQuitarOferta);
-            this.Controls.Add(this.BNuevaOferta);
+            this.Controls.Add(this.BOferta);
             this.Name = "MainAdminLocal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainAdminLocal";
             this.Load += new System.EventHandler(this.MainAdminLocal_Load);
             this.ResumeLayout(false);
@@ -113,8 +102,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button BNuevaOferta;
-        private System.Windows.Forms.Button BQuitarOferta;
+        private System.Windows.Forms.Button BOferta;
         private System.Windows.Forms.Button BExit;
         private System.Windows.Forms.Button BCambiarMenu;
         private System.Windows.Forms.Button BCambioHorario;

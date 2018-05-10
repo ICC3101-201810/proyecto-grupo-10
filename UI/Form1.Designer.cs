@@ -35,6 +35,7 @@
             this.NewUser = new System.Windows.Forms.Button();
             this.Loginboton = new System.Windows.Forms.Button();
             this.BLoginAdmin = new System.Windows.Forms.Button();
+            this.BAdminApp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usersLabel
@@ -58,6 +59,7 @@
             // UsuarioIng
             // 
             this.UsuarioIng.BackColor = System.Drawing.SystemColors.Control;
+            this.UsuarioIng.ForeColor = System.Drawing.SystemColors.InfoText;
             this.UsuarioIng.Location = new System.Drawing.Point(199, 30);
             this.UsuarioIng.Name = "UsuarioIng";
             this.UsuarioIng.Size = new System.Drawing.Size(157, 20);
@@ -67,10 +69,12 @@
             // UsuarioCont
             // 
             this.UsuarioCont.BackColor = System.Drawing.SystemColors.Control;
+            this.UsuarioCont.ForeColor = System.Drawing.SystemColors.InfoText;
             this.UsuarioCont.Location = new System.Drawing.Point(199, 56);
             this.UsuarioCont.Name = "UsuarioCont";
             this.UsuarioCont.Size = new System.Drawing.Size(157, 20);
             this.UsuarioCont.TabIndex = 4;
+            this.UsuarioCont.UseSystemPasswordChar = true;
             this.UsuarioCont.TextChanged += new System.EventHandler(this.UsuarioCont_TextChanged);
             // 
             // NewUser
@@ -106,12 +110,23 @@
             this.BLoginAdmin.UseVisualStyleBackColor = false;
             this.BLoginAdmin.Click += new System.EventHandler(this.BLoginAdmin_Click);
             // 
+            // BAdminApp
+            // 
+            this.BAdminApp.BackColor = System.Drawing.SystemColors.Control;
+            this.BAdminApp.Location = new System.Drawing.Point(199, 191);
+            this.BAdminApp.Name = "BAdminApp";
+            this.BAdminApp.Size = new System.Drawing.Size(100, 28);
+            this.BAdminApp.TabIndex = 8;
+            this.BAdminApp.Text = " Admin App Log In ";
+            this.BAdminApp.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(534, 311);
+            this.Controls.Add(this.BAdminApp);
             this.Controls.Add(this.BLoginAdmin);
             this.Controls.Add(this.Loginboton);
             this.Controls.Add(this.NewUser);
@@ -123,6 +138,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,6 +152,7 @@
         private System.Windows.Forms.Button NewUser;
         private System.Windows.Forms.Button Loginboton;
         private System.Windows.Forms.Button BLoginAdmin;
+        private System.Windows.Forms.Button BAdminApp;
     }
 }
 
