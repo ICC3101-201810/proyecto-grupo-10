@@ -40,7 +40,6 @@ namespace UI
         private void NewUser_Click(object sender, EventArgs e)
         {
             Registro register = new Registro();
-            this.Hide();
             register.Show();
         }
 
@@ -66,6 +65,7 @@ namespace UI
                 
                 LogInEventArgs inicia = new LogInEventArgs();
                 inicia.Usuario = LogInUser;
+                AUser.Usuario = LogInUser;
                 OnLogIn(this, inicia);
 
                 this.Hide();

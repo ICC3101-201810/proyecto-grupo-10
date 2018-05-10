@@ -38,8 +38,6 @@ namespace UI
         {
             string mensaje = "";
             List<Local> locales = Metodos.DeserializarLocal();
-            Producto cafe_grande = new Producto("Cafe Grande", 1200, 25, 1);
-            Producto cafe_chico = new Producto("Cafe Chico", 890, 25, 2);
             foreach (Local lugar in locales)
             {
                 mensaje += lugar.GetName() + ", Promedio: " +lugar.PromedioRanking(lugar.GetRank()) + "\n";
@@ -55,16 +53,30 @@ namespace UI
 
         private void IPresupuesto_Click(object sender, EventArgs e)
         {
-            int budget = Convert.ToInt32(IBudget.Text);
-            List<Local> locales = Metodos.DeserializarLocal();
-            Users Uactual = AUser.UsuarioA;
-            List<Producto> Opciones = Uactual.Presupuestar(locales, budget);
-            string mensaje = "";
-            foreach (Producto item in Opciones)
+            bool hay_error = false;
+            try
             {
-                mensaje += "Producto: " + item.GetNombre() + " Precio: " + item.GetPrecio() + "\n"; 
+                int budget = Convert.ToInt32(IBudget.Text);
             }
-            MessageBox.Show(mensaje, "Productos Disponibles");
+            catch(Exception exc)
+            {
+                MessageBox.Show("Ingrese un monto valido\n" + exc.Message, "Error en presupuestacion");
+                hay_error = true;
+            }
+            if (hay_error==false)
+            {
+                int budget_2 = Convert.ToInt32(IBudget.Text);
+                List<Local> locales = Metodos.DeserializarLocal();
+                Users Uactual = AUser.UsuarioA;
+                List<Producto> Opciones = Uactual.Presupuestar(locales, budget_2);
+                string mensaje = "";
+                foreach (Producto item in Opciones)
+                {
+                    mensaje += "Producto: " + item.GetNombre() + " Precio: " + item.GetPrecio() + "\n";
+                }
+                MessageBox.Show(mensaje, "Productos Disponibles");
+            }
+            
         }
     }
 }

@@ -19,7 +19,6 @@ namespace UI
         private void Menu_LogIn(object sender, LogInEventArgs e )
         {
             ActiveUser = e.Usuario;
-            AUser.UsuarioA = ActiveUser;
             MainAplicacion menu = new MainAplicacion();
             menu.Show();
             form_login.Enabled = false;
