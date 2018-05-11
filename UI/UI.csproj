@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStore.Designer.cs">
+      <DependentUpon>AddStore.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangeMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,12 @@
     </Compile>
     <Compile Include="MainAdminApp.Designer.cs">
       <DependentUpon>MainAdminApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReplaceAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReplaceAdmin.Designer.cs">
+      <DependentUpon>ReplaceAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="SetSales.cs">
       <SubType>Form</SubType>

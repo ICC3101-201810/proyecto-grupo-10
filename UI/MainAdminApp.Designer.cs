@@ -55,6 +55,7 @@
             this.BAddStores.TabIndex = 1;
             this.BAddStores.Text = "Add Stores";
             this.BAddStores.UseVisualStyleBackColor = true;
+            this.BAddStores.Click += new System.EventHandler(this.BAddStores_Click);
             // 
             // BRemoveStores
             // 
@@ -74,6 +75,7 @@
             this.BReplaceAdmin.TabIndex = 3;
             this.BReplaceAdmin.Text = "Replace Local Admin";
             this.BReplaceAdmin.UseVisualStyleBackColor = true;
+            this.BReplaceAdmin.Click += new System.EventHandler(this.BReplaceAdmin_Click);
             // 
             // BExit
             // 

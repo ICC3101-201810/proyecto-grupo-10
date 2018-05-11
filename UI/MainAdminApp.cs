@@ -31,5 +31,17 @@ namespace UI
         {
             string Local = CStore.SelectedItem.ToString();
         }
+
+        private void BAddStores_Click(object sender, EventArgs e)
+        {
+            AddStore a = new AddStore();
+            a.Show();
+        }
+
+        private void BReplaceAdmin_Click(object sender, EventArgs e)
+        {
+            ReplaceAdmin a = new ReplaceAdmin();
+            a.Show();
+        }
     }
 }
