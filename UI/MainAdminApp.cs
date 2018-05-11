@@ -43,5 +43,10 @@ namespace UI
             ReplaceAdmin a = new ReplaceAdmin();
             a.Show();
         }
+
+        private void MainAdminApp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

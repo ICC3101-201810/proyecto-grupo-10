@@ -135,6 +135,9 @@
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
     <Compile Include="Users.cs" />
+    <EmbeddedResource Include="AddStore.resx">
+      <DependentUpon>AddStore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeMenu.resx">
       <DependentUpon>ChangeMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainAdminApp.resx">
       <DependentUpon>MainAdminApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReplaceAdmin.resx">
+      <DependentUpon>ReplaceAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SetSales.resx">
       <DependentUpon>SetSales.cs</DependentUpon>

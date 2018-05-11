@@ -116,7 +116,9 @@
             this.Controls.Add(this.BAddStores);
             this.Controls.Add(this.BRemoveUser);
             this.Name = "MainAdminApp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MainAdminApp";
+            this.Load += new System.EventHandler(this.MainAdminApp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
