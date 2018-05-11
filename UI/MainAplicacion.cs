@@ -15,6 +15,7 @@ namespace UI
         public MainAplicacion()
         {
             InitializeComponent();
+            Bienvenida.Text += "Bienvenido " + AUser.UsuarioA.GetName() + "\nSaldo disponible: $" + AUser.UsuarioA.GetSaldo();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -101,5 +102,11 @@ namespace UI
             
         }
 
+        private void RPedido_Click(object sender, EventArgs e)
+        {
+            MakeOrder a = new MakeOrder();
+            this.Close();
+            a.Show();
+        }
     }
 }
