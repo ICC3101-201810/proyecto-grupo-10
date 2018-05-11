@@ -34,8 +34,8 @@
             this.BRemoveStores = new System.Windows.Forms.Button();
             this.BReplaceAdmin = new System.Windows.Forms.Button();
             this.BExit = new System.Windows.Forms.Button();
-            this.TMail = new System.Windows.Forms.TextBox();
             this.CStore = new System.Windows.Forms.ComboBox();
+            this.CMail = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // BRemoveUser
@@ -93,14 +93,6 @@
             this.BExit.UseVisualStyleBackColor = true;
             this.BExit.Click += new System.EventHandler(this.BExit_Click);
             // 
-            // TMail
-            // 
-            this.TMail.Location = new System.Drawing.Point(199, 195);
-            this.TMail.Name = "TMail";
-            this.TMail.Size = new System.Drawing.Size(132, 20);
-            this.TMail.TabIndex = 5;
-            this.TMail.Text = "Mail of User to Remove:";
-            // 
             // CStore
             // 
             this.CStore.FormattingEnabled = true;
@@ -108,6 +100,16 @@
             this.CStore.Name = "CStore";
             this.CStore.Size = new System.Drawing.Size(132, 21);
             this.CStore.TabIndex = 6;
+            this.CStore.Text = "Store to remove";
+            // 
+            // CMail
+            // 
+            this.CMail.FormattingEnabled = true;
+            this.CMail.Location = new System.Drawing.Point(199, 194);
+            this.CMail.Name = "CMail";
+            this.CMail.Size = new System.Drawing.Size(132, 21);
+            this.CMail.TabIndex = 7;
+            this.CMail.Text = "User to remove";
             // 
             // MainAdminApp
             // 
@@ -115,8 +117,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CMail);
             this.Controls.Add(this.CStore);
-            this.Controls.Add(this.TMail);
             this.Controls.Add(this.BExit);
             this.Controls.Add(this.BReplaceAdmin);
             this.Controls.Add(this.BRemoveStores);
@@ -128,7 +130,6 @@
             this.Text = "g";
             this.Load += new System.EventHandler(this.MainAdminApp_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -139,7 +140,7 @@
         private System.Windows.Forms.Button BRemoveStores;
         private System.Windows.Forms.Button BReplaceAdmin;
         private System.Windows.Forms.Button BExit;
-        private System.Windows.Forms.TextBox TMail;
         private System.Windows.Forms.ComboBox CStore;
+        private System.Windows.Forms.ComboBox CMail;
     }
 }

@@ -15,6 +15,18 @@ namespace UI
         public MainAdminApp()
         {
             InitializeComponent();
+            CStore.Items.Clear();
+            CMail.Items.Clear();
+            List<Users> usuarios = Metodos.DeserializarUsers();
+            List<Local> locales = Metodos.DeserializarLocal();
+            foreach (Local item in locales)
+            {
+                CStore.Items.Add(item.GetName());
+            }
+            foreach (Users item in usuarios)
+            {
+                CMail.Items.Add(item.GetMail());
+            }
         }
 
         private void BExit_Click(object sender, EventArgs e)
@@ -24,12 +36,38 @@ namespace UI
 
         private void BRemoveUser_Click(object sender, EventArgs e)
         {
-            string Mail = TMail.Text;
+            bool hay_error = false;
+            try
+            {
+                string mail = CMail.SelectedItem.ToString();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error al remover usuario!\n" + exc.Message, "Error");
+                hay_error = true;
+            }
+            if (hay_error==false)
+            {
+
+            }
         }
 
         private void BRemoveStores_Click(object sender, EventArgs e)
         {
-            string Local = CStore.SelectedItem.ToString();
+            bool hay_error = false;
+            try
+            {
+                string Local = CStore.SelectedItem.ToString();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error al remover local!\n" + exc.Message, "Error");
+                hay_error = true;
+            }
+            if (hay_error==false)
+            {
+
+            }
         }
 
         private void BAddStores_Click(object sender, EventArgs e)
