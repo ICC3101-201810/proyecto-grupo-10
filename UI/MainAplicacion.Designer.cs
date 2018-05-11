@@ -44,7 +44,7 @@
             // 
             // CSesion
             // 
-            this.CSesion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.CSesion.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.CSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CSesion.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CSesion.Location = new System.Drawing.Point(151, 263);
@@ -57,7 +57,7 @@
             // 
             // ANota
             // 
-            this.ANota.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ANota.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.ANota.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ANota.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ANota.Location = new System.Drawing.Point(151, 217);
@@ -72,7 +72,7 @@
             // IPresupuesto
             // 
             this.IPresupuesto.BackColor = System.Drawing.Color.Transparent;
-            this.IPresupuesto.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.IPresupuesto.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.IPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.IPresupuesto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.IPresupuesto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -86,7 +86,7 @@
             // 
             // VLocales
             // 
-            this.VLocales.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.VLocales.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.VLocales.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.VLocales.ForeColor = System.Drawing.SystemColors.ControlText;
             this.VLocales.Location = new System.Drawing.Point(151, 113);
@@ -99,7 +99,7 @@
             // 
             // RPedido
             // 
-            this.RPedido.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.RPedido.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.RPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RPedido.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RPedido.Location = new System.Drawing.Point(151, 142);
@@ -113,7 +113,7 @@
             // 
             // ASaldo
             // 
-            this.ASaldo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ASaldo.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.ASaldo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ASaldo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ASaldo.Location = new System.Drawing.Point(151, 188);
