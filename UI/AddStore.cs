@@ -16,5 +16,20 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string Nombre = TName.Text;
+            string Rut = TRut.Text;
+            int HOpen = Convert.ToInt32(TOpening.Text);
+            int HClose = Convert.ToInt32(TClosing.Text);
+
+            this.Hide();
+        }
+
+        private void BBack_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
