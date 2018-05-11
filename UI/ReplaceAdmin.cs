@@ -16,5 +16,16 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void BReplace_Click(object sender, EventArgs e)
+        {
+            string OldMail = TOld.Text;
+            string NewMail = TNew.Text;
+        }
+
+        private void BBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

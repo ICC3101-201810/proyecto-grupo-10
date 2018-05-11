@@ -43,7 +43,7 @@
             // 
             // BBack
             // 
-            this.BBack.Location = new System.Drawing.Point(713, 415);
+            this.BBack.Location = new System.Drawing.Point(12, 204);
             this.BBack.Name = "BBack";
             this.BBack.Size = new System.Drawing.Size(75, 23);
             this.BBack.TabIndex = 0;
@@ -54,7 +54,7 @@
             // LName
             // 
             this.LName.AutoSize = true;
-            this.LName.Location = new System.Drawing.Point(270, 80);
+            this.LName.Location = new System.Drawing.Point(9, 5);
             this.LName.Name = "LName";
             this.LName.Size = new System.Drawing.Size(38, 13);
             this.LName.TabIndex = 1;
@@ -62,14 +62,14 @@
             // 
             // TName
             // 
-            this.TName.Location = new System.Drawing.Point(273, 96);
+            this.TName.Location = new System.Drawing.Point(12, 21);
             this.TName.Name = "TName";
             this.TName.Size = new System.Drawing.Size(100, 20);
             this.TName.TabIndex = 2;
             // 
             // TRut
             // 
-            this.TRut.Location = new System.Drawing.Point(273, 135);
+            this.TRut.Location = new System.Drawing.Point(12, 60);
             this.TRut.Name = "TRut";
             this.TRut.Size = new System.Drawing.Size(100, 20);
             this.TRut.TabIndex = 4;
@@ -77,7 +77,7 @@
             // LRut
             // 
             this.LRut.AutoSize = true;
-            this.LRut.Location = new System.Drawing.Point(270, 119);
+            this.LRut.Location = new System.Drawing.Point(9, 44);
             this.LRut.Name = "LRut";
             this.LRut.Size = new System.Drawing.Size(27, 13);
             this.LRut.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             this.LOpening.AutoSize = true;
             this.LOpening.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.LOpening.Location = new System.Drawing.Point(270, 163);
+            this.LOpening.Location = new System.Drawing.Point(9, 88);
             this.LOpening.Name = "LOpening";
             this.LOpening.Size = new System.Drawing.Size(76, 13);
             this.LOpening.TabIndex = 5;
@@ -95,14 +95,14 @@
             // 
             // TOpening
             // 
-            this.TOpening.Location = new System.Drawing.Point(273, 179);
+            this.TOpening.Location = new System.Drawing.Point(12, 104);
             this.TOpening.Name = "TOpening";
             this.TOpening.Size = new System.Drawing.Size(100, 20);
             this.TOpening.TabIndex = 6;
             // 
             // TClosing
             // 
-            this.TClosing.Location = new System.Drawing.Point(273, 224);
+            this.TClosing.Location = new System.Drawing.Point(12, 149);
             this.TClosing.Name = "TClosing";
             this.TClosing.Size = new System.Drawing.Size(100, 20);
             this.TClosing.TabIndex = 8;
@@ -110,7 +110,7 @@
             // LClosing
             // 
             this.LClosing.AutoSize = true;
-            this.LClosing.Location = new System.Drawing.Point(270, 207);
+            this.LClosing.Location = new System.Drawing.Point(9, 132);
             this.LClosing.Name = "LClosing";
             this.LClosing.Size = new System.Drawing.Size(70, 13);
             this.LClosing.TabIndex = 7;
@@ -118,7 +118,7 @@
             // 
             // BAddStore
             // 
-            this.BAddStore.Location = new System.Drawing.Point(273, 250);
+            this.BAddStore.Location = new System.Drawing.Point(12, 175);
             this.BAddStore.Name = "BAddStore";
             this.BAddStore.Size = new System.Drawing.Size(75, 23);
             this.BAddStore.TabIndex = 9;
@@ -131,7 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(124, 261);
             this.Controls.Add(this.BAddStore);
             this.Controls.Add(this.TClosing);
             this.Controls.Add(this.LClosing);
