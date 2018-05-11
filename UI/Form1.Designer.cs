@@ -36,6 +36,7 @@
             this.Loginboton = new System.Windows.Forms.Button();
             this.BLoginAdmin = new System.Windows.Forms.Button();
             this.BAdminApp = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usersLabel
@@ -120,12 +121,24 @@
             this.BAdminApp.Text = " Admin App Log In ";
             this.BAdminApp.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(422, 256);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(534, 311);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BAdminApp);
             this.Controls.Add(this.BLoginAdmin);
             this.Controls.Add(this.Loginboton);
@@ -153,6 +166,7 @@
         private System.Windows.Forms.Button Loginboton;
         private System.Windows.Forms.Button BLoginAdmin;
         private System.Windows.Forms.Button BAdminApp;
+        private System.Windows.Forms.Button button1;
     }
 }
 
