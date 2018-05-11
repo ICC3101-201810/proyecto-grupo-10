@@ -85,21 +85,6 @@ namespace ProyectoVVSS
             Match m = r.Match(correo);
             return m.Success;
         }
-
-        public static string GetDirectorio(string archivo) //obtiene el path del repositorio
-        {
-            string path_i = Directory.GetCurrentDirectory();
-            string algo = @"bin\Debug\netcoreapp2.0";
-            string path = "";
-            int largo = (int)path_i.Length - 1;
-            for (int i = 0; i <= largo - algo.Length; i++)
-            {
-                path += path_i[i];
-            }
-            path += archivo;
-            return path;
-        }
-
         /**************************************************/
         /*        Presistencia de la Informacion          */
         /**************************************************/
@@ -107,7 +92,7 @@ namespace ProyectoVVSS
         {
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("locales.bin"), FileMode.Create))
+                using (Stream stream = File.Open(@"..\locales.bin", FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, lista_locales);
@@ -124,7 +109,7 @@ namespace ProyectoVVSS
             List<Local> locales;
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("locales.bin"), FileMode.Open))
+                using (Stream stream = File.Open(@"..\locales.bin", FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
 
@@ -143,7 +128,7 @@ namespace ProyectoVVSS
         {
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("admin_app.bin"), FileMode.Create))
+                using (Stream stream = File.Open(@"..\admin_app.bin", FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, usuarios);
@@ -160,7 +145,7 @@ namespace ProyectoVVSS
             List<AdminApp> usuarios;
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("admin_app.bin"), FileMode.Open))
+                using (Stream stream = File.Open(@"..\admin_app.bin", FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
 
@@ -179,7 +164,7 @@ namespace ProyectoVVSS
         {
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("admin_local.bin"), FileMode.Create))
+                using (Stream stream = File.Open(@"..\admin_local.bin", FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, usuarios);
@@ -196,7 +181,7 @@ namespace ProyectoVVSS
             List<AdminLocal> usuarios;
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("admin_local.bin"), FileMode.Open))
+                using (Stream stream = File.Open(@"..\admin_local.bin", FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
 
@@ -216,7 +201,7 @@ namespace ProyectoVVSS
         {
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("users.bin"), FileMode.Create))
+                using (Stream stream = File.Open(@"..\users.bin", FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, usuarios);
@@ -232,7 +217,7 @@ namespace ProyectoVVSS
             List<Users> usuarios;
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("users.bin"), FileMode.Open))
+                using (Stream stream = File.Open(@"..\users.bin", FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
 
@@ -266,7 +251,7 @@ namespace ProyectoVVSS
         {
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("log.bin"), FileMode.Create))
+                using (Stream stream = File.Open(@"..\log.bin", FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, log);
@@ -284,7 +269,7 @@ namespace ProyectoVVSS
             List<string> log;
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("log.bin"), FileMode.Open))
+                using (Stream stream = File.Open(@"..\log.bin", FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
 

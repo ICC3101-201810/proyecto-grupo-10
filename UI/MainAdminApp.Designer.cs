@@ -126,8 +126,8 @@
             this.Controls.Add(this.BRemoveUser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainAdminApp";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "g";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MenuAdminApp";
             this.Load += new System.EventHandler(this.MainAdminApp_Load);
             this.ResumeLayout(false);
 

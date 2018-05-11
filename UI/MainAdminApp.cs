@@ -46,8 +46,20 @@ namespace UI
                 MessageBox.Show("Error al remover usuario!\n" + exc.Message, "Error");
                 hay_error = true;
             }
-            if (hay_error==false)
+            if (hay_error == false)
             {
+                string mail = CMail.SelectedItem.ToString();
+                List<Users> usuarios = Metodos.DeserializarUsers();
+                AdminApp adminActivo = AUser.AdminAppA;
+                adminActivo.QuitarUser(usuarios, mail);
+                MessageBox.Show("Usuario removido con exito!");
+                CMail.Items.Clear();
+                foreach (Users item in usuarios)
+                {
+                    CMail.Items.Add(item.GetMail());
+                }
+                Metodos.SerializarUsers(usuarios);
+
 
             }
         }
@@ -66,6 +78,19 @@ namespace UI
             }
             if (hay_error==false)
             {
+                string Local = CStore.SelectedItem.ToString();
+                List<Local> locales = Metodos.DeserializarLocal();
+                Local ARemover = Metodos.BuscaLocal(Local, locales);
+                AdminApp adminActivo = AUser.AdminAppA;
+                adminActivo.QuitarLocal(locales, Local);
+                MessageBox.Show("Local removido con exito!");
+                CStore.Items.Clear();
+                foreach (Local item in locales)
+                {
+                    CStore.Items.Add(item.GetName());
+                }
+                Metodos.SerializarLocal(locales);
+
 
             }
         }

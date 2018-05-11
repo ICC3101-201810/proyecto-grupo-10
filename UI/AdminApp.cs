@@ -30,10 +30,8 @@ namespace UI
             Local seAgrega = new Local(nombre_local, rut_local, Abre, Cierra);
             locales.Add(seAgrega);
         }
-        public void QuitarLocal(List<Local> locales)
+        public void QuitarLocal(List<Local> locales, string nombre)
         {
-            Console.Write("Nombre del local: ");
-            string nombre = Console.ReadLine();
             Local aQuitar = Metodos.BuscaLocal(nombre, locales);
             locales.Remove(aQuitar);
         }
@@ -46,6 +44,10 @@ namespace UI
 
         }
 
-
+        public void QuitarUser(List<Users> usuarios, string mail)
+        {
+            Users aQuitar = Metodos.BuscaUsuario(usuarios, mail);
+            usuarios.Remove(aQuitar);
+        }
     }
 }
