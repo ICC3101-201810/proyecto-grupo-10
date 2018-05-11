@@ -25,7 +25,7 @@ namespace UI
         private void BBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainAdminLocal a = new MainAdminLocal;
+            MainAdminLocal a = new MainAdminLocal();
             a.Show();
         }
 
@@ -45,6 +45,11 @@ namespace UI
             this.Hide();
             MainAdminLocal a = new MainAdminLocal();
             a.Show();
+        }
+
+        private void ChangeMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

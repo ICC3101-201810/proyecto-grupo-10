@@ -96,9 +96,10 @@
             // LRemover
             // 
             this.LRemover.AutoSize = true;
+            this.LRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LRemover.Location = new System.Drawing.Point(337, 148);
             this.LRemover.Name = "LRemover";
-            this.LRemover.Size = new System.Drawing.Size(106, 13);
+            this.LRemover.Size = new System.Drawing.Size(132, 16);
             this.LRemover.TabIndex = 9;
             this.LRemover.Text = "To Remove Product:";
             this.LRemover.Click += new System.EventHandler(this.label1_Click);
@@ -126,9 +127,10 @@
             // LAdd
             // 
             this.LAdd.AutoSize = true;
+            this.LAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LAdd.Location = new System.Drawing.Point(486, 148);
             this.LAdd.Name = "LAdd";
-            this.LAdd.Size = new System.Drawing.Size(85, 13);
+            this.LAdd.Size = new System.Drawing.Size(105, 16);
             this.LAdd.TabIndex = 13;
             this.LAdd.Text = "To Add Product:";
             // 
@@ -224,6 +226,7 @@
             this.Controls.Add(this.BBack);
             this.Name = "ChangeMenu";
             this.Text = "ChangeMenu";
+            this.Load += new System.EventHandler(this.ChangeMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

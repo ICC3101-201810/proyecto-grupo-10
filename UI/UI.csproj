@@ -52,6 +52,12 @@
     <Compile Include="ChangeMenu.Designer.cs">
       <DependentUpon>ChangeMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hours.Designer.cs">
+      <DependentUpon>Hours.cs</DependentUpon>
+    </Compile>
     <Compile Include="SetSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     <Compile Include="Users.cs" />
     <EmbeddedResource Include="ChangeMenu.resx">
       <DependentUpon>ChangeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hours.resx">
+      <DependentUpon>Hours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SetSales.resx">
       <DependentUpon>SetSales.cs</DependentUpon>
