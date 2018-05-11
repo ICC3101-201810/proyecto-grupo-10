@@ -20,7 +20,9 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            SetSales sales = new SetSales();
+            this.Close();
+            sales.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
