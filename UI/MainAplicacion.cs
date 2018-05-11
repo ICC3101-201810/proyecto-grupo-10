@@ -70,6 +70,7 @@ namespace UI
                 MessageBox.Show("Abono realizado con exito!");
                 Metodos.SerializarUsers(usuarios);
                 ISaldo.Text = "";
+
             }
 
 
@@ -101,7 +102,7 @@ namespace UI
                 MessageBox.Show(mensaje, "Productos Disponibles");
                 IBudget.Text = "";
             }
-            
+
         }
 
 
