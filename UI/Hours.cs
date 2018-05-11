@@ -25,5 +25,10 @@ namespace UI
             MainAdminLocal a = new MainAdminLocal();
             a.Show();
         }
+
+        private void BBack_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

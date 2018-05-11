@@ -90,6 +90,7 @@
             this.BBack.TabIndex = 5;
             this.BBack.Text = "Back";
             this.BBack.UseVisualStyleBackColor = true;
+            this.BBack.Click += new System.EventHandler(this.BBack_Click);
             // 
             // Hours
             // 
@@ -103,6 +104,7 @@
             this.Controls.Add(this.LAbrir);
             this.Controls.Add(this.TAbrir);
             this.Name = "Hours";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hours";
             this.ResumeLayout(false);
             this.PerformLayout();
