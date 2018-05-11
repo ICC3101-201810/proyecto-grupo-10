@@ -24,7 +24,7 @@ namespace UI
 
         private void BBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             MainAdminLocal a = new MainAdminLocal();
             a.Show();
         }
@@ -57,7 +57,7 @@ namespace UI
                 adminLocal.AgregarAlMenu(lugar, Nombre, Precio, Stock);
                 Metodos.SerializarLocal(locales);
                 MessageBox.Show("Producto agregado con exito!");
-                this.Hide();
+                this.Close();
                 MainAdminLocal a = new MainAdminLocal();
                 a.Show();
             }

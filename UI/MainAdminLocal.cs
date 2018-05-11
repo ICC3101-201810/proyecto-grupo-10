@@ -30,5 +30,11 @@ namespace UI
             Application.Exit();
         }
 
+        private void BCambioHorario_Click(object sender, EventArgs e)
+        {
+            Hours hora = new Hours();
+            this.Close();
+            hora.Show();
+        }
     }
 }

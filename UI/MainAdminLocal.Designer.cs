@@ -77,6 +77,7 @@
             this.BCambioHorario.TabIndex = 4;
             this.BCambioHorario.Text = "Change opening and closing hours";
             this.BCambioHorario.UseVisualStyleBackColor = true;
+            this.BCambioHorario.Click += new System.EventHandler(this.BCambioHorario_Click);
             // 
             // Bienvenida
             // 

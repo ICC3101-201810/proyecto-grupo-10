@@ -13,7 +13,7 @@ namespace UI
         string rut;
         List<Ranking> comentarios;
         public List<Producto> menu;
-        List<DateTime> horario;
+        public List<DateTime> horario;
         List<string> pedidos;
         public List<Producto> ofertas;
         public Local(string Nombre, string Rut, DateTime abre, DateTime cierra)
@@ -39,7 +39,6 @@ namespace UI
         }
         public void ImprimeMenu()
         {
-            Console.WriteLine("Producto\t\tPrecio\t\tID");
             foreach (Producto item in this.menu)
             {
                 Console.WriteLine(item.GetNombre().ToUpper() + "\t\t" + item.GetPrecio().ToString() + "\t\t" + item.GetID());
