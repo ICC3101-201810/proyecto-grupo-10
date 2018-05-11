@@ -102,17 +102,17 @@ namespace UI
             
         }
 
-<<<<<<< HEAD
+
         private void Bienvenida_Click(object sender, EventArgs e)
         {
 
-=======
+        }
+
         private void RPedido_Click(object sender, EventArgs e)
         {
             MakeOrder a = new MakeOrder();
             this.Close();
             a.Show();
->>>>>>> 2f53b0e0d6fd55921aa35cf24439d9b3e56c0909
         }
     }
 }
