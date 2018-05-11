@@ -332,19 +332,6 @@ namespace ProyectoVVSS
             return null;
         }
 
-        public static string DiferenciaAdmin(Users persona) //podria no ser utilizado
-        {
-            if(persona.GetType().ToString() == "ProyectoVVSS.AdminApp")
-            {
-                return "App";
-            }
-            else if (persona.GetType().ToString()== "ProyectoVVSS.AdminLocal")
-            {
-                return "Local";
-            }
-            return null;
-        }
-
         public static bool RegistrarAdmin(List<AdminApp> usuarios) //modificar para GUI
         {
             Console.Write("Nombre: ");

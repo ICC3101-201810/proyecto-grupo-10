@@ -31,13 +31,37 @@ namespace UI
 
         private void BAdd_Click(object sender, EventArgs e)
         {
-            string Nombre = TNombre.Text;
-            string Precio = TPrecio.Text;
-            int Stock = Int32.Parse(TStock.Text);
-            int Id = Int32.Parse(TId.Text);
-            this.Hide();
-            MainAdminLocal a = new MainAdminLocal();
-            a.Show();
+            bool hay_error = false;
+            try
+            {
+                string Nombre = TNombre.Text;
+                string Precio = TPrecio.Text;
+                int Stock = Int32.Parse(TStock.Text);
+                int Id = Int32.Parse(TId.Text);
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show("Error al agregar producto\n" + exc.Message, "Error");
+                hay_error = true;
+            }
+            if (hay_error==false)
+            {
+                string local = CLocal.SelectedItem.ToString();
+                List<Local> locales = Metodos.DeserializarLocal();
+                Local lugar = Metodos.BuscaLocal(local, locales);
+                string Nombre = TNombre.Text;
+                int Precio = Convert.ToInt32(TPrecio.Text);
+                int Stock = Int32.Parse(TStock.Text);
+                int Id = Int32.Parse(TId.Text);
+                AdminLocal adminLocal = AUser.AdminLocalA;
+                adminLocal.AgregarAlMenu(lugar, Nombre, Precio, Stock);
+                Metodos.SerializarLocal(locales);
+                MessageBox.Show("Producto agregado con exito!");
+                this.Hide();
+                MainAdminLocal a = new MainAdminLocal();
+                a.Show();
+            }
+
         }
 
         private void Remove_Click(object sender, EventArgs e)
@@ -74,7 +98,7 @@ namespace UI
 
         private void CLocal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CProducto.ResetText();
+            CProducto.Items.Clear();
             List<Local> locales = Metodos.DeserializarLocal();
             string elige_local = CLocal.SelectedItem.ToString();
             Local Lugar = Metodos.BuscaLocal(elige_local, locales);

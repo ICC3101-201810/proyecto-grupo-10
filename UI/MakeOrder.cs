@@ -124,6 +124,7 @@ namespace UI
 
         private void CLocal_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CProducto.Items.Clear();
             List<Local> locales = Metodos.DeserializarLocal();
             string elige_local = CLocal.SelectedItem.ToString();
             Local Lugar = Metodos.BuscaLocal(elige_local, locales);
