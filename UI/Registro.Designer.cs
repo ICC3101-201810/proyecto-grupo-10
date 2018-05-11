@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.LNombre = new System.Windows.Forms.Label();
             this.TNombre = new System.Windows.Forms.TextBox();
             this.TAppellido = new System.Windows.Forms.TextBox();
@@ -45,7 +46,7 @@
             // LNombre
             // 
             this.LNombre.AutoSize = true;
-            this.LNombre.Location = new System.Drawing.Point(135, 92);
+            this.LNombre.Location = new System.Drawing.Point(63, 55);
             this.LNombre.Name = "LNombre";
             this.LNombre.Size = new System.Drawing.Size(35, 13);
             this.LNombre.TabIndex = 0;
@@ -55,24 +56,24 @@
             // TNombre
             // 
             this.TNombre.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TNombre.Location = new System.Drawing.Point(138, 108);
+            this.TNombre.Location = new System.Drawing.Point(66, 71);
             this.TNombre.Name = "TNombre";
-            this.TNombre.Size = new System.Drawing.Size(100, 20);
+            this.TNombre.Size = new System.Drawing.Size(129, 20);
             this.TNombre.TabIndex = 1;
             // 
             // TAppellido
             // 
             this.TAppellido.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TAppellido.Location = new System.Drawing.Point(138, 153);
+            this.TAppellido.Location = new System.Drawing.Point(66, 116);
             this.TAppellido.Name = "TAppellido";
-            this.TAppellido.Size = new System.Drawing.Size(100, 20);
+            this.TAppellido.Size = new System.Drawing.Size(129, 20);
             this.TAppellido.TabIndex = 3;
             this.TAppellido.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // LApellido
             // 
             this.LApellido.AutoSize = true;
-            this.LApellido.Location = new System.Drawing.Point(135, 137);
+            this.LApellido.Location = new System.Drawing.Point(63, 100);
             this.LApellido.Name = "LApellido";
             this.LApellido.Size = new System.Drawing.Size(58, 13);
             this.LApellido.TabIndex = 2;
@@ -82,16 +83,16 @@
             // TMail
             // 
             this.TMail.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TMail.Location = new System.Drawing.Point(138, 242);
+            this.TMail.Location = new System.Drawing.Point(66, 205);
             this.TMail.Name = "TMail";
-            this.TMail.Size = new System.Drawing.Size(100, 20);
+            this.TMail.Size = new System.Drawing.Size(129, 20);
             this.TMail.TabIndex = 7;
             this.TMail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // LMail
             // 
             this.LMail.AutoSize = true;
-            this.LMail.Location = new System.Drawing.Point(135, 226);
+            this.LMail.Location = new System.Drawing.Point(63, 189);
             this.LMail.Name = "LMail";
             this.LMail.Size = new System.Drawing.Size(26, 13);
             this.LMail.TabIndex = 6;
@@ -101,16 +102,16 @@
             // TRut
             // 
             this.TRut.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TRut.Location = new System.Drawing.Point(138, 197);
+            this.TRut.Location = new System.Drawing.Point(66, 160);
             this.TRut.Name = "TRut";
-            this.TRut.Size = new System.Drawing.Size(100, 20);
+            this.TRut.Size = new System.Drawing.Size(129, 20);
             this.TRut.TabIndex = 5;
             this.TRut.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // LRut
             // 
             this.LRut.AutoSize = true;
-            this.LRut.Location = new System.Drawing.Point(135, 181);
+            this.LRut.Location = new System.Drawing.Point(63, 144);
             this.LRut.Name = "LRut";
             this.LRut.Size = new System.Drawing.Size(24, 13);
             this.LRut.TabIndex = 4;
@@ -120,16 +121,16 @@
             // TClave
             // 
             this.TClave.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TClave.Location = new System.Drawing.Point(138, 286);
+            this.TClave.Location = new System.Drawing.Point(66, 249);
             this.TClave.Name = "TClave";
-            this.TClave.Size = new System.Drawing.Size(100, 20);
+            this.TClave.Size = new System.Drawing.Size(129, 20);
             this.TClave.TabIndex = 9;
             this.TClave.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // LClave
             // 
             this.LClave.AutoSize = true;
-            this.LClave.Location = new System.Drawing.Point(135, 270);
+            this.LClave.Location = new System.Drawing.Point(63, 233);
             this.LClave.Name = "LClave";
             this.LClave.Size = new System.Drawing.Size(78, 13);
             this.LClave.TabIndex = 8;
@@ -138,7 +139,8 @@
             // 
             // BRegistrar
             // 
-            this.BRegistrar.Location = new System.Drawing.Point(138, 322);
+            this.BRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BRegistrar.Location = new System.Drawing.Point(66, 285);
             this.BRegistrar.Name = "BRegistrar";
             this.BRegistrar.Size = new System.Drawing.Size(100, 23);
             this.BRegistrar.TabIndex = 10;
@@ -148,7 +150,8 @@
             // 
             // BAtras
             // 
-            this.BAtras.Location = new System.Drawing.Point(138, 360);
+            this.BAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BAtras.Location = new System.Drawing.Point(66, 323);
             this.BAtras.Name = "BAtras";
             this.BAtras.Size = new System.Drawing.Size(100, 23);
             this.BAtras.TabIndex = 11;
@@ -160,7 +163,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(267, 417);
             this.Controls.Add(this.BAtras);
             this.Controls.Add(this.BRegistrar);
             this.Controls.Add(this.TClave);
@@ -173,6 +177,7 @@
             this.Controls.Add(this.LApellido);
             this.Controls.Add(this.TNombre);
             this.Controls.Add(this.LNombre);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";

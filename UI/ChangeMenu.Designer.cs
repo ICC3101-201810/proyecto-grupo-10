@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeMenu));
             this.BBack = new System.Windows.Forms.Button();
             this.LProducto = new System.Windows.Forms.Label();
             this.LLocal = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             // 
             // BBack
             // 
+            this.BBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BBack.Location = new System.Drawing.Point(447, 286);
             this.BBack.Name = "BBack";
             this.BBack.Size = new System.Drawing.Size(75, 23);
@@ -107,6 +109,7 @@
             // 
             // Remove
             // 
+            this.Remove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Remove.Location = new System.Drawing.Point(169, 97);
             this.Remove.Name = "Remove";
             this.Remove.Size = new System.Drawing.Size(121, 23);
@@ -117,6 +120,7 @@
             // 
             // BAdd
             // 
+            this.BAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BAdd.Location = new System.Drawing.Point(318, 240);
             this.BAdd.Name = "BAdd";
             this.BAdd.Size = new System.Drawing.Size(121, 23);
@@ -207,6 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(534, 321);
             this.Controls.Add(this.LId);
             this.Controls.Add(this.TId);
@@ -225,6 +230,7 @@
             this.Controls.Add(this.CProducto);
             this.Controls.Add(this.CLocal);
             this.Controls.Add(this.BBack);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChangeMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangeMenu";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainAdminApp));
             this.BRemoveUser = new System.Windows.Forms.Button();
             this.BAddStores = new System.Windows.Forms.Button();
             this.BRemoveStores = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             // 
             // BRemoveUser
             // 
+            this.BRemoveUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BRemoveUser.Location = new System.Drawing.Point(337, 192);
             this.BRemoveUser.Name = "BRemoveUser";
             this.BRemoveUser.Size = new System.Drawing.Size(99, 23);
@@ -49,6 +51,7 @@
             // 
             // BAddStores
             // 
+            this.BAddStores.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BAddStores.Location = new System.Drawing.Point(337, 134);
             this.BAddStores.Name = "BAddStores";
             this.BAddStores.Size = new System.Drawing.Size(99, 23);
@@ -59,6 +62,7 @@
             // 
             // BRemoveStores
             // 
+            this.BRemoveStores.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BRemoveStores.Location = new System.Drawing.Point(337, 163);
             this.BRemoveStores.Name = "BRemoveStores";
             this.BRemoveStores.Size = new System.Drawing.Size(99, 23);
@@ -69,6 +73,7 @@
             // 
             // BReplaceAdmin
             // 
+            this.BReplaceAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BReplaceAdmin.Location = new System.Drawing.Point(337, 221);
             this.BReplaceAdmin.Name = "BReplaceAdmin";
             this.BReplaceAdmin.Size = new System.Drawing.Size(99, 45);
@@ -79,6 +84,7 @@
             // 
             // BExit
             // 
+            this.BExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BExit.Location = new System.Drawing.Point(713, 415);
             this.BExit.Name = "BExit";
             this.BExit.Size = new System.Drawing.Size(75, 23);
@@ -107,6 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.CStore);
             this.Controls.Add(this.TMail);
@@ -115,6 +122,7 @@
             this.Controls.Add(this.BRemoveStores);
             this.Controls.Add(this.BAddStores);
             this.Controls.Add(this.BRemoveUser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainAdminApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "g";

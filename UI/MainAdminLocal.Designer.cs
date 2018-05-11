@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainAdminLocal));
             this.BOferta = new System.Windows.Forms.Button();
             this.BExit = new System.Windows.Forms.Button();
             this.BCambiarMenu = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             // 
             // BOferta
             // 
+            this.BOferta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BOferta.Location = new System.Drawing.Point(323, 172);
             this.BOferta.Name = "BOferta";
             this.BOferta.Size = new System.Drawing.Size(97, 23);
@@ -47,6 +49,7 @@
             // 
             // BExit
             // 
+            this.BExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BExit.Location = new System.Drawing.Point(691, 415);
             this.BExit.Name = "BExit";
             this.BExit.Size = new System.Drawing.Size(97, 23);
@@ -57,6 +60,7 @@
             // 
             // BCambiarMenu
             // 
+            this.BCambiarMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BCambiarMenu.Location = new System.Drawing.Point(323, 201);
             this.BCambiarMenu.Name = "BCambiarMenu";
             this.BCambiarMenu.Size = new System.Drawing.Size(97, 23);
@@ -66,6 +70,7 @@
             // 
             // BCambioHorario
             // 
+            this.BCambioHorario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BCambioHorario.Location = new System.Drawing.Point(323, 230);
             this.BCambioHorario.Name = "BCambioHorario";
             this.BCambioHorario.Size = new System.Drawing.Size(97, 48);
@@ -85,12 +90,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Bienvenida);
             this.Controls.Add(this.BCambioHorario);
             this.Controls.Add(this.BCambiarMenu);
             this.Controls.Add(this.BExit);
             this.Controls.Add(this.BOferta);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainAdminLocal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainAdminLocal";
