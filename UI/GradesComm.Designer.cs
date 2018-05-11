@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GradesComm));
             this.TNota = new System.Windows.Forms.TextBox();
             this.TComentario = new System.Windows.Forms.TextBox();
             this.CLocal = new System.Windows.Forms.ComboBox();
@@ -133,6 +134,7 @@
             this.Controls.Add(this.CLocal);
             this.Controls.Add(this.TComentario);
             this.Controls.Add(this.TNota);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GradesComm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grades And Comments";

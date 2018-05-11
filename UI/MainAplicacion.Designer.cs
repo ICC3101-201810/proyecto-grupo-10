@@ -44,9 +44,9 @@
             // 
             // CSesion
             // 
-            this.CSesion.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.CSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.CSesion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.CSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CSesion.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CSesion.Location = new System.Drawing.Point(151, 263);
             this.CSesion.Name = "CSesion";
             this.CSesion.Size = new System.Drawing.Size(75, 29);
@@ -57,9 +57,9 @@
             // 
             // ANota
             // 
-            this.ANota.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.ANota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ANota.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ANota.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ANota.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ANota.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ANota.Location = new System.Drawing.Point(151, 217);
             this.ANota.Name = "ANota";
             this.ANota.Size = new System.Drawing.Size(75, 40);
@@ -71,10 +71,10 @@
             // 
             // IPresupuesto
             // 
-            this.IPresupuesto.BackColor = System.Drawing.Color.Maroon;
-            this.IPresupuesto.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.IPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.IPresupuesto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IPresupuesto.BackColor = System.Drawing.Color.Transparent;
+            this.IPresupuesto.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.IPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.IPresupuesto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.IPresupuesto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.IPresupuesto.Location = new System.Drawing.Point(151, 84);
             this.IPresupuesto.Name = "IPresupuesto";
@@ -86,9 +86,9 @@
             // 
             // VLocales
             // 
-            this.VLocales.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.VLocales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VLocales.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.VLocales.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.VLocales.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.VLocales.ForeColor = System.Drawing.SystemColors.ControlText;
             this.VLocales.Location = new System.Drawing.Point(151, 113);
             this.VLocales.Name = "VLocales";
             this.VLocales.Size = new System.Drawing.Size(75, 23);
@@ -99,9 +99,9 @@
             // 
             // RPedido
             // 
-            this.RPedido.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.RPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RPedido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RPedido.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.RPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.RPedido.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RPedido.Location = new System.Drawing.Point(151, 142);
             this.RPedido.Name = "RPedido";
             this.RPedido.Size = new System.Drawing.Size(75, 40);
@@ -113,9 +113,9 @@
             // 
             // ASaldo
             // 
-            this.ASaldo.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.ASaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ASaldo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ASaldo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ASaldo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ASaldo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ASaldo.Location = new System.Drawing.Point(151, 188);
             this.ASaldo.Name = "ASaldo";
             this.ASaldo.Size = new System.Drawing.Size(75, 23);
@@ -155,7 +155,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(33, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 15);
@@ -167,7 +167,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(33, 173);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 15);
@@ -178,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Maroon;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(282, 354);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

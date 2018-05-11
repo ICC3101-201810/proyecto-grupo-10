@@ -60,7 +60,7 @@
             // 
             // UsuarioIng
             // 
-            this.UsuarioIng.BackColor = System.Drawing.SystemColors.Control;
+            this.UsuarioIng.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.UsuarioIng.ForeColor = System.Drawing.SystemColors.InfoText;
             this.UsuarioIng.Location = new System.Drawing.Point(199, 30);
             this.UsuarioIng.Name = "UsuarioIng";
@@ -70,7 +70,7 @@
             // 
             // UsuarioCont
             // 
-            this.UsuarioCont.BackColor = System.Drawing.SystemColors.Control;
+            this.UsuarioCont.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.UsuarioCont.ForeColor = System.Drawing.SystemColors.InfoText;
             this.UsuarioCont.Location = new System.Drawing.Point(199, 56);
             this.UsuarioCont.Name = "UsuarioCont";
@@ -81,7 +81,8 @@
             // 
             // NewUser
             // 
-            this.NewUser.BackColor = System.Drawing.SystemColors.Control;
+            this.NewUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.NewUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.NewUser.Location = new System.Drawing.Point(199, 256);
             this.NewUser.Name = "NewUser";
             this.NewUser.Size = new System.Drawing.Size(100, 28);
@@ -92,7 +93,8 @@
             // 
             // Loginboton
             // 
-            this.Loginboton.BackColor = System.Drawing.SystemColors.Control;
+            this.Loginboton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Loginboton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Loginboton.Location = new System.Drawing.Point(199, 96);
             this.Loginboton.Name = "Loginboton";
             this.Loginboton.Size = new System.Drawing.Size(100, 28);
@@ -103,7 +105,8 @@
             // 
             // BLoginAdmin
             // 
-            this.BLoginAdmin.BackColor = System.Drawing.SystemColors.Control;
+            this.BLoginAdmin.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BLoginAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BLoginAdmin.Location = new System.Drawing.Point(199, 142);
             this.BLoginAdmin.Name = "BLoginAdmin";
             this.BLoginAdmin.Size = new System.Drawing.Size(100, 28);
@@ -114,7 +117,8 @@
             // 
             // BAdminApp
             // 
-            this.BAdminApp.BackColor = System.Drawing.SystemColors.Control;
+            this.BAdminApp.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BAdminApp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BAdminApp.Location = new System.Drawing.Point(199, 191);
             this.BAdminApp.Name = "BAdminApp";
             this.BAdminApp.Size = new System.Drawing.Size(100, 28);
@@ -125,7 +129,8 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(422, 256);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
@@ -138,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(534, 311);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BAdminApp);

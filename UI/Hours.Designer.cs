@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hours));
             this.TAbrir = new System.Windows.Forms.TextBox();
             this.LAbrir = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,6 +75,7 @@
             // 
             // BListo
             // 
+            this.BListo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BListo.Location = new System.Drawing.Point(86, 177);
             this.BListo.Name = "BListo";
             this.BListo.Size = new System.Drawing.Size(101, 23);
@@ -84,6 +86,7 @@
             // 
             // BBack
             // 
+            this.BBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BBack.Location = new System.Drawing.Point(200, 224);
             this.BBack.Name = "BBack";
             this.BBack.Size = new System.Drawing.Size(75, 23);
@@ -96,6 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.BBack);
             this.Controls.Add(this.BListo);
@@ -103,6 +107,7 @@
             this.Controls.Add(this.TCerrar);
             this.Controls.Add(this.LAbrir);
             this.Controls.Add(this.TAbrir);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hours";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hours";

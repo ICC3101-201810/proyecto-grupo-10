@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MakeOrder));
             this.BBack = new System.Windows.Forms.Button();
             this.CLocal = new System.Windows.Forms.ComboBox();
             this.CProducto = new System.Windows.Forms.ComboBox();
@@ -42,9 +43,11 @@
             // 
             // BBack
             // 
-            this.BBack.Location = new System.Drawing.Point(695, 402);
+            this.BBack.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BBack.Location = new System.Drawing.Point(158, 304);
             this.BBack.Name = "BBack";
-            this.BBack.Size = new System.Drawing.Size(75, 23);
+            this.BBack.Size = new System.Drawing.Size(75, 32);
             this.BBack.TabIndex = 0;
             this.BBack.Text = "Back";
             this.BBack.UseVisualStyleBackColor = true;
@@ -53,7 +56,7 @@
             // CLocal
             // 
             this.CLocal.FormattingEnabled = true;
-            this.CLocal.Location = new System.Drawing.Point(83, 79);
+            this.CLocal.Location = new System.Drawing.Point(77, 85);
             this.CLocal.Name = "CLocal";
             this.CLocal.Size = new System.Drawing.Size(156, 21);
             this.CLocal.TabIndex = 1;
@@ -63,7 +66,7 @@
             // CProducto
             // 
             this.CProducto.FormattingEnabled = true;
-            this.CProducto.Location = new System.Drawing.Point(83, 133);
+            this.CProducto.Location = new System.Drawing.Point(77, 139);
             this.CProducto.Name = "CProducto";
             this.CProducto.Size = new System.Drawing.Size(156, 21);
             this.CProducto.TabIndex = 2;
@@ -71,7 +74,7 @@
             // LLocal
             // 
             this.LLocal.AutoSize = true;
-            this.LLocal.Location = new System.Drawing.Point(80, 63);
+            this.LLocal.Location = new System.Drawing.Point(74, 69);
             this.LLocal.Name = "LLocal";
             this.LLocal.Size = new System.Drawing.Size(72, 13);
             this.LLocal.TabIndex = 3;
@@ -81,7 +84,7 @@
             // LProducto
             // 
             this.LProducto.AutoSize = true;
-            this.LProducto.Location = new System.Drawing.Point(80, 117);
+            this.LProducto.Location = new System.Drawing.Point(74, 123);
             this.LProducto.Name = "LProducto";
             this.LProducto.Size = new System.Drawing.Size(83, 13);
             this.LProducto.TabIndex = 4;
@@ -89,7 +92,9 @@
             // 
             // BCredito
             // 
-            this.BCredito.Location = new System.Drawing.Point(83, 182);
+            this.BCredito.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BCredito.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BCredito.Location = new System.Drawing.Point(77, 230);
             this.BCredito.Name = "BCredito";
             this.BCredito.Size = new System.Drawing.Size(75, 23);
             this.BCredito.TabIndex = 5;
@@ -99,7 +104,9 @@
             // 
             // BTienda
             // 
-            this.BTienda.Location = new System.Drawing.Point(164, 182);
+            this.BTienda.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTienda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BTienda.Location = new System.Drawing.Point(158, 230);
             this.BTienda.Name = "BTienda";
             this.BTienda.Size = new System.Drawing.Size(75, 23);
             this.BTienda.TabIndex = 6;
@@ -110,7 +117,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(269, 117);
+            this.label1.Location = new System.Drawing.Point(74, 169);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 7;
@@ -118,7 +125,7 @@
             // 
             // ICantidad
             // 
-            this.ICantidad.Location = new System.Drawing.Point(272, 134);
+            this.ICantidad.Location = new System.Drawing.Point(77, 186);
             this.ICantidad.Name = "ICantidad";
             this.ICantidad.Size = new System.Drawing.Size(100, 20);
             this.ICantidad.TabIndex = 8;
@@ -126,7 +133,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 166);
+            this.label2.Location = new System.Drawing.Point(74, 214);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 9;
@@ -136,7 +143,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(300, 357);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ICantidad);
             this.Controls.Add(this.label1);
@@ -147,6 +155,7 @@
             this.Controls.Add(this.CProducto);
             this.Controls.Add(this.CLocal);
             this.Controls.Add(this.BBack);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MakeOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MakeOrder";
