@@ -191,7 +191,7 @@
             this.Controls.Add(this.IPresupuesto);
             this.Controls.Add(this.ANota);
             this.Controls.Add(this.CSesion);
-            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainAplicacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
