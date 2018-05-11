@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeMenu.Designer.cs">
+      <DependentUpon>ChangeMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetSales.Designer.cs">
+      <DependentUpon>SetSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="AUser.cs" />
     <Compile Include="AdminApp.cs" />
     <Compile Include="AdminLocal.cs" />
@@ -97,6 +109,12 @@
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
     <Compile Include="Users.cs" />
+    <EmbeddedResource Include="ChangeMenu.resx">
+      <DependentUpon>ChangeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetSales.resx">
+      <DependentUpon>SetSales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
