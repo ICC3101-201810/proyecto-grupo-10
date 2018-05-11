@@ -12,10 +12,10 @@ namespace UI
         string nombre;
         string rut;
         List<Ranking> comentarios;
-        List<Producto> menu;
+        public List<Producto> menu;
         List<DateTime> horario;
         List<string> pedidos;
-        List<Producto> ofertas;
+        public List<Producto> ofertas;
         public Local(string Nombre, string Rut, DateTime abre, DateTime cierra)
         {
             nombre = Nombre;

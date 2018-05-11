@@ -32,9 +32,9 @@ namespace UI
             Producto plato = new Producto(nombre, precio, stock, menu.Count + 1);
             lugar.RecibeProducto(plato);
         }
-        public void AgregarOferta()
+        public void AgregarOferta(Producto item)
         {
-
+            local.ofertas.Add(item);
         }
         public void QuitarOferta()
         {

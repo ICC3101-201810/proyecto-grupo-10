@@ -35,6 +35,7 @@
             this.LProducto = new System.Windows.Forms.Label();
             this.TPrecio = new System.Windows.Forms.TextBox();
             this.LPrecios = new System.Windows.Forms.Label();
+            this.BSale = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BBack
@@ -53,6 +54,7 @@
             this.CLocal.Name = "CLocal";
             this.CLocal.Size = new System.Drawing.Size(121, 21);
             this.CLocal.TabIndex = 1;
+            this.CLocal.SelectedIndexChanged += new System.EventHandler(this.CLocal_SelectedIndexChanged);
             // 
             // CProducto
             // 
@@ -96,11 +98,22 @@
             this.LPrecios.TabIndex = 6;
             this.LPrecios.Text = "Set New Price";
             // 
+            // BSale
+            // 
+            this.BSale.Location = new System.Drawing.Point(294, 264);
+            this.BSale.Name = "BSale";
+            this.BSale.Size = new System.Drawing.Size(75, 23);
+            this.BSale.TabIndex = 7;
+            this.BSale.Text = "Set Sale";
+            this.BSale.UseVisualStyleBackColor = true;
+            this.BSale.Click += new System.EventHandler(this.BSale_Click);
+            // 
             // SetSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BSale);
             this.Controls.Add(this.LPrecios);
             this.Controls.Add(this.TPrecio);
             this.Controls.Add(this.LProducto);
@@ -125,5 +138,6 @@
         private System.Windows.Forms.Label LProducto;
         private System.Windows.Forms.TextBox TPrecio;
         private System.Windows.Forms.Label LPrecios;
+        private System.Windows.Forms.Button BSale;
     }
 }
