@@ -60,6 +60,12 @@
     </Compile>
     <Compile Include="LogInAppController.cs" />
     <Compile Include="LogInAppEventArgs.cs" />
+    <Compile Include="MainAdminApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainAdminApp.Designer.cs">
+      <DependentUpon>MainAdminApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="SetSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hours.resx">
       <DependentUpon>Hours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainAdminApp.resx">
+      <DependentUpon>MainAdminApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SetSales.resx">
       <DependentUpon>SetSales.cs</DependentUpon>
