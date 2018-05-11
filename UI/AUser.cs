@@ -15,5 +15,19 @@ namespace UI
             set { Usuario = value; }
         }
 
+        public static AdminLocal adm_l;
+        public static AdminLocal AdminLocalA
+        {
+            get { return adm_l; }
+            set { adm_l = value; }
+        }
+
+        public static AdminApp adm_a;
+        public static AdminApp AdminAppA
+        {
+            get { return adm_a; }
+            set { adm_a = value; }
+        }
+
     }
 }
