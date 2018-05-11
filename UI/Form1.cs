@@ -59,6 +59,7 @@ namespace UI
             {
                 MessageBox.Show("Error en contraseña o correo");
                 Metodos.SerializarUsers(usuarios);
+                UsuarioCont.Text = "";
             }
             else
             {
@@ -89,6 +90,7 @@ namespace UI
             {
                 MessageBox.Show("Error en contraseña o correo");
                 Metodos.SerializarAdminsLocal(admins_local);
+                UsuarioCont.Text = "";
             }
             else
             {
