@@ -13,7 +13,10 @@ namespace UI
         [STAThread]
         static void Main()
         {
-
+            /**********************/
+            /*  Icono por Raaes_  */
+            /*  Instagram: Raaes_ */
+            /**********************/
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 inicio = new Form1();
