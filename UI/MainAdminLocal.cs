@@ -25,12 +25,8 @@ namespace UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void MainAdminLocal_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -49,6 +49,8 @@
     <Compile Include="AUser.cs" />
     <Compile Include="AdminApp.cs" />
     <Compile Include="AdminLocal.cs" />
+    <Compile Include="LoginLocalArgs.cs" />
+    <Compile Include="LogInLocalController.cs" />
     <Compile Include="MainAdminLocal.cs">
       <SubType>Form</SubType>
     </Compile>

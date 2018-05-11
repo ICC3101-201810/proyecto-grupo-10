@@ -20,7 +20,7 @@ namespace UI
 
         }
         public event EventHandler<LogInEventArgs> OnLogIn;
-
+        public event EventHandler<LoginLocalEventArgs> OnLogInL;
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -81,7 +81,24 @@ namespace UI
 
         private void BLoginAdmin_Click(object sender, EventArgs e)
         {
-
+            string mail = UsuarioIng.Text;
+            string clave = UsuarioCont.Text;
+            List<AdminLocal> admins_local = Metodos.DeserializarAdminsLocal();
+            AdminLocal loginlocal = Metodos.LogInAdmin(admins_local, mail, clave);
+            if (loginlocal==null)
+            {
+                MessageBox.Show("Error en contraseña o correo");
+                Metodos.SerializarAdminsLocal(admins_local);
+            }
+            else
+            {
+                LoginLocalEventArgs inicia = new LoginLocalEventArgs();
+                inicia.admin = loginlocal;
+                AUser.AdminLocalA = loginlocal;
+                OnLogInL(this, inicia);
+                this.Hide();
+                Metodos.SerializarAdminsLocal(admins_local);
+            }
         }
     }
 }

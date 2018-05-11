@@ -14,6 +14,7 @@ namespace UI
         static void Main()
         {
 
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 inicio = new Form1();
             LogInController controlador = new LogInController(inicio);

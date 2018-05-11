@@ -104,8 +104,8 @@
             this.Controls.Add(this.BQuitarOferta);
             this.Controls.Add(this.BNuevaOferta);
             this.Name = "MainAdminLocal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainAdminLocal";
-            this.Load += new System.EventHandler(this.MainAdminLocal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
