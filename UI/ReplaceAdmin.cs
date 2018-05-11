@@ -21,10 +21,17 @@ namespace UI
         {
             string OldMail = TOld.Text;
             string NewMail = TNew.Text;
+            this.Hide();
         }
 
         private void BBack_Click(object sender, EventArgs e)
         {
+            this.Hide();
+        }
+
+        private void BAddAdmin_Click(object sender, EventArgs e)
+        {
+            string NewMail = TNew.Text;
             this.Hide();
         }
     }

@@ -115,6 +115,7 @@
             this.BAddAdmin.TabIndex = 7;
             this.BAddAdmin.Text = "Add Admin";
             this.BAddAdmin.UseVisualStyleBackColor = true;
+            this.BAddAdmin.Click += new System.EventHandler(this.BAddAdmin_Click);
             // 
             // BBack
             // 
