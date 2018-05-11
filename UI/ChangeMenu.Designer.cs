@@ -92,6 +92,7 @@
             this.CLocal.Name = "CLocal";
             this.CLocal.Size = new System.Drawing.Size(121, 21);
             this.CLocal.TabIndex = 5;
+            this.CLocal.SelectedIndexChanged += new System.EventHandler(this.CLocal_SelectedIndexChanged);
             // 
             // LRemover
             // 

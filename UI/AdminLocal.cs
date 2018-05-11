@@ -40,9 +40,9 @@ namespace UI
         {
 
         }
-        public void QuitarDelMenu()
+        public void QuitarDelMenu(Producto item)
         {
-
+            this.local.GetMenu().Remove(item);
         }
         public Local GetLocal()
         {
