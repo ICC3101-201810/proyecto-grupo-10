@@ -97,6 +97,8 @@
             // 
             // BVolver
             // 
+            this.BVolver.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BVolver.Location = new System.Drawing.Point(691, 400);
             this.BVolver.Name = "BVolver";
             this.BVolver.Size = new System.Drawing.Size(81, 29);
@@ -107,6 +109,8 @@
             // 
             // BEnviar
             // 
+            this.BEnviar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BEnviar.Location = new System.Drawing.Point(691, 363);
             this.BEnviar.Name = "BEnviar";
             this.BEnviar.Size = new System.Drawing.Size(81, 29);
@@ -119,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BEnviar);
             this.Controls.Add(this.BVolver);

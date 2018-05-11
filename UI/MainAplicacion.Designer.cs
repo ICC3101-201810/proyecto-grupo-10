@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainAplicacion));
             this.CSesion = new System.Windows.Forms.Button();
             this.ANota = new System.Windows.Forms.Button();
             this.IPresupuesto = new System.Windows.Forms.Button();
@@ -37,13 +38,18 @@
             this.IBudget = new System.Windows.Forms.TextBox();
             this.ISaldo = new System.Windows.Forms.TextBox();
             this.Bienvenida = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CSesion
             // 
-            this.CSesion.Location = new System.Drawing.Point(707, 409);
+            this.CSesion.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.CSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.CSesion.Location = new System.Drawing.Point(151, 263);
             this.CSesion.Name = "CSesion";
-            this.CSesion.Size = new System.Drawing.Size(81, 29);
+            this.CSesion.Size = new System.Drawing.Size(75, 29);
             this.CSesion.TabIndex = 0;
             this.CSesion.Text = "Exit";
             this.CSesion.UseVisualStyleBackColor = true;
@@ -51,9 +57,12 @@
             // 
             // ANota
             // 
-            this.ANota.Location = new System.Drawing.Point(330, 259);
+            this.ANota.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.ANota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ANota.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ANota.Location = new System.Drawing.Point(151, 217);
             this.ANota.Name = "ANota";
-            this.ANota.Size = new System.Drawing.Size(75, 31);
+            this.ANota.Size = new System.Drawing.Size(75, 40);
             this.ANota.TabIndex = 1;
             this.ANota.Text = "Grade and Comments";
             this.ANota.UseCompatibleTextRendering = true;
@@ -62,17 +71,25 @@
             // 
             // IPresupuesto
             // 
-            this.IPresupuesto.Location = new System.Drawing.Point(330, 126);
+            this.IPresupuesto.BackColor = System.Drawing.Color.Maroon;
+            this.IPresupuesto.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.IPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IPresupuesto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IPresupuesto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.IPresupuesto.Location = new System.Drawing.Point(151, 84);
             this.IPresupuesto.Name = "IPresupuesto";
             this.IPresupuesto.Size = new System.Drawing.Size(75, 23);
             this.IPresupuesto.TabIndex = 2;
             this.IPresupuesto.Text = "See Options";
-            this.IPresupuesto.UseVisualStyleBackColor = true;
+            this.IPresupuesto.UseVisualStyleBackColor = false;
             this.IPresupuesto.Click += new System.EventHandler(this.IPresupuesto_Click);
             // 
             // VLocales
             // 
-            this.VLocales.Location = new System.Drawing.Point(330, 155);
+            this.VLocales.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.VLocales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VLocales.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.VLocales.Location = new System.Drawing.Point(151, 113);
             this.VLocales.Name = "VLocales";
             this.VLocales.Size = new System.Drawing.Size(75, 23);
             this.VLocales.TabIndex = 3;
@@ -82,7 +99,10 @@
             // 
             // RPedido
             // 
-            this.RPedido.Location = new System.Drawing.Point(330, 184);
+            this.RPedido.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.RPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RPedido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RPedido.Location = new System.Drawing.Point(151, 142);
             this.RPedido.Name = "RPedido";
             this.RPedido.Size = new System.Drawing.Size(75, 40);
             this.RPedido.TabIndex = 4;
@@ -93,7 +113,10 @@
             // 
             // ASaldo
             // 
-            this.ASaldo.Location = new System.Drawing.Point(330, 230);
+            this.ASaldo.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.ASaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ASaldo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ASaldo.Location = new System.Drawing.Point(151, 188);
             this.ASaldo.Name = "ASaldo";
             this.ASaldo.Size = new System.Drawing.Size(75, 23);
             this.ASaldo.TabIndex = 5;
@@ -104,37 +127,61 @@
             // IBudget
             // 
             this.IBudget.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.IBudget.Location = new System.Drawing.Point(215, 126);
+            this.IBudget.Location = new System.Drawing.Point(36, 84);
             this.IBudget.Name = "IBudget";
             this.IBudget.Size = new System.Drawing.Size(109, 20);
             this.IBudget.TabIndex = 6;
-            this.IBudget.Text = "Budget";
             this.IBudget.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IBudget.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // ISaldo
             // 
-            this.ISaldo.Location = new System.Drawing.Point(215, 233);
+            this.ISaldo.Location = new System.Drawing.Point(36, 191);
             this.ISaldo.Name = "ISaldo";
             this.ISaldo.Size = new System.Drawing.Size(109, 20);
             this.ISaldo.TabIndex = 7;
-            this.ISaldo.Text = "Money";
             this.ISaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Bienvenida
             // 
             this.Bienvenida.AutoSize = true;
-            this.Bienvenida.Location = new System.Drawing.Point(212, 80);
+            this.Bienvenida.Location = new System.Drawing.Point(33, 40);
             this.Bienvenida.Name = "Bienvenida";
             this.Bienvenida.Size = new System.Drawing.Size(0, 13);
             this.Bienvenida.TabIndex = 8;
             this.Bienvenida.Click += new System.EventHandler(this.Bienvenida_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(33, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 15);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Budget";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(33, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 15);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Money";
+            // 
             // MainAplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Maroon;
+            this.ClientSize = new System.Drawing.Size(282, 354);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Bienvenida);
             this.Controls.Add(this.ISaldo);
             this.Controls.Add(this.IBudget);
@@ -144,6 +191,8 @@
             this.Controls.Add(this.IPresupuesto);
             this.Controls.Add(this.ANota);
             this.Controls.Add(this.CSesion);
+            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainAplicacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
@@ -164,5 +213,7 @@
         private System.Windows.Forms.TextBox IBudget;
         private System.Windows.Forms.TextBox ISaldo;
         private System.Windows.Forms.Label Bienvenida;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

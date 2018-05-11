@@ -25,7 +25,7 @@ namespace UI
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void ANota_Click(object sender, EventArgs e)
@@ -69,6 +69,7 @@ namespace UI
                 Usuario_Activo.Abonar(saldo);
                 MessageBox.Show("Abono realizado con exito!");
                 Metodos.SerializarUsers(usuarios);
+                ISaldo.Text = "";
             }
 
 
@@ -98,6 +99,7 @@ namespace UI
                     mensaje += "Producto: " + item.GetNombre() + " Precio: " + item.GetPrecio() + "\n";
                 }
                 MessageBox.Show(mensaje, "Productos Disponibles");
+                IBudget.Text = "";
             }
             
         }
@@ -116,6 +118,11 @@ namespace UI
         }
 
         private void MainAplicacion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
