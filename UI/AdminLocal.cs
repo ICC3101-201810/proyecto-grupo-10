@@ -44,5 +44,9 @@ namespace UI
         {
 
         }
+        public Local GetLocal()
+        {
+            return this.local;
+        }
     }
 }

@@ -33,9 +33,26 @@ namespace UI
 
         private void BSale_Click(object sender, EventArgs e)
         {
-            int precio_oferta = Convert.ToInt32(TPrecio.Text);
-            AdminLocal admin = AUser.AdminLocalA;
-
+            bool hay_error = false;
+            try
+            {
+                string lugar = CLocal.SelectedItem.ToString();
+                string prod = CProducto.SelectedItem.ToString();
+                int precio_oferta = Convert.ToInt32(TPrecio.Text);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error al agregar oferta\n" +exc.Message , "Error");
+            }
+            if (hay_error == false)
+            {
+                string lugar = CLocal.SelectedItem.ToString();
+                string prod = CProducto.SelectedItem.ToString();
+                int precio_oferta = Convert.ToInt32(TPrecio.Text);
+                AdminLocal admin = AUser.AdminLocalA;
+                List<Local> locales = Metodos.DeserializarLocal();
+                admin.AgregarOferta(Metodos.BuscaProducto(Metodos.BuscaLocal(lugar, locales).GetMenu(), prod));
+            }
         }
     }
 }
