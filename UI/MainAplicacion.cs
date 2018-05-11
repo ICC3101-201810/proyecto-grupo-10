@@ -30,7 +30,6 @@ namespace UI
 
         private void ANota_Click(object sender, EventArgs e)
         {
-            this.Hide();
             GradesComm nn = new GradesComm();
             nn.Show();
         }
@@ -114,7 +113,6 @@ namespace UI
         private void RPedido_Click(object sender, EventArgs e)
         {
             MakeOrder a = new MakeOrder();
-            this.Close();
             a.Show();
         }
 

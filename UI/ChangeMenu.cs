@@ -25,8 +25,6 @@ namespace UI
         private void BBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            MainAdminLocal a = new MainAdminLocal();
-            a.Show();
         }
 
         private void BAdd_Click(object sender, EventArgs e)

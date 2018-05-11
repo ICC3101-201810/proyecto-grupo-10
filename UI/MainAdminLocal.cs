@@ -21,7 +21,6 @@ namespace UI
         private void button1_Click(object sender, EventArgs e)
         {
             SetSales sales = new SetSales();
-            this.Close();
             sales.Show();
         }
 
@@ -33,7 +32,6 @@ namespace UI
         private void BCambioHorario_Click(object sender, EventArgs e)
         {
             Hours hora = new Hours();
-            this.Close();
             hora.Show();
         }
     }

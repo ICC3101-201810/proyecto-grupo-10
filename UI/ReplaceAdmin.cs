@@ -19,9 +19,22 @@ namespace UI
 
         private void BReplace_Click(object sender, EventArgs e)
         {
-            string OldMail = TOld.Text;
-            string NewMail = TNew.Text;
-            this.Hide();
+            bool hay_error = false;
+            try
+            {
+                string OldMail = TOld.Text;
+                string NewMail = TNew.Text;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error al reemplazar admin\n" + exc.Message, "Error");
+                hay_error = true;
+            }
+            if (hay_error==false)
+            {
+                MessageBox.Show("Admin reemplazado con exito");
+                this.Close();
+            }
         }
 
         private void BBack_Click(object sender, EventArgs e)
@@ -31,8 +44,34 @@ namespace UI
 
         private void BAddAdmin_Click(object sender, EventArgs e)
         {
-            string NewMail = TNew.Text;
-            this.Hide();
+            bool hay_error = false;
+            try
+            {
+                string nombre = TName.Text;
+                string clave = TClave.Text;
+                string mail = TMail.Text;
+                string apellido = TApellido.Text;
+                string rut = TRut.Text;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error al agregar admin\n" +exc.Message, "Error");
+                hay_error = true;
+            }
+            if (hay_error==false)
+            {
+                string nombre = TName.Text;
+                string clave = TClave.Text;
+                string mail = TMail.Text;
+                string apellido = TApellido.Text;
+                string rut = TRut.Text;
+                AdminApp nuevo = new AdminApp(nombre, apellido, mail, clave, rut, 0);
+                List<AdminApp> admins = Metodos.DeserializarAdminsApp();
+                admins.Add(nuevo);
+                Metodos.SerializarAdminsApp(admins);
+                MessageBox.Show("Admin agregado con exito!");
+                this.Close();
+            }
         }
     }
 }

@@ -31,8 +31,7 @@ namespace UI
         private void BBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            MainAplicacion a = new MainAplicacion();
-            a.Show();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -72,9 +71,7 @@ namespace UI
                     Metodos.SerializarLocal(locales);
                     usuarios[numero].RealizarPedido(locales, elige_local, elige_producto, Cantidad, MedioPago);
                     Metodos.SerializarUsers(usuarios);
-                    MainAplicacion a = new MainAplicacion();
                     this.Close();
-                    a.Show();
                 }
                 else MessageBox.Show("Error en realizar pedido","Error");
                 Metodos.SerializarLocal(locales);
@@ -112,9 +109,8 @@ namespace UI
                     MessageBox.Show("Pedido Realizado con exito!");
                     Metodos.SerializarLocal(locales);
 
-                    MainAplicacion a = new MainAplicacion();
+
                     this.Close();
-                    a.Show();
                 }
                 else MessageBox.Show("Error en realizar pedido", "Error");
                 Metodos.SerializarLocal(locales);

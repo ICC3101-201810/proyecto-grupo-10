@@ -64,14 +64,14 @@
             // 
             this.TName.Location = new System.Drawing.Point(12, 21);
             this.TName.Name = "TName";
-            this.TName.Size = new System.Drawing.Size(100, 20);
+            this.TName.Size = new System.Drawing.Size(113, 20);
             this.TName.TabIndex = 2;
             // 
             // TRut
             // 
             this.TRut.Location = new System.Drawing.Point(12, 60);
             this.TRut.Name = "TRut";
-            this.TRut.Size = new System.Drawing.Size(100, 20);
+            this.TRut.Size = new System.Drawing.Size(113, 20);
             this.TRut.TabIndex = 4;
             // 
             // LRut
@@ -89,22 +89,22 @@
             this.LOpening.ForeColor = System.Drawing.SystemColors.InfoText;
             this.LOpening.Location = new System.Drawing.Point(9, 88);
             this.LOpening.Name = "LOpening";
-            this.LOpening.Size = new System.Drawing.Size(76, 13);
+            this.LOpening.Size = new System.Drawing.Size(122, 13);
             this.LOpening.TabIndex = 5;
-            this.LOpening.Text = "Opening Hour:";
+            this.LOpening.Text = "Opening Hour: ( hh:mm )";
             // 
             // TOpening
             // 
             this.TOpening.Location = new System.Drawing.Point(12, 104);
             this.TOpening.Name = "TOpening";
-            this.TOpening.Size = new System.Drawing.Size(100, 20);
+            this.TOpening.Size = new System.Drawing.Size(113, 20);
             this.TOpening.TabIndex = 6;
             // 
             // TClosing
             // 
             this.TClosing.Location = new System.Drawing.Point(12, 149);
             this.TClosing.Name = "TClosing";
-            this.TClosing.Size = new System.Drawing.Size(100, 20);
+            this.TClosing.Size = new System.Drawing.Size(113, 20);
             this.TClosing.TabIndex = 8;
             // 
             // LClosing
@@ -112,9 +112,9 @@
             this.LClosing.AutoSize = true;
             this.LClosing.Location = new System.Drawing.Point(9, 132);
             this.LClosing.Name = "LClosing";
-            this.LClosing.Size = new System.Drawing.Size(70, 13);
+            this.LClosing.Size = new System.Drawing.Size(116, 13);
             this.LClosing.TabIndex = 7;
-            this.LClosing.Text = "Closing Hour:";
+            this.LClosing.Text = "Closing Hour: ( hh:mm )";
             // 
             // BAddStore
             // 
@@ -131,7 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(124, 261);
+            this.ClientSize = new System.Drawing.Size(145, 261);
             this.Controls.Add(this.BAddStore);
             this.Controls.Add(this.TClosing);
             this.Controls.Add(this.LClosing);
