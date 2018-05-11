@@ -58,6 +58,8 @@
     <Compile Include="Hours.Designer.cs">
       <DependentUpon>Hours.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogInAppController.cs" />
+    <Compile Include="LogInAppEventArgs.cs" />
     <Compile Include="SetSales.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -120,6 +120,7 @@
             this.BAdminApp.TabIndex = 8;
             this.BAdminApp.Text = " Admin App Log In ";
             this.BAdminApp.UseVisualStyleBackColor = false;
+            this.BAdminApp.Click += new System.EventHandler(this.BAdminApp_Click);
             // 
             // button1
             // 

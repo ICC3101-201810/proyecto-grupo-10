@@ -21,6 +21,7 @@ namespace UI
         }
         public event EventHandler<LogInEventArgs> OnLogIn;
         public event EventHandler<LoginLocalEventArgs> OnLogInL;
+        public event EventHandler<LogInAppEventArgs> OnLogInA;
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -111,6 +112,11 @@ namespace UI
         private void button1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BAdminApp_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
