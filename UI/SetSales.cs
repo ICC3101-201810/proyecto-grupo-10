@@ -15,6 +15,8 @@ namespace UI
         public SetSales()
         {
             InitializeComponent();
+            CLocal.Items.Clear();
+            CLocal.Items.Add(AUser.AdminLocalA.GetLocal());
         }
 
         private void CLocal_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,6 +45,7 @@ namespace UI
             catch (Exception exc)
             {
                 MessageBox.Show("Error al agregar oferta\n" +exc.Message , "Error");
+                hay_error = true;
             }
             if (hay_error == false)
             {
@@ -53,6 +56,13 @@ namespace UI
                 List<Local> locales = Metodos.DeserializarLocal();
                 admin.AgregarOferta(Metodos.BuscaProducto(Metodos.BuscaLocal(lugar, locales).GetMenu(), prod));
             }
+        }
+
+        private void BBack_Click(object sender, EventArgs e)
+        {
+            MainAdminLocal a = new MainAdminLocal();
+            this.Close();
+            a.Show();
         }
     }
 }

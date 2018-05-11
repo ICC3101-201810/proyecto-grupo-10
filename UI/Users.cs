@@ -109,7 +109,10 @@ namespace UI
 
             return Out;
         }
-
+        public string GetInfo()
+        {
+            return this.mail + this.password;
+        }
         public void SetNota(Local local, double nota, string comentario)
         {
             Ranking asigname = new Ranking(local, nota, comentario);

@@ -89,7 +89,7 @@ namespace UI
             AdminLocal loginlocal = Metodos.LogInAdmin(admins_local, mail, clave);
             if (loginlocal==null)
             {
-                MessageBox.Show("Error en contraseña o correo");
+                MessageBox.Show("Error en contraseña o correo\n" + admins_local[0].GetInfo(), "Error");
                 Metodos.SerializarAdminsLocal(admins_local);
                 UsuarioCont.Text = "";
             }
@@ -116,7 +116,25 @@ namespace UI
 
         private void BAdminApp_Click(object sender, EventArgs e)
         {
-
+            string mail = UsuarioIng.Text;
+            string clave = UsuarioCont.Text;
+            List<AdminApp> admins_app = Metodos.DeserializarAdminsApp();
+            AdminApp admin = Metodos.LogInAdminApp(admins_app, mail, clave);
+            if (admin==null)
+            {
+                MessageBox.Show("Error en contraseña o correo\n", "Error");
+                Metodos.SerializarAdminsApp(admins_app);
+                UsuarioCont.Text = "";
+            }
+            else
+            {
+                LogInAppEventArgs inicia = new LogInAppEventArgs();
+                inicia.adminApp = admin;
+                AUser.AdminAppA = admin;
+                OnLogInA(this, inicia);
+                this.Hide();
+                Metodos.SerializarAdminsApp(admins_app);
+            }
         }
     }
 }

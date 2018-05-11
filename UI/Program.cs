@@ -18,18 +18,14 @@ namespace UI
             /*  Instagram: Raaes_ */
             /**********************/
 
-            /*List<AdminLocal> admins = new List<AdminLocal>();
-            List<Local> locales = Metodos.DeserializarLocal();
-            AdminLocal admin1 = new AdminLocal("local@miuandes.cl", "1234", "admin", "Coffee", "1234", 0, locales[1]);
-            admins.Add(admin1);
-            Metodos.SerializarLocal(locales);
-            Metodos.SerializarAdminsLocal(admins);*/
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 inicio = new Form1();
             LogInController controlador = new LogInController(inicio);
+            LogInLocalController controlador2 = new LogInLocalController(inicio);
+            LogInAppController controlador3 = new LogInAppController(inicio);
             Application.Run(inicio);
+
         }
     }
 }

@@ -24,6 +24,7 @@ namespace UI
             comentarios = new List<Ranking>();
             horario = new List<DateTime> { abre, cierra };
             pedidos = new List<string>();
+            ofertas = new List<Producto>();
         }
         public string GetName()
         {

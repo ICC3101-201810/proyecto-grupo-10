@@ -18,6 +18,9 @@ namespace UI
         private void Menu_Login(object sender, LogInAppEventArgs e)
         {
             admin = e.adminApp;
+            MainAdminApp menu = new MainAdminApp();
+            menu.Show();
+            login_form.Enabled = false;
 
         }
     }

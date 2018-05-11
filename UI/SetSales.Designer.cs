@@ -48,6 +48,7 @@
             this.BBack.TabIndex = 0;
             this.BBack.Text = "Back";
             this.BBack.UseVisualStyleBackColor = true;
+            this.BBack.Click += new System.EventHandler(this.BBack_Click);
             // 
             // CLocal
             // 

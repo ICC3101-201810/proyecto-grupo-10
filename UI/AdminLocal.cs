@@ -17,6 +17,14 @@ namespace UI
         public AdminLocal(string Mail, string miPass, string miNombre, string miApellido, string miRut, int miSaldo) : base(miNombre, miApellido, miRut, miPass, Mail, miSaldo)
         {
         }
+        public void SetLocal(Local lugar)
+        {
+            local = lugar;
+        }
+        public Local GetLocal()
+        {
+            return this.local;
+        }
 
         public List<DateTime> DefineHorario(int hora_abre, int minuto_abre, int hora_cierra, int minuto_cierra)
         {
@@ -34,6 +42,7 @@ namespace UI
         }
         public void AgregarOferta(Producto item)
         {
+            Local local = this.GetLocal();
             local.ofertas.Add(item);
         }
         public void QuitarOferta()
@@ -44,9 +53,6 @@ namespace UI
         {
             this.local.GetMenu().Remove(item);
         }
-        public Local GetLocal()
-        {
-            return this.local;
-        }
+
     }
 }
