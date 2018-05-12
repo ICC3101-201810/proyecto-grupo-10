@@ -19,12 +19,44 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string Nombre = TName.Text;
-            string Rut = TRut.Text;
-            int HOpen = Convert.ToInt32(TOpening.Text);
-            int HClose = Convert.ToInt32(TClosing.Text);
+            bool hay_error = false;
+            DateTime hoy = DateTime.Now;
+            try
+            {
+                string Nombre = TName.Text;
+                string Rut = TRut.Text;
+                string[] Opening = TOpening.Text.Split(':');
+                string[] HClosing = TClosing.Text.Split(':');
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error al agregar local" + exc.Message, "Error");
+                hay_error = true;
+            }
+            if (hay_error==false)
+            {
+                string Nombre = TName.Text;
+                string Rut = TRut.Text;
 
-            this.Hide();
+                string[] Opening = TOpening.Text.Split(':');
+                int horaOpen = Convert.ToInt32(Opening[0]);
+                int minOpen = Convert.ToInt32(Opening[1]);
+
+                string[] HClosing = TClosing.Text.Split(':');
+                int horaCLose = Convert.ToInt32(HClosing[0]);
+                int minClose = Convert.ToInt32(HClosing[1]);
+
+                DateTime newAbre = new DateTime(hoy.Year, hoy.Month, hoy.Day, horaOpen, minOpen, 0);
+                DateTime newCierre = new DateTime(hoy.Year, hoy.Month, hoy.Day, horaCLose, minClose, 0);
+                Local newLocal = new Local(Nombre, Rut, newAbre, newCierre);
+                List<Local> locales = Metodos.DeserializarLocal();
+                locales.Add(newLocal);
+                MessageBox.Show("Horario de local cambiado con exito!");
+                Metodos.SerializarLocal(locales);
+                this.Close();
+
+            }
+
         }
 
         private void BBack_Click(object sender, EventArgs e)
