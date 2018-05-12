@@ -30,7 +30,7 @@ namespace UI
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Error al agregar local" + exc.Message, "Error");
+                MessageBox.Show("Error al agregar local\n" + exc.Message, "Error");
                 hay_error = true;
             }
             if (hay_error==false)

@@ -42,8 +42,7 @@ namespace UI
         private void CSesion_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainAplicacion ss = new MainAplicacion();
-            ss.Show();
+
         }
 
         private void BEnviar_Click(object sender, EventArgs e)
@@ -72,9 +71,8 @@ namespace UI
                 aUser.SetNota(selected, Nota, Comentario);
                 Metodos.SerializarLocal(locales);
                 MessageBox.Show("Nota Enviada a " + selected.GetName());
-                this.Hide();
-                MainAplicacion ss = new MainAplicacion();
-                ss.Show();
+                this.Close();
+
             }
         }
 

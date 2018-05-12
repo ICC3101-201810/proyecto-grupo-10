@@ -93,18 +93,13 @@ namespace UI
             }
             usuarios.Add(NewUser);
             MessageBox.Show("Usuario registrado con exito!");
-            Metodos.SerializarUsers(usuarios);
             this.Close();
-            menu.Show();
 
         }
 
         private void BAtras_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form1 menu = new Form1();
-            menu.Show();
-
         }
     }
 }

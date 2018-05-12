@@ -28,7 +28,7 @@ namespace UI
             }
             catch(Exception exc)
             {
-                MessageBox.Show("Error al cambiar horario de local" + exc.Message, "Error");
+                MessageBox.Show("Error al cambiar horario de local\n" + exc.Message, "Error");
                 hay_error = true;
             }
             if (hay_error==false)
