@@ -91,7 +91,8 @@ namespace UI
         {
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("locales.bin"), FileMode.Create))
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Delocales.bin");
+                using (Stream stream = File.Open(path, FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, lista_locales);
@@ -108,7 +109,8 @@ namespace UI
             List<Local> locales;
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("locales.bin"), FileMode.Open))
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Delocales.bin");
+                using (Stream stream = File.Open(path, FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
 
@@ -127,7 +129,8 @@ namespace UI
         {
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("admin_app.bin"), FileMode.Create))
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Deadmin_app.bin");
+                using (Stream stream = File.Open(path, FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, usuarios);
@@ -144,7 +147,8 @@ namespace UI
             List<AdminApp> usuarios;
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("admin_app.bin"), FileMode.Open))
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Deadmin_app.bin");
+                using (Stream stream = File.Open(path, FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
 
@@ -163,7 +167,8 @@ namespace UI
         {
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("admin_local.bin"), FileMode.Create))
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Deadmin_local.bin");
+                using (Stream stream = File.Open(path, FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, usuarios);
@@ -180,7 +185,8 @@ namespace UI
             List<AdminLocal> usuarios;
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("admin_local.bin"), FileMode.Open))
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Deadmin_local");
+                using (Stream stream = File.Open(path, FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
 
@@ -200,7 +206,8 @@ namespace UI
         {
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("users.bin"), FileMode.Create))
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Deusers.bin");
+                using (Stream stream = File.Open(path, FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, usuarios);
@@ -216,7 +223,8 @@ namespace UI
             List<Users> usuarios;
             try
             {
-                using (Stream stream = File.Open(GetDirectorio("users.bin"), FileMode.Open))
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Deusers.bin");
+                using (Stream stream = File.Open(path, FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
 
