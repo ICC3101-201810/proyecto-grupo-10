@@ -18,7 +18,6 @@ namespace UI
         public Form1()
         {
             InitializeComponent();
-            MessageBox.Show(Directory.GetCurrentDirectory());
 
         }
         public event EventHandler<LogInEventArgs> OnLogIn;
@@ -132,6 +131,11 @@ namespace UI
                 this.Hide();
                 Metodos.SerializarAdminsApp(admins_app);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

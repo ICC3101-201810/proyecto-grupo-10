@@ -185,7 +185,7 @@ namespace UI
             List<AdminLocal> usuarios;
             try
             {
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Deadmin_local");
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Deadmin_local.bin");
                 using (Stream stream = File.Open(path, FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
