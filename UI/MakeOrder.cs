@@ -71,6 +71,8 @@ namespace UI
                     Metodos.SerializarLocal(locales);
                     usuarios[numero].RealizarPedido(locales, elige_local, elige_producto, Cantidad, MedioPago);
                     Metodos.SerializarUsers(usuarios);
+                    MainAplicacion main = new MainAplicacion();
+                    main.Show();
                     this.Close();
                 }
                 else MessageBox.Show("Error en realizar pedido","Error");
@@ -108,8 +110,8 @@ namespace UI
                     UsuarioActivo.RealizarPedido(locales, elige_local, elige_producto, Cantidad, MedioPago);
                     MessageBox.Show("Pedido Realizado con exito!");
                     Metodos.SerializarLocal(locales);
-
-
+                    MainAplicacion main = new MainAplicacion();
+                    main.Show();
                     this.Close();
                 }
                 else MessageBox.Show("Error en realizar pedido", "Error");

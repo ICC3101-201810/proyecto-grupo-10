@@ -15,9 +15,14 @@ namespace UI
         public MainAplicacion()
         {
             InitializeComponent();
-            Bienvenida.Text += "Bienvenido " + AUser.UsuarioA.GetName() + "\nSaldo disponible: $" + AUser.UsuarioA.GetSaldo();
-        }
+            Inicia(0);
 
+        }
+        public void Inicia(int num)
+        {
+            Bienvenida.Text = "Bienvenido " + AUser.UsuarioA.GetName() + "\nSaldo disponible: $" + (AUser.UsuarioA.GetSaldo() + num).ToString();
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -66,6 +71,7 @@ namespace UI
             {
                 int saldo = Convert.ToInt32(ISaldo.Text);
                 Usuario_Activo.Abonar(saldo);
+                Inicia(saldo);
                 MessageBox.Show("Abono realizado con exito!");
                 Metodos.SerializarUsers(usuarios);
                 ISaldo.Text = "";
@@ -113,6 +119,7 @@ namespace UI
         private void RPedido_Click(object sender, EventArgs e)
         {
             MakeOrder a = new MakeOrder();
+            this.Close();
             a.Show();
         }
 
