@@ -25,6 +25,9 @@ namespace UI
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            /*Form1 inicio = new Form1();
+            this.Close();
+            inicio.Show();*/
             Application.Exit();
         }
 
@@ -63,11 +66,17 @@ namespace UI
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Ingrese un monto valido\n" + exc.Message, "Error en presupuestacion");
+                MessageBox.Show("Ingrese un monto valido\n" + exc.Message, "Error al agregar saldo");
                 hay_error = true;
                 Metodos.SerializarUsers(usuarios);
             }
-            if (hay_error==false)
+            if (Convert.ToInt32(ISaldo.Text) < 0)
+            {
+                MessageBox.Show("Ingrese un monto valido", "Error al agregar saldo");
+                hay_error = true;
+                Metodos.SerializarUsers(usuarios);
+            }
+            else if (hay_error==false)
             {
                 int saldo = Convert.ToInt32(ISaldo.Text);
                 Usuario_Activo.Abonar(saldo);

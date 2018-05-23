@@ -69,7 +69,6 @@ namespace UI
 
         private void BRegistrar_Click(object sender, EventArgs e)
         {
-            Form1 menu = new Form1();
             string Nombre = TNombre.Text;
             string Apellido = TAppellido.Text;
             string Rut = TRut.Text;
@@ -87,11 +86,11 @@ namespace UI
                 if (persona.GetMail()==NewUser.GetMail())
                 {
                     MessageBox.Show("Usuario ya esta registrado", "Error de registro");
-                    menu.Show();
                     this.Close();
                 }
             }
             usuarios.Add(NewUser);
+            Metodos.SerializarUsers(usuarios);
             MessageBox.Show("Usuario registrado con exito!");
             this.Close();
 
