@@ -40,6 +40,7 @@
             this.Bienvenida = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.LOGOUT = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CSesion
@@ -174,12 +175,26 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Money";
             // 
+            // LOGOUT
+            // 
+            this.LOGOUT.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.LOGOUT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LOGOUT.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.LOGOUT.Location = new System.Drawing.Point(195, 12);
+            this.LOGOUT.Name = "LOGOUT";
+            this.LOGOUT.Size = new System.Drawing.Size(75, 29);
+            this.LOGOUT.TabIndex = 11;
+            this.LOGOUT.Text = "Log out";
+            this.LOGOUT.UseVisualStyleBackColor = true;
+            this.LOGOUT.Click += new System.EventHandler(this.LOGOUT_Click);
+            // 
             // MainAplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(282, 354);
+            this.Controls.Add(this.LOGOUT);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Bienvenida);
@@ -215,5 +230,6 @@
         private System.Windows.Forms.Label Bienvenida;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button LOGOUT;
     }
 }

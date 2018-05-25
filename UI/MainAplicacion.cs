@@ -20,15 +20,15 @@ namespace UI
         }
         public void Inicia(int num)
         {
-            Bienvenida.Text = "Bienvenido " + AUser.UsuarioA.GetName() + "\nSaldo disponible: $" + (AUser.UsuarioA.GetSaldo() + num).ToString();
+            Bienvenida.Text = "Welcome " + AUser.UsuarioA.GetName() + "\nAvailable balance: $" + (AUser.UsuarioA.GetSaldo() + num).ToString();
 
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            /*Form1 inicio = new Form1();
+            Form1 inicio = new Form1();
             this.Close();
-            inicio.Show();*/
-            Application.Exit();
+            inicio.Show();
+            //Application.Exit();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -48,9 +48,9 @@ namespace UI
             List<Local> locales = Metodos.DeserializarLocal();
             foreach (Local lugar in locales)
             {
-                mensaje += lugar.GetName() + ", Promedio: " +lugar.PromedioRanking(lugar.GetRank()) + "\n";
+                mensaje += lugar.GetName() + ", average: " +lugar.PromedioRanking(lugar.GetRank()) + "\n";
             }
-            MessageBox.Show(mensaje, "Locales Disponibles");
+            MessageBox.Show(mensaje, "Open Locals");
             Metodos.SerializarLocal(locales);
         }
 
@@ -66,13 +66,13 @@ namespace UI
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Ingrese un monto valido\n" + exc.Message, "Error al agregar saldo");
+                MessageBox.Show("Enter a valid amount\n" + exc.Message, "Error adding balance");
                 hay_error = true;
                 Metodos.SerializarUsers(usuarios);
             }
             if (Convert.ToInt32(ISaldo.Text) < 0)
             {
-                MessageBox.Show("Ingrese un monto valido", "Error al agregar saldo");
+                MessageBox.Show("Enter a valid amount", "Error adding balance");
                 hay_error = true;
                 Metodos.SerializarUsers(usuarios);
             }
@@ -81,7 +81,7 @@ namespace UI
                 int saldo = Convert.ToInt32(ISaldo.Text);
                 Usuario_Activo.Abonar(saldo);
                 Inicia(saldo);
-                MessageBox.Show("Abono realizado con exito!");
+                MessageBox.Show("Balance add with success!");
                 Metodos.SerializarUsers(usuarios);
                 ISaldo.Text = "";
 
@@ -99,7 +99,7 @@ namespace UI
             }
             catch(Exception exc)
             {
-                MessageBox.Show("Ingrese un monto valido\n" + exc.Message, "Error en presupuestacion");
+                MessageBox.Show("Enter a valid amount\n" + exc.Message, "Budgeting Error");
                 hay_error = true;
             }
             if (hay_error==false)
@@ -113,7 +113,7 @@ namespace UI
                 {
                     mensaje += "Producto: " + item.GetNombre() + " Precio: " + item.GetPrecio() + "\n";
                 }
-                MessageBox.Show(mensaje, "Productos Disponibles");
+                MessageBox.Show(mensaje, "Available Products");
                 IBudget.Text = "";
             }
 
@@ -140,6 +140,11 @@ namespace UI
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LOGOUT_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

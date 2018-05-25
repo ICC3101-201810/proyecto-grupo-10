@@ -69,10 +69,22 @@ namespace UI
                 LogInEventArgs inicia = new LogInEventArgs();
                 inicia.Usuario = LogInUser;
                 AUser.Usuario = LogInUser;
-                OnLogIn(this, inicia);
-
-                this.Hide();
-                Metodos.SerializarUsers(usuarios);
+                bool error = false;
+                try
+                {
+                    OnLogIn(this, inicia);
+                }
+                catch(Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                    error = true;
+                }
+                if (!error)
+                {
+                    this.Hide();
+                    Metodos.SerializarUsers(usuarios);
+                }
+                
             }
 
         }
