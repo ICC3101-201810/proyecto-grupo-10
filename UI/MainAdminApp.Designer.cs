@@ -41,7 +41,7 @@
             // BRemoveUser
             // 
             this.BRemoveUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BRemoveUser.Location = new System.Drawing.Point(337, 192);
+            this.BRemoveUser.Location = new System.Drawing.Point(161, 106);
             this.BRemoveUser.Name = "BRemoveUser";
             this.BRemoveUser.Size = new System.Drawing.Size(99, 23);
             this.BRemoveUser.TabIndex = 0;
@@ -52,7 +52,7 @@
             // BAddStores
             // 
             this.BAddStores.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BAddStores.Location = new System.Drawing.Point(337, 134);
+            this.BAddStores.Location = new System.Drawing.Point(161, 48);
             this.BAddStores.Name = "BAddStores";
             this.BAddStores.Size = new System.Drawing.Size(99, 23);
             this.BAddStores.TabIndex = 1;
@@ -63,7 +63,7 @@
             // BRemoveStores
             // 
             this.BRemoveStores.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BRemoveStores.Location = new System.Drawing.Point(337, 163);
+            this.BRemoveStores.Location = new System.Drawing.Point(161, 77);
             this.BRemoveStores.Name = "BRemoveStores";
             this.BRemoveStores.Size = new System.Drawing.Size(99, 23);
             this.BRemoveStores.TabIndex = 2;
@@ -74,18 +74,18 @@
             // BReplaceAdmin
             // 
             this.BReplaceAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BReplaceAdmin.Location = new System.Drawing.Point(337, 221);
+            this.BReplaceAdmin.Location = new System.Drawing.Point(161, 135);
             this.BReplaceAdmin.Name = "BReplaceAdmin";
             this.BReplaceAdmin.Size = new System.Drawing.Size(99, 45);
             this.BReplaceAdmin.TabIndex = 3;
-            this.BReplaceAdmin.Text = "Replace Local Admin";
+            this.BReplaceAdmin.Text = "Add/Remove Store Admin";
             this.BReplaceAdmin.UseVisualStyleBackColor = true;
             this.BReplaceAdmin.Click += new System.EventHandler(this.BReplaceAdmin_Click);
             // 
             // BExit
             // 
             this.BExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BExit.Location = new System.Drawing.Point(713, 415);
+            this.BExit.Location = new System.Drawing.Point(185, 223);
             this.BExit.Name = "BExit";
             this.BExit.Size = new System.Drawing.Size(75, 23);
             this.BExit.TabIndex = 4;
@@ -96,7 +96,7 @@
             // CStore
             // 
             this.CStore.FormattingEnabled = true;
-            this.CStore.Location = new System.Drawing.Point(199, 163);
+            this.CStore.Location = new System.Drawing.Point(23, 77);
             this.CStore.Name = "CStore";
             this.CStore.Size = new System.Drawing.Size(132, 21);
             this.CStore.TabIndex = 6;
@@ -105,7 +105,7 @@
             // CMail
             // 
             this.CMail.FormattingEnabled = true;
-            this.CMail.Location = new System.Drawing.Point(199, 194);
+            this.CMail.Location = new System.Drawing.Point(23, 108);
             this.CMail.Name = "CMail";
             this.CMail.Size = new System.Drawing.Size(132, 21);
             this.CMail.TabIndex = 7;
@@ -116,7 +116,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(304, 346);
             this.Controls.Add(this.CMail);
             this.Controls.Add(this.CStore);
             this.Controls.Add(this.BExit);

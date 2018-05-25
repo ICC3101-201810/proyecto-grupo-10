@@ -45,9 +45,9 @@
             this.usersLabel.AutoSize = true;
             this.usersLabel.Location = new System.Drawing.Point(153, 30);
             this.usersLabel.Name = "usersLabel";
-            this.usersLabel.Size = new System.Drawing.Size(40, 13);
+            this.usersLabel.Size = new System.Drawing.Size(45, 13);
             this.usersLabel.TabIndex = 1;
-            this.usersLabel.Text = "USER:";
+            this.usersLabel.Text = "E-MAIL:";
             // 
             // PaswordLabel
             // 
@@ -111,7 +111,7 @@
             this.BLoginAdmin.Name = "BLoginAdmin";
             this.BLoginAdmin.Size = new System.Drawing.Size(100, 28);
             this.BLoginAdmin.TabIndex = 7;
-            this.BLoginAdmin.Text = " Admin Log In ";
+            this.BLoginAdmin.Text = " Log In as Admin";
             this.BLoginAdmin.UseVisualStyleBackColor = false;
             this.BLoginAdmin.Click += new System.EventHandler(this.BLoginAdmin_Click);
             // 

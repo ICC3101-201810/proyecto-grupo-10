@@ -128,7 +128,6 @@ namespace UI
         private void RPedido_Click(object sender, EventArgs e)
         {
             MakeOrder a = new MakeOrder();
-            this.Close();
             a.Show();
         }
 
