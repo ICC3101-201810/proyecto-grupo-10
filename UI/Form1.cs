@@ -18,6 +18,9 @@ namespace UI
         public Form1()
         {
             InitializeComponent();
+            AUser.UsuarioA = null;
+            AUser.AdminAppA = null;
+            AUser.AdminLocalA = null;
 
         }
         public event EventHandler<LogInEventArgs> OnLogIn;
@@ -66,25 +69,27 @@ namespace UI
             else
             {
                 
+                
+                bool error = false;
                 LogInEventArgs inicia = new LogInEventArgs();
                 inicia.Usuario = LogInUser;
                 AUser.Usuario = LogInUser;
-                bool error = false;
                 try
                 {
                     OnLogIn(this, inicia);
                 }
-                catch(Exception exc)
+                catch (Exception exc)
                 {
-                    MessageBox.Show(exc.Message);
+                    MessageBox.Show(exc.Message, "Log In error");
                     error = true;
                 }
                 if (!error)
                 {
                     this.Hide();
                     Metodos.SerializarUsers(usuarios);
+
                 }
-                
+
             }
 
         }
@@ -112,7 +117,7 @@ namespace UI
                 inicia.admin = loginlocal;
                 AUser.AdminLocalA = loginlocal;
                 OnLogInL(this, inicia);
-                this.Hide();
+                this.Close();
                 Metodos.SerializarAdminsLocal(admins_local);
             }
         }
@@ -140,7 +145,7 @@ namespace UI
                 inicia.adminApp = admin;
                 AUser.AdminAppA = admin;
                 OnLogInA(this, inicia);
-                this.Hide();
+                this.Close();
                 Metodos.SerializarAdminsApp(admins_app);
             }
         }

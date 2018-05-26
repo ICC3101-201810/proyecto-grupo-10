@@ -30,6 +30,8 @@ namespace UI
 
         private void BBack_Click(object sender, EventArgs e)
         {
+            MainAplicacion main = new MainAplicacion();
+            main.Show();
             this.Close();
 
         }

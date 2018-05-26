@@ -18,6 +18,7 @@ namespace UI
             Inicia(0);
 
         }
+
         public void Inicia(int num)
         {
             Bienvenida.Text = "Welcome " + AUser.UsuarioA.GetName() + "\nAvailable balance: $" + (AUser.UsuarioA.GetSaldo() + num).ToString();
@@ -125,6 +126,7 @@ namespace UI
         private void RPedido_Click(object sender, EventArgs e)
         {
             MakeOrder a = new MakeOrder();
+            this.Close();
             a.Show();
         }
 
@@ -140,7 +142,12 @@ namespace UI
 
         private void LOGOUT_Click(object sender, EventArgs e)
         {
-            
+            Form1 a = new Form1();
+            LogInEventArgs adios = new LogInEventArgs();
+            adios.Usuario = null;
+            AUser.UsuarioA = null;
+            a.Show();
+            this.Close();
         }
     }
 }
