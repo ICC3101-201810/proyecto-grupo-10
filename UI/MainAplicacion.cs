@@ -109,7 +109,7 @@ namespace UI
                 string mensaje = "";
                 foreach (Producto item in Opciones)
                 {
-                    mensaje += "Producto: " + item.GetNombre() + " Precio: " + item.GetPrecio() + "\n";
+                    mensaje += "Product: " + item.GetNombre() + " Price: " + item.GetPrecio() + "\n";
                 }
                 MessageBox.Show(mensaje, "Available Products");
                 IBudget.Text = "";

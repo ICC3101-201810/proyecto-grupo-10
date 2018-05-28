@@ -117,7 +117,7 @@ namespace UI
                 inicia.admin = loginlocal;
                 AUser.AdminLocalA = loginlocal;
                 OnLogInL(this, inicia);
-                this.Close();
+                this.Hide();
                 Metodos.SerializarAdminsLocal(admins_local);
             }
         }
@@ -145,7 +145,7 @@ namespace UI
                 inicia.adminApp = admin;
                 AUser.AdminAppA = admin;
                 OnLogInA(this, inicia);
-                this.Close();
+                this.Hide();
                 Metodos.SerializarAdminsApp(admins_app);
             }
         }
