@@ -142,12 +142,7 @@ namespace UI
 
         private void LOGOUT_Click(object sender, EventArgs e)
         {
-            Form1 a = new Form1();
-            LogInEventArgs adios = new LogInEventArgs();
-            adios.Usuario = null;
-            AUser.UsuarioA = null;
-            a.Show();
-            this.Close();
+            Application.Restart();
         }
     }
 }
