@@ -34,5 +34,15 @@ namespace UI
             Hours hora = new Hours();
             hora.Show();
         }
+
+        private void BCambiarMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

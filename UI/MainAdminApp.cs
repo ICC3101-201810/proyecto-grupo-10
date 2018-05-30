@@ -31,7 +31,7 @@ namespace UI
 
         private void BExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Restart();
         }
 
         private void BRemoveUser_Click(object sender, EventArgs e)

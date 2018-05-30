@@ -62,7 +62,7 @@ namespace UI
 
         private void BBack_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

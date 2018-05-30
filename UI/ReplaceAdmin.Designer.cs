@@ -47,6 +47,7 @@
             this.TClave = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.Clocales = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // TOld
@@ -117,7 +118,7 @@
             // 
             // BAddAdmin
             // 
-            this.BAddAdmin.Location = new System.Drawing.Point(12, 426);
+            this.BAddAdmin.Location = new System.Drawing.Point(12, 455);
             this.BAddAdmin.Name = "BAddAdmin";
             this.BAddAdmin.Size = new System.Drawing.Size(100, 23);
             this.BAddAdmin.TabIndex = 7;
@@ -127,7 +128,7 @@
             // 
             // BBack
             // 
-            this.BBack.Location = new System.Drawing.Point(37, 455);
+            this.BBack.Location = new System.Drawing.Point(37, 484);
             this.BBack.Name = "BBack";
             this.BBack.Size = new System.Drawing.Size(75, 23);
             this.BBack.TabIndex = 8;
@@ -208,12 +209,21 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "Mail";
             // 
+            // Clocales
+            // 
+            this.Clocales.FormattingEnabled = true;
+            this.Clocales.Location = new System.Drawing.Point(12, 428);
+            this.Clocales.Name = "Clocales";
+            this.Clocales.Size = new System.Drawing.Size(121, 21);
+            this.Clocales.TabIndex = 18;
+            // 
             // ReplaceAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(264, 560);
+            this.Controls.Add(this.Clocales);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TClave);
@@ -261,5 +271,6 @@
         private System.Windows.Forms.TextBox TClave;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox Clocales;
     }
 }

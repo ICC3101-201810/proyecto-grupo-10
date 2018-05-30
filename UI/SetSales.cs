@@ -16,7 +16,12 @@ namespace UI
         {
             InitializeComponent();
             CLocal.Items.Clear();
-            CLocal.Items.Add(AUser.AdminLocalA.GetLocal());
+            List<Local> locales = Metodos.DeserializarLocal();
+            foreach (Local l in locales)
+            {
+                CLocal.Items.Add(l.GetName());
+            }
+            Metodos.SerializarLocal(locales);
         }
 
         private void CLocal_SelectedIndexChanged(object sender, EventArgs e)

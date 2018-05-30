@@ -34,12 +34,13 @@
             this.BCambiarMenu = new System.Windows.Forms.Button();
             this.BCambioHorario = new System.Windows.Forms.Button();
             this.Bienvenida = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BOferta
             // 
             this.BOferta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BOferta.Location = new System.Drawing.Point(323, 172);
+            this.BOferta.Location = new System.Drawing.Point(22, 55);
             this.BOferta.Name = "BOferta";
             this.BOferta.Size = new System.Drawing.Size(97, 23);
             this.BOferta.TabIndex = 0;
@@ -61,17 +62,18 @@
             // BCambiarMenu
             // 
             this.BCambiarMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BCambiarMenu.Location = new System.Drawing.Point(323, 201);
+            this.BCambiarMenu.Location = new System.Drawing.Point(22, 84);
             this.BCambiarMenu.Name = "BCambiarMenu";
             this.BCambiarMenu.Size = new System.Drawing.Size(97, 23);
             this.BCambiarMenu.TabIndex = 3;
             this.BCambiarMenu.Text = "Change Menu";
             this.BCambiarMenu.UseVisualStyleBackColor = true;
+            this.BCambiarMenu.Click += new System.EventHandler(this.BCambiarMenu_Click);
             // 
             // BCambioHorario
             // 
             this.BCambioHorario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BCambioHorario.Location = new System.Drawing.Point(323, 230);
+            this.BCambioHorario.Location = new System.Drawing.Point(22, 113);
             this.BCambioHorario.Name = "BCambioHorario";
             this.BCambioHorario.Size = new System.Drawing.Size(97, 48);
             this.BCambioHorario.TabIndex = 4;
@@ -87,12 +89,23 @@
             this.Bienvenida.Size = new System.Drawing.Size(0, 13);
             this.Bienvenida.TabIndex = 5;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(44, 185);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // MainAdminLocal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(159, 234);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Bienvenida);
             this.Controls.Add(this.BCambioHorario);
             this.Controls.Add(this.BCambiarMenu);
@@ -114,5 +127,6 @@
         private System.Windows.Forms.Button BCambiarMenu;
         private System.Windows.Forms.Button BCambioHorario;
         private System.Windows.Forms.Label Bienvenida;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UI
 {
@@ -43,7 +44,14 @@ namespace UI
         public void AgregarOferta(Producto item)
         {
             Local local = this.GetLocal();
-            local.ofertas.Add(item);
+            try
+            {
+                local.ofertas.Add(item);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Setting sale failed\n" + exc.Message, "Sale error");
+            }
         }
         public void QuitarOferta()
         {
