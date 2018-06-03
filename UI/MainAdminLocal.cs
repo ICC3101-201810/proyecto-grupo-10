@@ -15,13 +15,14 @@ namespace UI
         public MainAdminLocal()
         {
             InitializeComponent();
-            Bienvenida.Text += "Bienvenido " + AUser.AdminLocalA.GetName() + "\nSaldo disponible: $" + AUser.AdminLocalA.GetSaldo();
+            Bienvenida.Text += "Bienvenido " + AUser.AdminLocalA.GetName() + "\nSaldo disponible: $" + AUser.AdminLocalA.GetSaldo() ;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             SetSales sales = new SetSales();
             sales.Show();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
