@@ -38,7 +38,8 @@ namespace UI
 
         private void BCambiarMenu_Click(object sender, EventArgs e)
         {
-
+            ChangeMenu a = new ChangeMenu();
+            a.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)

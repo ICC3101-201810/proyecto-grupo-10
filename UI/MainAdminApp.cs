@@ -99,6 +99,7 @@ namespace UI
         {
             AddStore a = new AddStore();
             a.Show();
+            this.Close();
         }
 
         private void BReplaceAdmin_Click(object sender, EventArgs e)

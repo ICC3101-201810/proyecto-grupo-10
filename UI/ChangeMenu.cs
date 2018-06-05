@@ -15,6 +15,13 @@ namespace UI
         public ChangeMenu()
         {
             InitializeComponent();
+            List<Local> locales = Metodos.DeserializarLocal();
+            foreach (Local l in locales)
+            {
+                CLocal.Items.Add(l.GetName());
+            }
+            Metodos.SerializarLocal(locales);
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -81,6 +88,7 @@ namespace UI
                 AdminLocal admin = AUser.AdminLocalA;
                 Producto aremover = Metodos.BuscaProducto(admin.GetLocal().menu, prod);
                 admin.QuitarDelMenu(aremover);
+                MessageBox.Show("Product removed!");
 
                 this.Hide();
                 Metodos.SerializarLocal(locales);

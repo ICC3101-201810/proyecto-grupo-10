@@ -30,7 +30,7 @@ namespace UI
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Error al agregar local\n" + exc.Message, "Error");
+                MessageBox.Show("Invalid field\n" + exc.Message, "Error");
                 hay_error = true;
             }
             if (hay_error==false)
@@ -51,9 +51,11 @@ namespace UI
                 Local newLocal = new Local(Nombre, Rut, newAbre, newCierre);
                 List<Local> locales = Metodos.DeserializarLocal();
                 locales.Add(newLocal);
-                MessageBox.Show("Horario de local cambiado con exito!");
+                MessageBox.Show("Store added with success!");
                 Metodos.SerializarLocal(locales);
                 this.Close();
+                MainAdminApp a = new MainAdminApp();
+                a.Show();
 
             }
 
@@ -62,6 +64,8 @@ namespace UI
         private void BBack_Click(object sender, EventArgs e)
         {
             this.Hide();
+            MainAdminApp a = new MainAdminApp();
+            a.Show();
         }
     }
 }
